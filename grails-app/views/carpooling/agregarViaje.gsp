@@ -85,8 +85,8 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="MisViajes" action="renderMisViajesView">Mis Viajes</g:link></li>
-                <li><g:link controller="index" action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+                <li><g:link controller="MisViajes" action="redirectAgregarVehiculoController">Mis Viajes</g:link></li>
+                <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
               </ul>
@@ -98,47 +98,47 @@
 			<h1>Agregar nuevo viaje</h1>
             <div class="seccion_imgs caja-sombra _imgs">
             
-                <form role="form">
+                <fieldset>
+                <g:form controller="AgregarViaje" action="" method="post">
 				
 				<div class="col-md-6">	
 					<div class="form-group">
 						<label for="desde">Desde:</label>
-						<input type="text" class="form-control" id="desde">
+						<g:field name="desde" type="text" class="form-control" id="desde"/>
 					</div>
 					<div class="form-group">
 						<label for="hasta">Hasta:</label>
-						<input type="text" class="form-control" id="hasta">
+						<g:field  name="desde "type="text" class="form-control" id="hasta"/>
 					</div>
 					<div class="form-group">
-						<label for="Modelo">Hora de salida:</label>
-						<input type="text" class="form-control" placeholder="Formato hh:mm:ss..">
+						<label for="hora">Hora de salida:</label>
+						<g:field name="hora" type="text" class="form-control" placeholder="Formato hh:mm:ss"/>
 					</div>
 					
 					<label for="frecuencia">Frecuencia:</label>
 					<div id="checkboxset">
-                		<input type="checkbox" id="checkbox1" name="checkbox"><label for="checkbox1">Dom</label>
-                		<input type="checkbox" id="checkbox2" name="checkbox"><label for="checkbox2">Lun</label>
-                		<input type="checkbox" id="checkbox3" name="checkbox"><label for="checkbox3">Mar</label>
-                		<input type="checkbox" id="checkbox4" name="checkbox"><label for="checkbox4">Mier</label>
-                		<input type="checkbox" id="checkbox5" name="checkbox"><label for="checkbox5">Jue</label>
-                		<input type="checkbox" id="checkbox6" name="checkbox"><label for="checkbox6">Vie</label>
-                		<input type="checkbox" id="checkbox7" name="checkbox"><label for="checkbox7">Sab</label>
+					
+                		<input type="checkbox" id="checkbox1" name="domingo"><label for="checkbox1">Dom</label>
+                		<input type="checkbox" id="checkbox2" name="lunes"><label for="checkbox2">Lun</label>
+                		<input type="checkbox" id="checkbox3" name="martes"><label for="checkbox3">Mar</label>
+                		<input type="checkbox" id="checkbox4" name="miercoles"><label for="checkbox4">Mier</label>
+                		<input type="checkbox" id="checkbox5" name="jueves"><label for="checkbox5">Jue</label>
+                		<input type="checkbox" id="checkbox6" name="viernes"><label for="checkbox6">Vie</label>
+                		<input type="checkbox" id="checkbox7" name="sabado"><label for="checkbox7">Sab</label>
                 	</div>
                 	
                 	<div class="form-group">
-						<select name="vehiculo" class="form-control">
-                            <option>Seleccione un vehiculo</option>
-                        </select>
+                	<g:select name="vehiculo.idUsuario" id="vehiculo.idUsuario"  from="${Vehiculo}"  optionvalue="patente" class="form-control"/>
 					</div>
 					
 					<div class="form-group">
 						<label for="colaboracion">Colaboración:</label>
-						<input type="text" class="form-control" placeholder="$">
+						<g:field name="colaboracion"  type="text" class="form-control" placeholder="Pesos" />
 					</div>
 					
 					<div class="form-group">
 						<label for="disponibilidad">Lugares disp:</label>
-						<input type="text" class="form-control" placeholder="Ingrese cantidad..">
+						<g:textField name="lugares" type="text" class="form-control" placeholder="Ingrese cantidad.."/>
 					</div>
 	
                 </div>
@@ -149,22 +149,23 @@
 					
 					<div class="form-group">
 						<label for="comentario">Comentario:</label>
-						<textarea class="form-control" placeholder="Algun detalle mas para agregar..."></textarea>
+						<g:textArea name="comentario" class="form-control" placeholder="Algun detalle mas para agregar..."/>
 					</div>
                 </div>
                 
                 <div style="clear: both"></div>
                 
                 <center class="btn_vehiculo">
-                    <button type="submit" class="btn btn-success">Publicar Viaje</button>
-                    <buttom type="reset" class="btn btn-default">Cancelar</buttom>
+                    <g:submitButton name="submit" value="Publicar mi viaje" class="btn btn-warning" />
+                    <!--<buttom type="reset" class="btn btn-default">Cancelar</buttom>-->
                 </center>
                 
-                </form>
+              </g:form>
+               </fieldset>
                 
             </div>
             
-            <div style="clear: both"></div>
+            
 		</div><!--fin contenido-->
 		<div id="push"></div>
 	</div>

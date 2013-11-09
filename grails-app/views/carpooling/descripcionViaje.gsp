@@ -19,6 +19,14 @@
 	src="${resource(dir: 'bootstrap/js', file: 'jquery.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
+<script type="text/javascript"
+	src="${resource(dir: 'js', file: 'holder.js')}"></script>
+	
+<script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+<script type="text/javascript"
+        src="${resource(dir: 'js', file: 'google.js')}">
+</script>
 
 </head>
 
@@ -70,7 +78,7 @@
 							action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
 					<li><g:link controller="MisViajes"
 							action="renderMisViajesView">Mis Viajes</g:link></li>
-					<li><g:link controller="index" action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+					<li><g:link controller="tipoUsuario" action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 					<li class="divider"></li>
 					<li><a href="index.html">Cerrar Sesión</a></li>
 				</ul>
@@ -80,75 +88,77 @@
 		<!--fin menu-->
 
 		<div id="contenido">
-			<h1>
-				<i class="glyphicon glyphicon-map-marker"></i> Viajes publicados que
-				coinciden con la busqueda:
-			</h1>
-
-			<div class="seccion_imgs caja-sombra _imgs">
-				<div class="alert alert-info">
-					<h4>Villa Luro - Lomas del Mirador!</h4>
-					<h5>Desde Basualdo 626 - Villa Luro hasta Bolivar 2874 - Lomas
-						del Mirador.</h5>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul>
-							<li><strong>Chofer: </strong>Fulanito</li>
-							<li><strong>Vehiculo: </strong>Volkswagen Gol Trend</li>
-						</ul>
-					</div>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul class="pull-left">
-							<li><strong>Lugares disponibles: </strong>3</li>
-							<li><strong>Colaboración: </strong>$20</li>
-						</ul>
-						<g:link class="btn btn-warning btn-xs pull-right" controller="DescripcionViaje" action="renderDescripcionViajeView">Ver detalle</g:link>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-
-				<div class="alert alert-info">
-					<h4>Villa Luro - Lomas del Mirador!</h4>
-					<h5>Desde Basualdo 626 - Villa Luro hasta Bolivar 2874 - Lomas
-						del Mirador.</h5>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul>
-							<li><strong>Chofer: </strong>Fulanito</li>
-							<li><strong>Vehiculo: </strong>Volkswagen Gol Trend</li>
-						</ul>
-					</div>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul class="pull-left">
-							<li><strong>Lugares disponibles: </strong>3</li>
-							<li><strong>Colaboración: </strong>$20</li>
-						</ul>
-						<g:link class="btn btn-warning btn-xs pull-right" controller="DescripcionViaje" action="renderDescripcionViajeView">Ver detalle</g:link>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-
-				<div class="alert alert-info">
-					<h4>Villa Luro - Lomas del Mirador!</h4>
-					<h5>Desde Basualdo 626 - Villa Luro hasta Bolivar 2874 - Lomas
-						del Mirador.</h5>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul>
-							<li><strong>Chofer: </strong>Fulanito</li>
-							<li><strong>Vehiculo: </strong>Volkswagen Gol Trend</li>
-						</ul>
-					</div>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul class="pull-left">
-							<li><strong>Lugares disponibles: </strong>3</li>
-							<li><strong>Colaboración: </strong>$20</li>
-						</ul>
-						<g:link class="btn btn-warning btn-xs pull-right" controller="DescripcionViaje" action="renderDescripcionViajeView">Ver detalle</g:link>
-						
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-
-			<div style="clear: both"></div>
+			<h1>Descripción de viaje seleccionado</h1>
+            <div class="seccion_imgs caja-sombra _imgs">
+                <div class="col-md-6">
+                
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h4>Conductor</h4>
+                            <h5><strong>Nombre: </strong>Fulanito de Tal</h5>
+                            <h5><strong>DNI: </strong>33157053</h5>
+                            <h5><strong>Teléfono: </strong>1130306084</h5>
+                            </br>
+                            <h5><strong>Reputacion: </strong></h5>
+                            <h5>Positivo: 1 | Negativo: 0 | Neutro: 0</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="thumbnail" style="width: 148px;">
+                                <img data-src="js/holder.js/140x140" alt="conductor"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Vehiculo</h4>
+                            <h5><strong>Marca: </strong>Renault</h5>
+                            <h5><strong>Model: </strong>Clio</h5>
+                            <h5><strong>Patente: </strong>MND405</h5>
+                            </br>
+                            <h5><strong>Lugares Disponibles: </strong>3</h5>
+                            <h5><strong>Colaboración: </strong>$20</h5>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="thumbnail" style="width: 228px;">
+                                <img data-src="js/holder.js/220x200" alt="cedula"/>
+                            </div>
+                        </div>
+                    </div>
+    				
+    				<div class="row">
+    				    <form role="form">
+    				        <div class="form-group">
+        						<label for="comentario">Mensaje:</label>
+        						<textarea class="form-control" placeholder="Enviale un mensaje al conductor..."></textarea>
+        					</div>
+        					
+        					<center class="btn_vehiculo">
+                                <button type="submit" class="btn btn-success btn-xs">Enviar</button>
+                                <button type="reset" class="btn btn-default btn-xs">Borrar</button>
+                            </center>
+    				    </form>
+    				</div>
+    				
+                </div>
+                
+                <div class="col-md-6">
+                    <h4>Viaje</h4>
+                    <h5><strong>Desde: </strong>Basualdo 626 - Villa Luro</h5>
+                    <h5><strong>Hasta: </strong>Bolivar 2874 - Lomas del Mirador</h5>
+                    <h5><strong>Hora de Salida: </strong>6:30</h5>
+                    <h5><strong>Dia/as: </strong>Lun - Mar - Mier - Jue - Vie</h5>
+    				<div id="map-canvas" style="width: 410px; height: 281px; margin: 75px auto 0"></div>
+    				<center class="btn_vehiculo">
+	                    <button type="submit" class="btn btn-lg btn-block btn-success">Unirme</button>
+	                </center>
+                </div>
+                <div class="clearfix"></div>
+                
+                
+            </div>
+            <div class"clearfix"></div>
+            
 		</div><!--fin contenido-->
 		<div id="push"></div>
 	</div>

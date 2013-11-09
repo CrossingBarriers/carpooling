@@ -5,7 +5,8 @@ class Vehiculo {
 	String marca
 	String modelo
 	Integer cantidadAsientos
-	Usuario usuario
+	//Usuario usuario
+	Integer idUsuario
 	
 	static belongsTo = Usuario // Vehículo pertenece a Usuario
 	static hasMany = [viajes: ViajeRegistrado] // Un vehículo puede estar en muchos viajes registrados.
@@ -15,6 +16,6 @@ class Vehiculo {
 		marca   (blank: false, nullable: false)
 		modelo  (blank: false, nullable: false)
 		cantidadAsientos  (blank: false, nullable: false)
-		usuario  (blank: false, nullable: false)
+		//usuario  (blank: false, nullable: false)
 	}
 }

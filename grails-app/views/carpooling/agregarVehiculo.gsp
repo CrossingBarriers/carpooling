@@ -62,8 +62,8 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="MisViajes" action="renderMisViajesView">Mis Viajes</g:link></li>
-                <li><g:link controller="index" action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+                <li><g:link controller="MisViajes" action="redirectAgregarVehiculoController">Mis Viajes</g:link></li>
+                <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
               </ul>
@@ -75,42 +75,39 @@
 		  <h1>Registrar vehiculo</h1>
             <div class="seccion_imgs caja-sombra _imgs">
                 
-                <form role="form">
-				
+                <fieldset>
+				<g:form controller="AgregarVehiculo" action="guardarVehiculo" method="post"> 
 				<div class="col-md-6">	
 					<div class="form-group">
 						<label for="patente">Patente:</label>
-						<input type="text" class="form-control" placeholder="Ingrese patente..">
+						<g:field type="text" name="patente" class="form-control" placeholder="Ingrese patente"/>
 					</div>
 					<div class="form-group">
 						<label for="marca">Marca:</label>
-						<input type="text" class="form-control" placeholder="Ingrese marca..">
+						<g:field type="text" name="marca" class="form-control" placeholder="Ingrese marca"/>
 					</div>
 					<div class="form-group">
-						<label for="Modelo">Modelo:</label>
-						<input type="text" class="form-control" placeholder="Ingrese modelo..">
+						<label for="modelo">Modelo:</label>
+						<g:field type="text" name="modelo" class="form-control" placeholder="Ingrese modelo"/>
 					</div>
                 </div>
                 
                 <div class="col-md-6">
-                    <div class="form-group">
-						<label for="telefono">Teléfono:</label>
-						<input type="text" class="form-control" placeholder="Ingrese teléfono..">
-					</div>
 					<div class="form-group">
-						<label for="Modelo">Asientos:</label>
-						<input type="text" class="form-control" placeholder="Ingrese cantidad..">
+						<label for="asientos">Asientos:</label>
+						<g:field type="number" name="asientos" class="form-control" placeholder="Seleccione cantidad"/>
 					</div>
                 </div>
                 
                 <div style="clear: both"></div>
                 
                 <center class="btn_vehiculo">
-                    <button type="submit" class="btn btn-success">Agregar Vehiculo</button>
-                    <buttom type="reset" class="btn btn-default">Cancelar</buttom>
+                    <g:submitButton name="submit" value="Agregar" class="btn btn-warning" />
+                   <!--<g:submitButton name="reset" class="btn btn-default" value="Cancelar"/>-->
                 </center>
                 
-                </form>
+                </g:form>
+                </fieldset>
             </div>
             
 		</div><!--fin contenido-->

@@ -7,6 +7,10 @@ class TipoUsuarioController {
 		
 	}
 	
+	def redirectMisViajes={
+		
+		redirect(controller:"misViajes", action:"renderMisViajesView")
+	}
 	
 	def redirectBusquedaDeViajes = {
 		

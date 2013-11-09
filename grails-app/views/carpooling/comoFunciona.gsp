@@ -27,10 +27,7 @@
 <body>
 
 	<div id="bg_header">
-
-		<img
-			src="${resource(dir: 'images/carpooling', file: 'header_bg.jpg')}"
-			height="114" width="1159" alt="header_bg" /> <img
+	<img
 			src="${resource(dir: 'images/carpooling', file: 'header_bg.jpg')}"
 			height="114" width="960" alt="header_bg" />
 
@@ -42,21 +39,6 @@
 	<div id="contenedor">
 
 		<div class="header">
-
-			<g:link controller="index" action="renderIndexView">
-				<!-- cambiar el controlador -->
-
-				<img class="logo"
-					src="${resource(dir: 'images/carpooling', file: 'logo.png')}"
-					height="106" width="254" alt="logo" />
-
-			</g:link>
-
-			<ul id="m-soc4">
-				<li><a class="facebook" href="#"><span>Facebook</span></a></li>
-				<li><a class="twitter" href="#"><span>Twitter</span></a></li>
-				<li><a class="youtube" href="#"><span>YouTube</span></a></li>
-			</ul>
 
 			<g:link controller="index" action="renderIndexView">
 
@@ -127,8 +109,8 @@
 			</div>
 
 			<div style="clear: both"></div>
-
-			<a class="btn btn-lg btn-block btn-success" href="registrate.html">Registrate</a>
+			
+			<g:link class="btn btn-lg btn-block btn-success" controller="Registrate" action="renderRegistrateView">Registrate</g:link>
 
 		</div>
 		<!--fin contenido-->

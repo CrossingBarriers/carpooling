@@ -2,9 +2,18 @@ package carpooling
 
 class MisViajesController {
 
-   def renderMisViajesView =  {
+  def misViajes() {
+	
+	}
+	
+	def renderMisViajesView =  {
 		
 		render(view:"/carpooling/misViajes")
 		
 	}
+	
+	def redirectAgregarVehiculoController = {
+		
+				redirect(controller:"agregarVehiculo", action:"show")
+     }
 }

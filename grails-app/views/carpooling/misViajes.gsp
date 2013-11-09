@@ -62,8 +62,8 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="MisViajes" action="renderMisViajesView">Mis Viajes</g:link></li>
-                <li><g:link controller="index" action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+                <li><g:link controller="MisViajes" action="redirectAgregarVehiculoController">Mis Viajes</g:link></li>
+                <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
               </ul>
@@ -91,25 +91,27 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
+                      <tbody>
+                    <g:each var="vehiculos" in="${map}">
                         <tr>
                             <td>
+                            ${vehiculos.patente}
                             </td>
                             <td>
+                            ${vehiculos.marca} 
                             </td>
                             <td>
+                            ${vehiculos.modelo }
                             </td>
                             <td>
+                            ${vehiculos.cantidadAsientos }
                             </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
+                           <td>
+                          <g:link action="quitarVehiculo" id="${vehiculos.id}"><span class="glyphicon glyphicon-remove"></span></g:link>
+  
+                           </td>
                         </tr>
+                        </g:each>
                     </tbody>
                 </table>
                 <br />
@@ -164,8 +166,8 @@
                 </table>
                 
                 <center class="btn-vehiculo">
-                    <g:link controller="AgregarVehiculo" action="renderAgregarVehiculoView" class="btn btn-small btn-success">Agregar Vehiculo</g:link>
-                    <g:link controller="AgregarViaje" action="renderAgregarViajeView" class="btn btn-small btn-success">Agregar Viaje</g:link>
+                    <g:link controller="AgregarVehiculo" action="renderAgregarVehiculoView" class="btn btn-sm btn-warning">Agregar Vehiculo</g:link>
+                    <g:link controller="AgregarViaje" action="renderAgregarViajeView" class="btn btn-sm btn-warning">Agregar Viaje</g:link>
                 </center>
             
             </div>
