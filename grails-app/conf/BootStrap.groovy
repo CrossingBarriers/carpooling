@@ -28,16 +28,16 @@ class BootStrap {
 
 		println vehiculo1
 
-		def viaje1 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", hasta: "Palermo, Buenos Aires, Argentina", horaSalida: "16:30" , domingo: false, lunes: true, martes: false, miercoles: true, jueves: false, viernes: true, sabado: false, vehiculo: 1, colaboracion: 20, asientosLibres: 3, comentario: "-")
+		def viaje1 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", hasta: "Palermo, Buenos Aires, Argentina", horaSalida: "2013-12-12 16:30:00.0" , domingo: false, lunes: true, martes: false, miercoles: true, jueves: false, viernes: true, sabado: false, vehiculo: 1, colaboracion: 20, asientosLibres: 3, comentario: "-")
 		viaje1.save()
 		
 		println viaje1
 
 
-		def viaje2 = new ViajeRegistrado(desde: "Walmart San Justo - Brig. Gral. Juan Manuel de Rosas, San Justo, Buenos Aires Province, Argentina", hasta: "Plaza de Mayo - Hipólito Yrigoyen, Buenos Aires, Argentina", horaSalida: "16:30:00" ,  domingo: false, lunes: false, martes: true, miercoles: false, jueves: true, viernes: false, sabado: false, vehiculo: 1, colaboracion: 20, asientosLibres: 3, comentario: "-")
+	/*	def viaje2 = new ViajeRegistrado(desde: "Walmart San Justo - Brig. Gral. Juan Manuel de Rosas, San Justo, Buenos Aires Province, Argentina", hasta: "Plaza de Mayo - Hipólito Yrigoyen, Buenos Aires, Argentina", horaSalida: "2013-12-12 16:30:00" ,  domingo: false, lunes: false, martes: true, miercoles: false, jueves: true, viernes: false, sabado: false, vehiculo: 1, colaboracion: 20, asientosLibres: 3, comentario: "-")
 		viaje2.save()
 		
-		println viaje2
+		println viaje2 */
 
 	}
 
