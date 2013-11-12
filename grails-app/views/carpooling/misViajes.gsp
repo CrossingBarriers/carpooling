@@ -62,8 +62,9 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="MisViajes" action="redirectAgregarVehiculoController">Mis Viajes</g:link></li>
+                <li><g:link controller="MisViajes" action="show">Mis Viajes</g:link></li>   
                 <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
+                <li><g:link controller="AgregarVehiculo" action="renderAgregarVehiculoView"><p class="text-danger">Agregar Vehiculo</p></g:link></li> 
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
               </ul>
@@ -72,22 +73,30 @@
 		</div><!--fin menu-->
 		
 		<div id="contenido">
-		  <h1>Mis autos y Mis viajes</h1>
+		  <h1>Mi auto y Mis viajes</h1>
             <div class="seccion_imgs caja-sombra _imgs">
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th>
+                            <center>
                                 Patente
+                                </center>
                             </th>
                             <th>
+                            <center>
                                 Marca
+                                </center>
                             </th>
                             <th>
+                            <center>
                                 Modelo
+                                </center>
                             </th>
                             <th>
+                            <center>
                                 Cantidad de asientos
+                                </center>
                             </th>
                         </tr>
                     </thead>
@@ -95,20 +104,30 @@
                     <g:each var="vehiculos" in="${map}">
                         <tr>
                             <td>
+                            <center>
                             ${vehiculos.patente}
+                            </center>
                             </td>
                             <td>
+                            <center>
                             ${vehiculos.marca} 
+                            </center>
                             </td>
                             <td>
+                            <center>
                             ${vehiculos.modelo }
+                            </center>
                             </td>
                             <td>
+                            <center>
                             ${vehiculos.cantidadAsientos }
+                            </center>
+                           </td>
+                           <td>
+                            <g:link controller="AgregarViaje" action="renderAgregarViajeView" type = "button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-star-empty"></span> Agregar Viaje</g:link>    
                             </td>
                            <td>
-                          <g:link action="quitarVehiculo" id="${vehiculos.id}"><span class="glyphicon glyphicon-remove"></span></g:link>
-  
+                          <g:link controller="MisViajes" action="quitarVehiculo" id="${vehiculos.id}" type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-remove-sign"></span> Eliminar vehiculo</g:link>
                            </td>
                         </tr>
                         </g:each>
@@ -121,28 +140,38 @@
                     <thead>
                         <tr>
                             <th>
+                            <center>
                                 Desde
+                                </center>
                             </th>
                             <th>
+                            <center>
                                 Hasta
+                                </center>
                             </th>
                             <th>
-                                Dias
+                            <center>
+                                Días
+                                </center>
                             </th>
                             <th>
-                                Hora
+                            <center>
+                                Horario
+                                </center>
                             </th>
                             <th>
-                                Vehiculo
+                            <center>
+                                Lugares libres
+                                </center>
                             </th>
                             <th>
-                                Colaboracion
-                            </th>
-                            <th>
-                                Comentario adicional
+                            <center>
+                                Colaboración
+                                </center>
                             </th>
                         </tr>
                     </thead>
+                   
                     <tbody>
                         <tr>
                             <td>
@@ -158,17 +187,13 @@
                             <td>
                             </td>
                             <td>
-                            </td>
-                            <td>
+                              <!--<g:link action="" id="" type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span> Eliminar</g:link>-->
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                
-                <center class="btn-vehiculo">
-                    <g:link controller="AgregarVehiculo" action="renderAgregarVehiculoView" class="btn btn-sm btn-warning">Agregar Vehiculo</g:link>
-                    <g:link controller="AgregarViaje" action="renderAgregarViajeView" class="btn btn-sm btn-warning">Agregar Viaje</g:link>
-                </center>
+                <br></br>
+              
             
             </div>
             <div style="clear: both"></div>

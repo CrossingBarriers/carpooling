@@ -68,7 +68,7 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="MisViajes" action="redirectAgregarVehiculoController">Mis Viajes</g:link></li>
+                <li><g:link controller="MisViajes" action="show">Mis Viajes</g:link></li>
                 <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
@@ -83,7 +83,7 @@
 	<div id="contenido">
 			<div class="Layer-32 caja-sombra">
 				<g:link controller="MisViajes"
-					action="redirectAgregarVehiculoController" name="show">
+					action="show" name="show">
 					<img class="tipo_usuario"
 						src="${resource(dir: 'images/carpooling', file: 'Layer-32.jpg')}"
 						alt="conductor" />
