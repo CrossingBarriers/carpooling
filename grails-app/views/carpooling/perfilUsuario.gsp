@@ -54,9 +54,8 @@
                 <span class="glyphicon glyphicon-user"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="perfil_usuario.html">Mi Perfil</a></li>
-                <li><a href="agregar_viajes.html">Mis Viajes</a></li>
-                <li><g:link controller="index" action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+                <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+                <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
               </ul>
@@ -67,6 +66,7 @@
 		<div id="contenido">
 		  	<div id="contenido">
             	<h3>Datos personales</h3>
+            	
         	</div>
 		</div><!--fin contenido-->
 		<div id="push"></div>

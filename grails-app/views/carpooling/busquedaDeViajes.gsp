@@ -85,8 +85,8 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="MisViajes" action="renderMisViajesView">Mis Viajes</g:link></li>
-                <li><g:link controller="index" action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+                <li><g:link controller="ViajesALosQueMeUni" action="renderMisViajesView">Mis Viajes</g:link></li>
+                <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
               </ul>
@@ -132,8 +132,8 @@
                                         <div style="clear: both"></div>
 
                                         <center class="btn_vehiculo">
-                                                <button type="submit" class="btn btn-warning">BUSCAR</button>
-                                                <button type="reset" class="btn btn-default">BORRAR</button>
+                                                <button type="submit" class="btn btn-warning">Buscar</button>
+                                                <button type="reset" class="btn btn-default">Borrar</button>
                                         </center>
                                         <div style="clear: both"></div>
                                 </g:form>
