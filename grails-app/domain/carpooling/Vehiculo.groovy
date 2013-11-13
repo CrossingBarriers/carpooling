@@ -12,6 +12,7 @@ class Vehiculo {
 
 		id generator: 'assigned', name:'patente', type: 'string'
 		usuario column: 'usuario_dni'
+		version false
 
 	}
 

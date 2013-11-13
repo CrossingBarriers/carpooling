@@ -21,6 +21,7 @@ class ViajeRegistrado {
 	static mapping = { 
 		
 		vehiculo column: 'vehiculo_patente'
+		version false
 		
 		}
 
