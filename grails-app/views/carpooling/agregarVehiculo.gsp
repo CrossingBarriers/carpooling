@@ -19,6 +19,8 @@
 	src="${resource(dir: 'bootstrap/js', file: 'jquery.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
+<script type="text/javascript"
+    src="${resource(dir:'js', file:'validacion.js') }"></script>
 
 </head>
 
@@ -62,7 +64,7 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="MisViajes" action="redirectAgregarVehiculoController">Mis Viajes</g:link></li>
+                <li><g:link controller="MisViajes" action="show">Mis Viajes</g:link></li>
                 <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
@@ -76,26 +78,26 @@
             <div class="seccion_imgs caja-sombra _imgs">
                 
                 <fieldset>
-				<g:form controller="AgregarVehiculo" action="guardarVehiculo" method="post"> 
+				<g:form onSubmit="return validar(this)" controller="AgregarVehiculo" action="guardarVehiculo" method="post"> 
 				<div class="col-md-6">	
 					<div class="form-group">
 						<label for="patente">Patente:</label>
-						<g:field type="text" name="patente" class="form-control" placeholder="Ingrese patente"/>
+						<g:field type="text" id="patente" name="patente" class="form-control" placeholder="Ingrese patente"/>
 					</div>
 					<div class="form-group">
 						<label for="marca">Marca:</label>
-						<g:field type="text" name="marca" class="form-control" placeholder="Ingrese marca"/>
+						<g:field type="text" id="marca" name="marca" class="form-control" placeholder="Ingrese marca"/>
 					</div>
 					<div class="form-group">
 						<label for="modelo">Modelo:</label>
-						<g:field type="text" name="modelo" class="form-control" placeholder="Ingrese modelo"/>
+						<g:field type="text" id="modelo" name="modelo" class="form-control" placeholder="Ingrese modelo"/>
 					</div>
                 </div>
                 
                 <div class="col-md-6">
 					<div class="form-group">
 						<label for="asientos">Asientos:</label>
-						<g:field type="number" name="asientos" class="form-control" placeholder="Seleccione cantidad"/>
+						<g:field type="number" id="asientos" name="asientos" class="form-control" placeholder="Seleccione cantidad"/>
 					</div>
                 </div>
                 

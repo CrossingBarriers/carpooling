@@ -19,6 +19,8 @@
 	src="${resource(dir: 'bootstrap/js', file: 'jquery.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
+<script type="text/javascript"
+    src="${resource(dir:'js', file:'validacionviaje.js') }"></script>
 <script
 	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 <script type="text/javascript"
@@ -85,7 +87,7 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="MisViajes" action="redirectAgregarVehiculoController">Mis Viajes</g:link></li>
+                <li><g:link controller="MisViajes" action="show">Mis Viajes</g:link></li>
                 <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
@@ -99,26 +101,32 @@
             <div class="seccion_imgs caja-sombra _imgs">
             
                 <fieldset>
-                <g:form controller="AgregarViaje" action="" method="post">
+                <g:form onSubmit="return validar(this)" controller="AgregarViaje" action="guardarViaje" method="post">
 				
 				<div class="col-md-6">	
 					<div class="form-group">
 						<label for="desde">Desde:</label>
-						<g:field name="desde" type="text" class="form-control" id="desde"/>
+						<g:field name="desde" id="desde" type="text" class="form-control" id="desde"/>
 					</div>
 					<div class="form-group">
 						<label for="hasta">Hasta:</label>
-						<g:field  name="desde "type="text" class="form-control" id="hasta"/>
+						<g:field  name="hasta" id="hasta" type="text" class="form-control" id="hasta"/>
 					</div>
 					<div class="form-group">
 						<label for="hora">Hora de salida:</label>
-						<g:field name="hora" type="text" class="form-control" placeholder="Formato hh:mm:ss"/>
+						<br></br>
+						<div class="col-xs-3">
+						<g:field name="hora" type="text" class="form-control" placeholder="hh"/>
+						</div>
+						<div class="col-xs-3">
+						<g:field type="text" name="minutos" class="form-control" placeholder="mm" />
+					   </div>
 					</div>
-					
+					<br></br>
 					<label for="frecuencia">Frecuencia:</label>
 					<div id="checkboxset">
 					
-                		<input type="checkbox" id="checkbox1" name="domingo"><label for="checkbox1">Dom</label>
+                		<input  type="checkbox" id="checkbox1" name="domingo"><label for="checkbox1">Dom</label>
                 		<input type="checkbox" id="checkbox2" name="lunes"><label for="checkbox2">Lun</label>
                 		<input type="checkbox" id="checkbox3" name="martes"><label for="checkbox3">Mar</label>
                 		<input type="checkbox" id="checkbox4" name="miercoles"><label for="checkbox4">Mier</label>
@@ -126,30 +134,24 @@
                 		<input type="checkbox" id="checkbox6" name="viernes"><label for="checkbox6">Vie</label>
                 		<input type="checkbox" id="checkbox7" name="sabado"><label for="checkbox7">Sab</label>
                 	</div>
-                	
-                	<div class="form-group">
-                	<g:select name="vehiculo.idUsuario" id="vehiculo.idUsuario"  from="${Vehiculo}"  optionvalue="patente" class="form-control"/>
-					</div>
-					
 					<div class="form-group">
 						<label for="colaboracion">Colaboración:</label>
-						<g:field name="colaboracion"  type="text" class="form-control" placeholder="Pesos" />
+						<g:field name="colaboracion" id="colaboracion" type="text" class="form-control" placeholder="Pesos" />
 					</div>
 					
 					<div class="form-group">
-						<label for="disponibilidad">Lugares disp:</label>
-						<g:textField name="lugares" type="text" class="form-control" placeholder="Ingrese cantidad.."/>
+						<label for="disponibilidad">Lugares disponibles:</label>
+						<g:textField name="lugares" id="lugares" type="text" class="form-control" placeholder="Ingrese cantidad"/>
 					</div>
 	
                 </div>
                 
                 <div class="col-md-6">
-                
-					<div id="map-canvas" style="width: 410px; height: 281px; margin: 0 auto 17px;"></div>
-					
+					<div id="map-canvas" style="width: 390px; height: 261px; margin: 0 auto 17px;"></div>
 					<div class="form-group">
 						<label for="comentario">Comentario:</label>
-						<g:textArea name="comentario" class="form-control" placeholder="Algun detalle mas para agregar..."/>
+						
+						<g:textArea name="comentario" id="comentario" class="form-control" rows="5" cols="15" placeholder="Algun detalle mas para agregar..."/>
 					</div>
                 </div>
                 
@@ -159,13 +161,10 @@
                     <g:submitButton name="submit" value="Publicar mi viaje" class="btn btn-warning" />
                     <!--<buttom type="reset" class="btn btn-default">Cancelar</buttom>-->
                 </center>
-                
               </g:form>
                </fieldset>
-                
             </div>
-            
-            
+
 		</div><!--fin contenido-->
 		<div id="push"></div>
 	</div>

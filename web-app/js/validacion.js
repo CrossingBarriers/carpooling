@@ -2,116 +2,59 @@
 function validar(formulario)
 {
 
-//valida nombre
-  if (formulario.nombre.value=='') 
-  {
-    alert('Ingrese su nombre.');
-    formulario.nombre.focus();
-    return (false);
-  }
-  var letrasok = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ' + 'abcdefghijklmnñopqrstuvwxyzáéíóú';
-  var letras = formulario.nombre.value;
-  var validado = true; 
-  for (i = 0; i < letras.length; i++) 
-  {
-    ch = letras.charAt(i); //charAt devuelve un valor de carácter igual al carácter situado en la posición especificada por index. 
-    for (j = 0; j < letrasok.length; j++)
-      if (ch == letrasok.charAt(j))
-        break;
-    if (j == letrasok.length) 
-	{ 
-      validado= false; 
-      break; 
-    }
-  }
-  if (!validado) 
-  { 
-    alert('Escriba sólo letras'); 
-    formulario.nombre.focus(); 
-    return (false); 
-  } 
+	//valida patente
+	  if (formulario.patente.value=='') 
+	  {
+	    alert('Ingrese patente alfanumerica (Formato: AAA000)');
+	    formulario.patente.focus();
+	    return false;
+	  }
+	  
 
-//valida apellido
-if(formulario.apellido.value == '')
-{
-    alert('Ingrese su apellido');
-    formulario.apellido.focus();
-    return false;
-}
-var letrasok = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ' + 'abcdefghijklmnñopqrstuvwxyzáéíóú';
-  var letras = formulario.apellido.value;
-  var validado= true; 
-  for (i = 0; i < letras.length; i++) 
-  {
-    ch = letras.charAt(i); 
-    for (j = 0; j < letrasok.length; j++)
-      if (ch == letrasok.charAt(j))
-        break;
-    if (j == letrasok.length) 
-	{ 
-      validado = false; 
-      break; 
-    }
-  }
-  if (!validado) { 
-    alert('Escriba sólo letras,por favor'); 
-    formulario.apellido.focus(); 
-    return (false); 
-  } 
-  
-valor = document.getElementById("dni").value;
-if( !(/^\d{8}$/.test(valor)) ) {
-	alert('Ingrese su dni correctamente y sin espacios');
-  return false;
-}
+	//valida marca
+	if(formulario.marca.value == '')
+	{
+	    alert('Ingrese la marca de su vehiculo');
+	    formulario.marca.focus();
+	    return false;
+	}
+	var letrasok = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ' + 'abcdefghijklmnñopqrstuvwxyzáéíóú';
+	  var letras = formulario.marca.value;
+	  var validado= true; 
+	  for (i = 0; i < letras.length; i++) 
+	  {
+	    ch = letras.charAt(i); 
+	    for (j = 0; j < letrasok.length; j++)
+	      if (ch == letrasok.charAt(j))
+	        break;
+	    if (j == letrasok.length) 
+		{ 
+	      validado = false; 
+	      break; 
+	    }
+	  }
+	  if (!validado) { 
+	    alert('Escriba solo letras,por favor'); 
+	    formulario.marca.focus(); 
+	    return (false); 
+	  } 
 
-//valida direccion de mail
-if(formulario.email.value.indexOf('@')==-1) 
-{
-	alert('Debe ingresar su correo electronico.');
-	formulario.email.focus();
-	return false;
-}
-if(formulario.email.value.indexOf('.')==-1)
-{
-	alert('Debe ingresar su correo electrónico correctamente.');
-	formulario.email.focus();
-	return false;
-}	
-//valida telefono
-  valor = document.getElementById("telefono").value;
-if( !(/^\d{8}$/.test(valor)) ) {
-	alert('Ingrese su numero telefonico particular');
-  return false;
-}
- //valida contraseña
-if(formulario.contraseña.value==''){
-alert('Ingrese su contraseña');
-formulario.contraseña.focus();
-return false;
-}
-//Valida repetir contraseña
-if(formulario.repetircontraseña.value==''){
-alert('Ingrese nuevamente su contraseña');
-formulario.repetircontraseña.focus();
-return false;
-}
-//valida que las contraseñas sean iguales
-if(formulario.contraseña.value!=formulario.repetircontraseña.value){
-alert('Las contraseñas deben coincidir');
-return false;
-}
+	//valida modelo
+	if(formulario.modelo.value == '')
+	{
+	    alert('Ingrese modelo de su vehiculo');
+	    formulario.modelo.focus();
+	    return false;
+	}
+	 
+	//valida asientos
+	 var asientos = document.getElementById("asientos").value;
+	if( !(/^\d{1}$/.test(asientos)) || asientos<=0  ) {
+		alert('Seleccione la cantidad de asientos');
+	  return false;
+	}
 
-
-
-//valida que acepte los terminos
-elemento = document.getElementById("terminos");
-if( !elemento.checked ) {
-	alert('Debe aceptar los terminos y condiciones para continuar');
-  return false;
-}
-
-//validacion de envio
-alert('Gracias por completar el formulario.');
-return true;	
-}
+	//validacion de envio
+	alert('Vehiculo agregado correctamente');
+	return true;	
+	}

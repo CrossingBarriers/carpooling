@@ -7,16 +7,16 @@ class TipoUsuarioController {
 		
 	}
 	
-	def redirectMisViajes={
+	//def redirectMisViajes={
 		
-		redirect(controller:"misViajes", action:"renderMisViajesView")
-	}
+	//	redirect(controller:"misViajes", action:"renderMisViajesView")
+	//}
 	
-	def redirectBusquedaDeViajes = {
+	//def redirectViajesALosQueMeUni = {
 		
-		redirect(controller:"busquedaDeViajes", action:"renderBusquedaDeViajesView")
+	//	redirect(controller:"viajesALosQueUni", action:"renderMisViajesView")
 		
-	}
+	//}
 	
 	def renderTipoUsuarioView={
 		render(view:"/carpooling/tipoUsuario")

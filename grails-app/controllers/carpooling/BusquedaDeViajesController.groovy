@@ -9,7 +9,7 @@ class BusquedaDeViajesController {
 	
 	def renderBusquedaDeViajesView =  {
 		
-		render(view:"/carpooling/busquedaDeViajes")
+	  render(view:"/carpooling/busquedaDeViajes")
 		
 	}
 	

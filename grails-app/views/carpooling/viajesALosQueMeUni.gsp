@@ -62,9 +62,8 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="MisViajes" action="show">Mis Viajes</g:link></li>   
+                <li><g:link controller="ViajesALosQueMeUni" action="renderMisViajesView">Mis Viajes</g:link></li>   
                 <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
-                <li><g:link controller="AgregarVehiculo" action="renderAgregarVehiculoView"><p class="text-danger">Agregar Vehiculo</p></g:link></li> 
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
               </ul>
@@ -73,128 +72,66 @@
 		</div><!--fin menu-->
 		
 		<div id="contenido">
-		  <h1>Mi auto y Mis viajes</h1>
+		  <h1>Viajes a los que me uní</h1>
             <div class="seccion_imgs caja-sombra _imgs">
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <th>
                             <center>
-                                Patente
+                                Nombre
                                 </center>
                             </th>
                             <th>
                             <center>
-                                Marca
+                                Nombre
                                 </center>
                             </th>
                             <th>
                             <center>
-                                Modelo
+                                Nombre
                                 </center>
                             </th>
                             <th>
                             <center>
-                                Cantidad de asientos
+                                Nombre
                                 </center>
                             </th>
                         </tr>
                     </thead>
                       <tbody>
-                    <g:each var="vehiculos" in="${map}">
+                    <g:each var="" in="">
                         <tr>
                             <td>
                             <center>
-                            ${vehiculos.patente}
+                            
                             </center>
                             </td>
                             <td>
                             <center>
-                            ${vehiculos.marca} 
+                            
                             </center>
                             </td>
                             <td>
                             <center>
-                            ${vehiculos.modelo }
+                            
                             </center>
                             </td>
                             <td>
                             <center>
-                            ${vehiculos.cantidadAsientos }
+                            
                             </center>
-                           </td>
-                           <td>
-                            <g:link controller="AgregarViaje" action="renderAgregarViajeView" type = "button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-star-empty"></span> Agregar Viaje</g:link>    
-                            </td>
-                           <td>
-                          <g:link controller="MisViajes" action="quitarVehiculo" id="${vehiculos.id}" type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-remove-sign"></span> Eliminar vehiculo</g:link>
                            </td>
                         </tr>
                         </g:each>
                     </tbody>
                 </table>
-                <br />
-                <br />
-                <br />
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>
-                            <center>
-                                Desde
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Hasta
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Días
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Horario
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Lugares libres
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Colaboración
-                                </center>
-                            </th>
-                        </tr>
-                    </thead>
-                   
-                    <tbody>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                              <!--<g:link action="" id="" type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span> Eliminar</g:link>-->
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
                 <br></br>
-              
-            
+                <center class="btn-vehiculo">
+                    <g:link controller="BusquedaDeViajes" action="renderBusquedaDeViajesView" type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-search"></span> Buscar viaje</g:link>
+                </center>
+                <br />
+
             </div>
             <div style="clear: both"></div>
 		</div><!--fin contenido-->
