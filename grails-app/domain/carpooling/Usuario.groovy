@@ -17,9 +17,9 @@ class Usuario {
 		version false
 
 	}
-	
+
 	static hasMany = [pasajeros:UsuarioUnido] // Para hacer la relación N - N entre los usuarios y los viajes a los que se unen.
-	
+
 	static belongsTo = ViajeRegistrado // Para hacer la relación N - N con ViajeRegistrado
 
 	static constraints = {
