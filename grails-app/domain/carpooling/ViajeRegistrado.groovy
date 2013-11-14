@@ -18,14 +18,16 @@ class ViajeRegistrado {
 	Integer asientosLibres // calculado
 	String comentario
 
-	static mapping = { 
-		
+	static mapping = {
+
 		vehiculo column: 'vehiculo_patente'
 		version false
-		
-		}
 
-	static belongsTo = [vehiculo:Vehiculo] // Relación bidireccional entre Vehiculo y ViajeRegistrado. Es necesario???
+	}
+
+	static belongsTo = [vehiculo:Vehiculo]
+
+	static hasMany = [pasajeros: UsuarioUnido] // Para hacer la relación N - N entre los usuarios y los viajes a los que se unen.
 
 	static constraints = {
 
