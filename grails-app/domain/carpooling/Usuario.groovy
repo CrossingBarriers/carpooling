@@ -10,6 +10,7 @@ class Usuario {
 	//Imagen imagen
 	String contrasenia
 	Boolean conductor
+	
 
 	static mapping = {
 

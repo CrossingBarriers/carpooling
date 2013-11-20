@@ -78,7 +78,7 @@
             <div class="seccion_imgs caja-sombra _imgs">
                 
                 <fieldset>
-				<g:form onSubmit="return validar(this)" controller="AgregarVehiculo" action="guardarVehiculo" method="post"> 
+				<g:form onSubmit="return validar(this)" controller="agregarVehiculo" action="guardarVehiculo" method="post"> 
 				<div class="col-md-6">	
 					<div class="form-group">
 						<label for="patente">Patente:</label>

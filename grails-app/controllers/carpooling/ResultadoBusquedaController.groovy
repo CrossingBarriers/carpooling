@@ -1,20 +1,26 @@
 package carpooling
 
 class ResultadoBusquedaController {
+	
+	def resultadoBusquedaService
 
     def resultadoBusqueda() {
 		
 		
 	}
 	
-	def renderResultadoBusquedaView =  {
+	def renderResultadoBusquedaView = {
 		
-		def desde = params.desde;
+		/*def resultadosId = params.resultadosId.split(',')*.toLong()
 		
-		render(view:"/carpooling/resultadoBusqueda")//aca se mostrarian los resultados
-		//buscamos conductores(usuarios) que coincidan con la ruta ingresada.
+		def lista = ViajeRegistrado.getAll(resultadosId)
 		
-	 //implementar la busqueda - crear un servicio
+		render(view:"/carpooling/resultadoBusqueda", model:[resultado:lista])*/
+		
+		def busqueda = new Busqueda(desde:params.desde, hasta:params.hasta, hh:params.hh, mm:params.mm).save()
+		def lista = resultadoBusquedaService.busquedaViajes(busqueda)
+		print lista
+		render(view:"/carpooling/resultadoBusqueda", model:[resultado:lista])
 		
 	}
 }

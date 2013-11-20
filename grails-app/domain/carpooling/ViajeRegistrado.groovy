@@ -6,13 +6,13 @@ class ViajeRegistrado {
 	String hasta
 	Integer hora
 	Integer minutos
-	Boolean domingo
-	Boolean lunes
-	Boolean martes
-	Boolean miercoles
-	Boolean jueves
-	Boolean viernes
-	Boolean sabado
+	String domingo
+	String lunes
+	String martes
+	String miercoles
+	String jueves
+	String viernes
+	String sabado
 	Vehiculo vehiculo
 	Integer colaboracion
 	Integer asientosLibres // calculado

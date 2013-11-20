@@ -46,21 +46,26 @@ class BootStrap {
 		viaje2.save()
 
 		println viaje2.errors
+		
+		def viaje3 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", hasta: "Palermo, Buenos Aires, Argentina", hora: 20, minutos: 30 , domingo: false, lunes: false, martes: true, miercoles: false, jueves: false, viernes: false, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
+		viaje3.save()
+
+		println viaje3.errors
 
 
-		def pasajero1 = new UsuarioUnido(viaje: viaje1, usuario: usuario2)
+		def pasajero1 = new UsuarioUnido(viaje: viaje1, dia: 'L', usuario: usuario2)
 		pasajero1.save()
 
 		println pasajero1.errors
 
 
-		def pasajero2 = new UsuarioUnido(viaje: viaje1, usuario: usuario3)
+		def pasajero2 = new UsuarioUnido(viaje: viaje1, dia: 'X', usuario: usuario2)
 		pasajero2.save()
 
 		println pasajero2.errors
 
 
-		def pasajero3 = new UsuarioUnido(viaje: viaje2, usuario: usuario3)
+		def pasajero3 = new UsuarioUnido(viaje: viaje1, dia: 'L', usuario: usuario3)
 		pasajero3.save()
 
 		println pasajero3.errors

@@ -68,8 +68,10 @@
 				<ul class="dropdown-menu" role="menu">
 					<li><g:link controller="PerfilUsuario"
 							action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-					<li><g:link controller="ViajesALosQueMeUni" action="renderMisViajesView">Mis Viajes</g:link></li>
-					<li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
+					<li><g:link controller="ViajesALosQueMeUni"
+							action="renderMisViajesView">Mis Viajes</g:link></li>
+					<li><g:link controller="index"
+							action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
 					<li class="divider"></li>
 					<li><a href="index.html">Cerrar Sesión</a></li>
 				</ul>
@@ -85,70 +87,34 @@
 			</h1>
 
 			<div class="seccion_imgs caja-sombra _imgs">
-				<div class="alert alert-info">
-					<h4>Villa Luro - Lomas del Mirador!</h4>
-					<h5>Desde Basualdo 626 - Villa Luro hasta Bolivar 2874 - Lomas
-						del Mirador.</h5>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul>
-							<li><strong>Chofer: </strong>Fulanito</li>
-							<li><strong>Vehiculo: </strong>Volkswagen Gol Trend</li>
-						</ul>
-					</div>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul class="pull-left">
-							<li><strong>Lugares disponibles: </strong>3</li>
-							<li><strong>Colaboración: </strong>$20</li>
-						</ul>
-						<g:link class="btn btn-warning btn-xs pull-right" controller="DescripcionViaje" action="renderDescripcionViajeView">Ver detalle</g:link>
-					</div>
-					<div class="clearfix"></div>
-				</div>
 
+				<g:each in = "${resultado}">
 				<div class="alert alert-info">
-					<h4>Villa Luro - Lomas del Mirador!</h4>
-					<h5>Desde Basualdo 626 - Villa Luro hasta Bolivar 2874 - Lomas
-						del Mirador.</h5>
+					<h4>Desde: ${it.desde}</h4>
+					<h5>Hasta: ${it.hasta}</h5>
 					<div class="col-md-6 col-xs-3 col-sm-4">
 						<ul>
-							<li><strong>Chofer: </strong>Fulanito</li>
-							<li><strong>Vehiculo: </strong>Volkswagen Gol Trend</li>
+							<li><strong>Chofer: </strong>${it.vehiculo.usuario.nombre} ${it.vehiculo.usuario.apellido}</li>
+							<li><strong>Vehiculo: </strong>${it.vehiculo.marca} ${it.vehiculo.modelo}</li>
 						</ul>
 					</div>
 					<div class="col-md-6 col-xs-3 col-sm-4">
 						<ul class="pull-left">
-							<li><strong>Lugares disponibles: </strong>3</li>
-							<li><strong>Colaboración: </strong>$20</li>
+							<li><strong>Lugares disponibles: </strong>${it.asientosLibres}</li>
+							<li><strong>Colaboración: </strong>$${it.colaboracion}</li>
 						</ul>
-						<g:link class="btn btn-warning btn-xs pull-right" controller="DescripcionViaje" action="renderDescripcionViajeView">Ver detalle</g:link>
+						<g:link class="btn btn-warning btn-xs pull-right"
+							controller="DescripcionViaje" action="renderDescripcionViajeView">Ver detalle</g:link>
 					</div>
 					<div class="clearfix"></div>
 				</div>
+				</g:each>
 
-				<div class="alert alert-info">
-					<h4>Villa Luro - Lomas del Mirador!</h4>
-					<h5>Desde Basualdo 626 - Villa Luro hasta Bolivar 2874 - Lomas
-						del Mirador.</h5>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul>
-							<li><strong>Chofer: </strong>Fulanito</li>
-							<li><strong>Vehiculo: </strong>Volkswagen Gol Trend</li>
-						</ul>
-					</div>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul class="pull-left">
-							<li><strong>Lugares disponibles: </strong>3</li>
-							<li><strong>Colaboración: </strong>$20</li>
-						</ul>
-						<g:link class="btn btn-warning btn-xs pull-right" controller="DescripcionViaje" action="renderDescripcionViajeView">Ver detalle</g:link>
-						
-					</div>
-					<div class="clearfix"></div>
-				</div>
 			</div>
 
 			<div style="clear: both"></div>
-		</div><!--fin contenido-->
+		</div>
+		<!--fin contenido-->
 		<div id="push"></div>
 	</div>
 
