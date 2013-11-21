@@ -113,16 +113,16 @@
 						<g:field  name="hasta" id="hasta" type="text" class="form-control" id="hasta"/>
 					</div>
 					<div class="form-group">
-						<label for="hora">Hora de salida:</label>
-						<br></br>
+						<label for="hora" class="pull-left">Hora de salida:</label>
 						<div class="col-xs-3">
 						<g:field name="hora" type="text" class="form-control" placeholder="hh"/>
 						</div>
+						<label for="hora" class="pull-left" style="padding-left:0;">:</label>
 						<div class="col-xs-3">
 						<g:field type="text" name="minutos" class="form-control" placeholder="mm" />
 					   </div>
+					   <div class="clearfix"></div>
 					</div>
-					<br></br>
 					<label for="frecuencia">Frecuencia:</label>
 					<div id="checkboxset">
 					

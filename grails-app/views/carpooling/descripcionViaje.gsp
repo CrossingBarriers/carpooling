@@ -127,17 +127,18 @@
                     </div>
     				
     				<div class="row">
-    				    <form role="form">
+    				    <g:form controller="DescripcionViaje" action="guardarMensaje" method="post">
     				        <div class="form-group">
         						<label for="comentario">Mensaje:</label>
-        						<textarea class="form-control" placeholder="Enviale un mensaje al conductor..."></textarea>
+        						<g:textArea class="form-control" name="mensaje" placeholder="Enviale un mensaje al conductor..."/>
+        						<g:field type="hidden" name="receptor" value="29157077"/>
         					</div>
         					
         					<center class="btn_vehiculo">
                                 <button type="submit" class="btn btn-success btn-xs">Enviar</button>
                                 <button type="reset" class="btn btn-default btn-xs">Borrar</button>
                             </center>
-    				    </form>
+    				    </g:form>
     				</div>
     				
                 </div>

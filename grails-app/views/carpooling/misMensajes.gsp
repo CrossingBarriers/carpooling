@@ -81,32 +81,16 @@
 		<!--fin menu-->
 
 		<div id="contenido">
-			<h1>
-				<i class="glyphicon glyphicon-map-marker"></i> Viajes publicados que
-				coinciden con su busqueda
-			</h1>
+			<h1>Mis Mensajes</h1>
 
 			<div class="seccion_imgs caja-sombra _imgs">
 
-				<g:each in = "${resultado}">
+				<g:each in = "${mensajes}">
 				<div class="alert alert-info">
-					<h4>${it.desde.tokenize(',').first()} - ${it.hasta.tokenize(',').first()}</h4>
-					<h5><strong>Desde:</strong> ${it.desde}<strong>Hasta:</strong> ${it.hasta}</h5>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul>
-							<li><strong>Chofer: </strong>${it.vehiculo.usuario.nombre} ${it.vehiculo.usuario.apellido}</li>
-							<li><strong>Vehiculo: </strong>${it.vehiculo.marca} ${it.vehiculo.modelo}</li>
-						</ul>
-					</div>
-					<div class="col-md-6 col-xs-3 col-sm-4">
-						<ul class="pull-left">
-							<li><strong>Lugares disponibles: </strong>${it.asientosLibres}</li>
-							<li><strong>Colaboración: </strong>$${it.colaboracion}</li>
-						</ul>
-						<g:link class="btn btn-warning btn-xs pull-right"
-							controller="DescripcionViaje" action="renderDescripcionViajeView">Ver detalle</g:link>
-					</div>
-					<div class="clearfix"></div>
+					<h4>Mensaje de:</h4>
+					<h5>${it.receptor.nombre}</h5>
+					<p>${it.mensaje}</p>
+					<h5>${it.dateCreated}</h5>
 				</div>
 				</g:each>
 

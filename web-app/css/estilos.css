@@ -506,6 +506,10 @@ a.activo {
     margin: auto;
 }
 
+.seccion_imgs label.pull-left {
+    padding-top: 8px;
+}
+
 /*-----Fin Contenido Agregar Vehiculo-----*/
 
 /*-----Contenido Ingresar Vehiculo-----*/
