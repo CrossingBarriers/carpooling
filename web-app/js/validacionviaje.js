@@ -45,6 +45,6 @@ if(formulario.comentario.value == '')
 
   
 //validacion de envio
-alert('Viaje registrado correctamente');
+alert('Viaje validado correctamente');
 return true;	
 }

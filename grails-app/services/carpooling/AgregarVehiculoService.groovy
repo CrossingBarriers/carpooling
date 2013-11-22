@@ -1,15 +1,14 @@
 package carpooling
-
+import carpooling.Usuario
 import grails.transaction.Transactional
 
 @Transactional
 class AgregarVehiculoService {
-	
-    def guardar(idUsuario) {
-		Vehiculo.findAllByIdUsuario(idUsuario)
-    }
-	
-	def lista(usuario){
-		Vehiculo.findAllByIdUsuario(usuario)
+
+	def serviceMethod() {
+	}
+
+	def find(usuarioDni) {
+		Usuario.findAllByDni(usuarioDni)
 	}
 }

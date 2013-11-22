@@ -55,6 +55,6 @@ function validar(formulario)
 	}
 
 	//validacion de envio
-	alert('Vehiculo agregado correctamente');
+	alert('Vehiculo validado correctamente');
 	return true;	
 	}

@@ -55,42 +55,42 @@
 		<!--fin header_960-->
 
 		<div class="menu">
-			
+
 			<ul class="menu_single">
-                <li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
-                <li><g:link controller="ComoFunciona" action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-            </ul>
-            
-            <div class="dropdown">
-                <a data-toggle="dropdown" href="#">
-                <span>Fulanito de Tal</span>
-                <span class="glyphicon glyphicon-user"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <!--<li><g:link controller="MisViajes" action="show">Mis Viajes</g:link></li>-->
-                <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
-                <li class="divider"></li>
-                <li><a href="index.html">Cerrar Sesión</a></li>
-              </ul>
-            </div>
-            
-            <div style="clear: both"></div>
-            
+				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
+				<li><g:link controller="comoFunciona"
+						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+			</ul>
+
+			<div class="dropdown">
+				<a data-toggle="dropdown" href="#"> <span>Fulanito de Tal</span>
+					<span class="glyphicon glyphicon-user"></span>
+				</a>
+				<ul class="dropdown-menu" role="menu">
+					<li><g:link controller="perfilUsuario"
+							action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+					<li><g:link controller="index"
+							action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
+					<li class="divider"></li>
+					<li><a href="index.html">Cerrar Sesión</a></li>
+				</ul>
+			</div>
+
+			<div style="clear: both"></div>
+
 		</div>
 		<!--fin menu-->
 
-	<div id="contenido">
+		<div id="contenido">
 			<div class="Layer-32 caja-sombra">
-				<g:link controller="MisViajes"
-					action="show" name="show">
+				<g:link controller="misViajes" action="index">
 					<img class="tipo_usuario"
 						src="${resource(dir: 'images/carpooling', file: 'Layer-32.jpg')}"
 						alt="conductor" />
 				</g:link>
 			</div>
 			<div class="Layer-34 caja-sombra">
-				<g:link controller="ViajesALosQueMeUni" action="renderMisViajesView">
+				<g:link controller="viajesALosQueMeUni" action="renderMisViajesView">
 					<img class="tipo_usuario"
 						src="${resource(dir: 'images/carpooling', file: 'Layer-34.jpg')}"
 						alt="pasajero" />
@@ -113,8 +113,10 @@
 				<h3>CARPOOLING</h3>
 				<ul>
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
-					<li><g:link controller="ComoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="Registrate" action="renderRegistrateView">Registrate</g:link></li>
+					<li><g:link controller="comoFunciona"
+							action="renderComoFuncionaView">Como Funciona</g:link></li>
+					<li><g:link controller="registrate"
+							action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
 				</ul>
 			</div>

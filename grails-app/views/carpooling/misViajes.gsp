@@ -25,196 +25,268 @@
 <body>
 
 	<div id="bg_header">
-		<img src="${resource(dir: 'images/carpooling', file: 'header_bg.jpg')}" height="114" width="960" alt="header_bg" />
-		
-		<hr class="linea"/>
+		<img
+			src="${resource(dir: 'images/carpooling', file: 'header_bg.jpg')}"
+			height="114" width="960" alt="header_bg" />
+
+		<hr class="linea" />
 		<div id="barra"></div>
 		<div class="bg_contenido"></div>
 	</div>
 
 	<div id="contenedor">
-		
+
 		<div class="header">
 			<g:link controller="index" action="renderIndexView">
 
-				<img class="logo" src="${resource(dir: 'images/carpooling', file: 'logo.png')}" height="106" width="254" alt="logo" />
-				
+				<img class="logo"
+					src="${resource(dir: 'images/carpooling', file: 'logo.png')}"
+					height="106" width="254" alt="logo" />
+
 			</g:link>
-			
+
 			<ul id="m-soc4">
 				<li><a class="facebook" href="#"><span>Facebook</span></a></li>
 				<li><a class="twitter" href="#"><span>Twitter</span></a></li>
 				<li><a class="youtube" href="#"><span>YouTube</span></a></li>
 			</ul>
-			
-		</div><!--fin header_960-->
+
+		</div>
+		<!--fin header_960-->
 
 		<div class="menu">
 			<ul class="menu_single">
-                <li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
-				<li><g:link controller="ComoFunciona" action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-            </ul>
-            
-            <div class="dropdown">
-                <a data-toggle="dropdown" href="#">
-                <span>Fulanito de Tal</span>
-                <span class="glyphicon glyphicon-user"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="MisViajes" action="show">Mis Viajes</g:link></li>   
-                <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
-                <li><g:link controller="AgregarVehiculo" action="renderAgregarVehiculoView"><p class="text-danger">Agregar Vehiculo</p></g:link></li> 
-                <li class="divider"></li>
-                <li><a href="index.html">Cerrar Sesión</a></li>
-              </ul>
-            </div>
-            
-		</div><!--fin menu-->
-		
+				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
+				<li><g:link controller="ComoFunciona"
+						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+			</ul>
+
+			<div class="dropdown">
+				<a data-toggle="dropdown" href="#"> <span>Fulanito de Tal</span>
+					<span class="glyphicon glyphicon-user"></span>
+				</a>
+				<ul class="dropdown-menu" role="menu">
+					<li><g:link controller="perfilUsuario"
+							action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+					<li><g:link controller="misViajes" action="index">Mis Viajes</g:link></li>
+					<li><g:link controller="index"
+							action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
+					<li><g:link controller="agregarVehiculo"
+							action="renderAgregarVehiculoView">
+							<strong>Agregar Vehiculo</strong>
+						</g:link></li>
+					<li class="divider"></li>
+					<li><a href="index.html">Cerrar Sesión</a></li>
+				</ul>
+			</div>
+
+		</div>
+		<!--fin menu-->
+
 		<div id="contenido">
-		  <h1>Mi auto y Mis viajes</h1>
-            <div class="seccion_imgs caja-sombra _imgs">
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>
-                            <center>
-                                Patente
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Marca
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Modelo
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Cantidad de asientos
-                                </center>
-                            </th>
-                        </tr>
-                    </thead>
-                      <tbody>
-                    <g:each var="vehiculos" in="${map}">
-                        <tr>
-                            <td>
-                            <center>
-                            ${vehiculos.patente}
-                            </center>
-                            </td>
-                            <td>
-                            <center>
-                            ${vehiculos.marca} 
-                            </center>
-                            </td>
-                            <td>
-                            <center>
-                            ${vehiculos.modelo }
-                            </center>
-                            </td>
-                            <td>
-                            <center>
-                            ${vehiculos.cantidadAsientos }
-                            </center>
-                           </td>
-                           <td>
-                            <g:link controller="AgregarViaje" action="renderAgregarViajeView" type = "button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-star-empty"></span> Agregar Viaje</g:link>    
-                            </td>
-                           <td>
-                          <g:link controller="MisViajes" action="quitarVehiculo" id="${vehiculos.id}" type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-remove-sign"></span> Eliminar vehiculo</g:link>
-                           </td>
-                        </tr>
-                        </g:each>
-                    </tbody>
-                </table>
-                <br />
-                <br />
-                <br />
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>
-                            <center>
-                                Desde
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Hasta
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Días
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Horario
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Lugares libres
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Colaboración
-                                </center>
-                            </th>
-                        </tr>
-                    </thead>
-                   
-                    <tbody>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                              <!--<g:link action="" id="" type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-remove"></span> Eliminar</g:link>-->
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br></br>
-              
-            
-            </div>
-            <div style="clear: both"></div>
-		</div><!--fin contenido-->
+			<h1>Mi vehículo y Mis viajes</h1>
+			<div class="seccion_imgs caja-sombra _imgs">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>
+								<p class="text-center">
+									<strong> Patente </strong>
+								</p>
+							</th>
+							<th>
+								<p class="text-center">
+									<strong> Marca </strong>
+								</p>
+							</th>
+							<th>
+								<p class="text-center">
+									<strong> Modelo </strong>
+								</p>
+							</th>
+							<th>
+								<p class="text-center">
+									<strong> Cantidad de asientos </strong>
+								</p>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<g:each var="vehiculo" in="${map}">
+							<tr>
+								<td>
+									<center>
+										${vehiculo.patente}
+									</center>
+								</td>
+								<td>
+									<center>
+										${vehiculo.marca}
+									</center>
+								</td>
+								<td>
+									<center>
+										${vehiculo.modelo }
+									</center>
+								</td>
+								<td>
+									<center>
+										${vehiculo.cantidadAsientos }
+									</center>
+								</td>
+								<td><g:link controller="agregarViaje" action="agregarNuevo"
+										id="${vehiculo.patente }" type="button"
+										class="btn btn-warning btn-xs">
+										<span class="glyphicon glyphicon-star-empty"></span> Agregar Viaje</g:link>
+								</td>
+								<td><g:link controller="misViajes" action="quitarVehiculo"
+										id="${vehiculo.patente}" type="button"
+										class="btn btn-warning btn-xs">
+										<span class="glyphicon glyphicon-remove-sign"></span> Eliminar vehiculo</g:link>
+								</td>
+							</tr>
+						</g:each>
+					</tbody>
+				</table>
+				<h4 class="text-danger">
+					<center>
+						${flash.message }
+					</center>
+				</h4>
+				<br />
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>
+								<p class="text-center">
+									<strong> Desde </strong>
+								</p>
+							</th>
+							<th>
+								<p class="text-center">
+									<strong> Hasta </strong>
+								</p>
+							</th>
+							<th>
+								<p class="text-center">
+									<strong> Días </strong>
+								</p>
+							</th>
+							<th>
+								<p class="text-center">
+									<strong> Horario </strong>
+								</p>
+							</th>
+							<th>
+								<p class="text-center">
+									<strong> Lugares disponibles </strong>
+								</p>
+							</th>
+							<th>
+								<p class="text-center">
+									<strong> Colaboración </strong>
+								</p>
+							</th>
+							<th>
+								<p class="text-center">
+									<strong> Comentario </strong>
+								</p>
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<g:each var="viaje" in="${viajes}">
+							<tr>
+								<td>
+									<center>
+										${viaje.desde }
+									</center>
+								</td>
+								<td>
+									<center>
+										${viaje.hasta }
+									</center>
+								</td>
+								<td>
+									<center>
+										<g:if test="${viaje.domingo=='D'}">
+                           Dom
+                            </g:if>
+										<g:if test="${viaje.lunes=='L' }">
+                            Lun
+                            </g:if>
+										<g:if test="${viaje.martes=='M' }">
+                            Mar
+                            </g:if>
+										<g:if test="${viaje.miercoles=='X' }">
+                            Mie
+                            </g:if>
+										<g:if test="${viaje.jueves=='J'}">
+                            Jue
+                            </g:if>
+										<g:if test="${viaje.viernes=='V' }">
+                            Vie
+                            </g:if>
+										<g:if test="${viaje.sabado=='S' }">
+                            Sab
+                            </g:if>
+									</center>
+								</td>
+								<td>
+									<center>
+										${viaje.hora }:${viaje.minutos }
+									</center>
+								</td>
+								<td>
+									<center>
+										${viaje.asientosLibres }
+									</center>
+								</td>
+								<td><center>
+										$
+										${viaje.colaboracion }
+									</center></td>
+								<td>
+									<center>
+										${viaje.comentario }
+									</center>
+								</td>
+								<td><g:link action="quitarViaje" id="${viaje.id }"
+										type="button" class="btn btn-warning btn-xs">
+										<span class="glyphicon glyphicon-remove-sign"></span> Eliminar viaje</g:link>
+								</td>
+							</tr>
+						</g:each>
+					</tbody>
+				</table>
+				<br></br>
+
+
+			</div>
+			<div style="clear: both"></div>
+		</div>
+		<!--fin contenido-->
 		<div id="push"></div>
-	</div><!--fin contenedor-->
-	
+	</div>
+	<!--fin contenedor-->
+
 	<div id="footer">
-		
+
 		<div class="footer_960">
-			
+
 			<div id="foot_carpooling" class="secciones_foot">
 				<h3>CARPOOLING</h3>
 				<ul>
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
-					<li><g:link controller="ComoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="Registrate" action="renderRegistrateView">Registrate</g:link></li>
+					<li><g:link controller="comoFunciona"
+							action="renderComoFuncionaView">Como Funciona</g:link></li>
+					<li><g:link controller="registrate"
+							action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
 				</ul>
 			</div>
-			
+
 			<div id="foot_mas_info" class="secciones_foot">
 				<h3>MAS INFORMACION</h3>
 				<ul>
@@ -224,18 +296,22 @@
 					<li><a href="#">Políticas de Privacidad</a></li>
 				</ul>
 			</div>
-			
+
 			<div id="foot_redes_sociales" class="secciones_foot">
 				<h3>REDES SOCIALES</h3>
-				<img src="${resource(dir: 'images/carpooling', file: 'redes_icons.png')}" height="33" width="117" alt="redes_icons" />
+				<img
+					src="${resource(dir: 'images/carpooling', file: 'redes_icons.png')}"
+					height="33" width="117" alt="redes_icons" />
 			</div>
 
-			<hr class="linea_2"/>
+			<hr class="linea_2" />
 
-			<p>© 2013  |  Crossing Barriers  |  Todos los derechos Reservados</p>
+			<p>© 2013 | Crossing Barriers | Todos los derechos Reservados</p>
 
-		</div><!--fin footer_960-->
+		</div>
+		<!--fin footer_960-->
 
-	</div><!--fin footer-->
+	</div>
+	<!--fin footer-->
 </body>
 </html>
