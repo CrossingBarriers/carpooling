@@ -178,7 +178,7 @@
 							<center class="btn_vehiculo">
 								<g:submitButton name="submit" value="Publicar mi viaje"
 									class="btn btn-warning" />
-								<!--<buttom type="reset" class="btn btn-default">Cancelar</buttom>-->
+								<g:submitButton name="reset" type="reset" class="btn btn-default" value="Borrar"/>
 							</center>
 						</g:form>
 					</fieldset>

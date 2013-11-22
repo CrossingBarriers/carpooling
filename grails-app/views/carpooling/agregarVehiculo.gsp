@@ -120,7 +120,7 @@
 						<center class="btn_vehiculo">
 							<g:submitButton name="submit" value="Agregar"
 								class="btn btn-warning" />
-							<!--<g:submitButton name="reset" class="btn btn-default" value="Cancelar"/>-->
+							<g:submitButton name="reset" type="reset" class="btn btn-default" value="Borrar"/>
 						</center>
 
 					</g:form>
