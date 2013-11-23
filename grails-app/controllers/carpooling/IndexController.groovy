@@ -17,12 +17,12 @@ class IndexController {
 		
 	}
 	
-	def redirectTipoUsuarioController={
-		redirect(controller:"tipoUsuario", action:"renderTipoUsuarioView")
-	}
+	//def redirectTipoUsuarioController={
+	//	redirect(controller:"tipoUsuario", action:"renderTipoUsuarioView")
+	//}
 	
-	def redirectComoFuncionaController={
-		redirect(controller:"comoFunciona", action:"renderComoFuncionaView")
-	}
+	//def redirectComoFuncionaController={
+	//	redirect(controller:"comoFunciona", action:"renderComoFuncionaView")
+	//}
 	
 }

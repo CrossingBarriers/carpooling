@@ -45,7 +45,7 @@
 		<div class="menu">
 			<ul class="menu_single">
                 <li><g:link controller="index" action="renderIndexView">Home</g:link></li>
-				<li><g:link controller="ComoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
+				<li><g:link controller="comoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
             </ul>
             
             <div class="dropdown">
@@ -54,8 +54,8 @@
                 <span class="glyphicon glyphicon-user"></span>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li><g:link controller="PerfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="index" action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
+                <li><g:link controller="perfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+                <li><g:link controller="tipoUsuario" action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
                 <li class="divider"></li>
                 <li><a href="index.html">Cerrar Sesión</a></li>
               </ul>
@@ -80,8 +80,8 @@
 				<h3>CARPOOLING</h3>
 				<ul>
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
-					<li><g:link controller="ComoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="Registrate" action="renderRegistrateView">Registrate</g:link></li>
+					<li><g:link controller="comoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
+					<li><g:link controller="registrate" action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
 				</ul>
 			</div>

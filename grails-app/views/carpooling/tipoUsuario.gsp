@@ -69,8 +69,8 @@
 				<ul class="dropdown-menu" role="menu">
 					<li><g:link controller="perfilUsuario"
 							action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-					<li><g:link controller="index"
-							action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
+					<li><g:link controller="tipoUsuario"
+							action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 					<li class="divider"></li>
 					<li><a href="index.html">Cerrar Sesión</a></li>
 				</ul>

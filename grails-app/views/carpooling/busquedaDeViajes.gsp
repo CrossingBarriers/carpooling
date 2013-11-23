@@ -77,7 +77,7 @@
 
 			<ul class="menu_single">
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
-				<li><g:link controller="ComoFunciona"
+				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
 			</ul>
 
@@ -86,12 +86,12 @@
 					<span class="glyphicon glyphicon-user"></span>
 				</a>
 				<ul class="dropdown-menu" role="menu">
-					<li><g:link controller="PerfilUsuario"
+					<li><g:link controller="perfilUsuario"
 							action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-					<li><g:link controller="ViajesALosQueMeUni"
+					<li><g:link controller="viajesALosQueMeUni"
 							action="renderMisViajesView">Mis Viajes</g:link></li>
-					<li><g:link controller="index"
-							action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
+					<li><g:link controller="tipoUsuario"
+							action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 					<li class="divider"></li>
 					<li><a href="index.html">Cerrar Sesión</a></li>
 				</ul>
@@ -170,9 +170,9 @@
 				<h3>CARPOOLING</h3>
 				<ul>
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
-					<li><g:link controller="ComoFunciona"
+					<li><g:link controller="comoFunciona"
 							action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="Registrate"
+					<li><g:link controller="registrate"
 							action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
 				</ul>

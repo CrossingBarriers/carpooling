@@ -55,8 +55,8 @@
 		<div class="menu">
 			<ul class="menu_single">
 				<li><a class="activo">HOME</a></li>
-				<li><g:link controller="ComoFunciona" action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-				<li><g:link controller="Registrate" action="renderRegistrateView">REGISTRATE</g:link></li>
+				<li><g:link controller="comoFunciona" action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+				<li><g:link controller="registrate" action="renderRegistrateView">REGISTRATE</g:link></li>
 			</ul>
 		</div>
 		<!--fin menu-->
@@ -160,8 +160,8 @@
 				<h3>CARPOOLING</h3>
 				<ul>
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
-					<li><g:link controller="ComoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="Registrate" action="renderRegistrateView">Registrate</g:link></li>
+					<li><g:link controller="comoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
+					<li><g:link controller="registrate" action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
 					<li><g:link controller="index"
 							action="redirectMiembrosComunidadController">Miembros de la comunidad</g:link></li>

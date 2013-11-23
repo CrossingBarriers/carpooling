@@ -89,8 +89,8 @@
 					<li><g:link controller="perfilUsuario"
 							action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
 					<li><g:link controller="misViajes" action="index">Mis Viajes</g:link></li>
-					<li><g:link controller="index"
-							action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
+					<li><g:link controller="tipoUsuario"
+							action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 					<li class="divider"></li>
 					<li><a href="index.html">Cerrar Sesión</a></li>
 				</ul>
@@ -107,7 +107,7 @@
 				<div class="seccion_imgs caja-sombra _imgs">
 
 					<fieldset>
-						<g:form onSubmit="return validar(this)" controller="AgregarViaje"
+						<g:form onSubmit="return validar(this)" controller="agregarViaje"
 							action="guardarViaje" method="post">
 
 							<div class="col-md-6">

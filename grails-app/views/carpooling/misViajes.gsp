@@ -57,7 +57,7 @@
 		<div class="menu">
 			<ul class="menu_single">
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
-				<li><g:link controller="ComoFunciona"
+				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
 			</ul>
 
@@ -69,8 +69,8 @@
 					<li><g:link controller="perfilUsuario"
 							action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
 					<li><g:link controller="misViajes" action="index">Mis Viajes</g:link></li>
-					<li><g:link controller="index"
-							action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
+					<li><g:link controller="tipoUsuario"
+							action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 					<li><g:link controller="agregarVehiculo"
 							action="renderAgregarVehiculoView">
 							<strong>Agregar Vehiculo</strong>
