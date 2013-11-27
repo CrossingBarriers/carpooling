@@ -138,6 +138,11 @@ ul.menu_single li{
 	padding: 0 42px 0 0;
 }
 
+ul.menu_single li.pull-right{
+	padding: 0;
+	position: relative;
+}
+
 ul.menu_single li a{
 	color: white;
 	font: 14px normal Helvetica, Verdana, sans-serif;
@@ -148,7 +153,7 @@ ul.menu_single {
 	padding-top: 5px;
 	list-style: none;
     margin: 0;
-    width: 480px;
+    width: 960px;
     float: left;
 }
 
@@ -156,9 +161,32 @@ ul.menu_single li a:hover {
 	border-bottom: 1px solid #FFFFFF;
 }
 
-.dropdown {
-    float: right;
-    padding-top: 4px;
+.ml-count {
+background-color: #D90000;
+border: 1px solid #032d57;
+color: #FFF;
+line-height: 12px;
+padding: 0 2px;
+position: absolute;
+top: -5px;
+left: 9px;
+font-size: 9px;
+font-style: normal;
+text-indent: 0;
+text-align: center;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+min-width: 10px;
+}
+
+ul.dropdown-menu li{
+	padding: 0;
+	display: inherit;
+}
+
+ul.dropdown-menu li a:hover{
+	border-bottom: 0;
 }
 
 .dropdown:hover {
@@ -183,7 +211,7 @@ ul.menu_single li a:hover {
 }
 
 .menu .dropdown .dropdown-menu {
-    left: -37px !important;
+    left: -26px !important;
 }
 
 .dropdown-menu > li > a {
@@ -501,6 +529,7 @@ a.activo {
 .seccion_imgs label {
     padding-left: 22px;
 }
+
 .seccion_imgs .table {
     width: 90%;
     margin: auto;
@@ -551,7 +580,7 @@ a.activo {
     padding: 0;
 }
 
-#contenido .alert .btn {
+#contenido .alert .pull-right {
     width: auto !important;
     margin-bottom: 0;
     bottom: 0;
@@ -628,6 +657,16 @@ margin-top: 72px;
 }
 
 /*-----Fin Contenido Busqueda-----*/
+
+/*-----Contenido Mis Mensajes-----*/
+
+#contenido .seccion_imgs .alert .form-group textarea.mis_mensajes{
+	height: 35px;
+	margin-top: 7px;
+	width: 100%;
+}
+
+/*------Fin Contenido Mis Mensajes------*/
 
 #push {
 	height: 160px;

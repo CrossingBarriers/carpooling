@@ -44,22 +44,36 @@
 
 		<div class="menu">
 			<ul class="menu_single">
-                <li><g:link controller="index" action="renderIndexView">Home</g:link></li>
-				<li><g:link controller="comoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
-            </ul>
-            
-            <div class="dropdown">
-                <a data-toggle="dropdown" href="#">
-                <span>Fulanito de Tal</span>
-                <span class="glyphicon glyphicon-user"></span>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li><g:link controller="perfilUsuario" action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-                <li><g:link controller="tipoUsuario" action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
-                <li class="divider"></li>
-                <li><a href="index.html">Cerrar Sesión</a></li>
-              </ul>
-            </div>
+				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
+				<li><g:link controller="comoFunciona"
+						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+				<li class="pull-right">
+					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+						<span class="glyphicon glyphicon-envelope"></span>
+						<em class="ml-count ch-hide" style="display: inline;">2</em>
+					</g:link>
+				</li>
+				
+				<li class="pull-right" style="padding-right:15px;">
+					<div class="dropdown">
+						<a data-toggle="dropdown" href="#"><span>Fulanito de Tal</span>
+							<span class="glyphicon glyphicon-user"></span>
+						</a>
+						
+						<ul class="dropdown-menu" role="menu">
+							<li><g:link controller="perfilUsuario"
+									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+							<li><g:link controller="viajesALosQueMeUni"
+									action="renderMisViajesView">Mis Viajes</g:link></li>
+							<li><g:link controller="tipoUsuario"
+									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+							<li class="divider"></li>
+							<li><a href="index.html">Cerrar Sesión</a></li>
+						</ul>
+					</div>
+				</li>
+				<div class="clearfix"></div>
+			</ul>
             
 		</div><!--fin menu-->
 		

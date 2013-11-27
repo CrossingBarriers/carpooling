@@ -19,6 +19,25 @@
 	src="${resource(dir: 'bootstrap/js', file: 'jquery.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
+<script type="text/javascript"
+	src="${resource(dir: 'js', file: 'jquery.timeago.js')}"></script>
+<script type="text/javascript"
+	src="${resource(dir: 'js', file: 'jquery.timeago.es.js')}"></script>
+	
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	jQuery("abbr.timeago").timeago();
+
+	$('#contenido .alert textarea.mis_mensajes').focus(function () {
+	    $(this).animate({ height: "60px" }, 500);
+	    var current = $("textarea.mis_mensajes").index(this);
+
+	    
+	    $(".btn_vehiculo:eq("+parseInt(current)+")").attr("class","btn_vehiculo show"); 
+	});
+})
+</script>
 
 </head>
 
@@ -57,25 +76,35 @@
 		<div class="menu">
 			<ul class="menu_single">
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
-				<li><g:link controller="ComoFunciona"
+				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+				<li class="pull-right">
+					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+						<span class="glyphicon glyphicon-envelope"></span>
+						<em class="ml-count ch-hide" style="display: inline;">2</em>
+					</g:link>
+				</li>
+				
+				<li class="pull-right" style="padding-right:15px;">
+					<div class="dropdown">
+						<a data-toggle="dropdown" href="#"><span>Fulanito de Tal</span>
+							<span class="glyphicon glyphicon-user"></span>
+						</a>
+						
+						<ul class="dropdown-menu" role="menu">
+							<li><g:link controller="perfilUsuario"
+									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+							<li><g:link controller="viajesALosQueMeUni"
+									action="renderMisViajesView">Mis Viajes</g:link></li>
+							<li><g:link controller="tipoUsuario"
+									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+							<li class="divider"></li>
+							<li><a href="index.html">Cerrar Sesión</a></li>
+						</ul>
+					</div>
+				</li>
+				<div class="clearfix"></div>
 			</ul>
-
-			<div class="dropdown">
-				<a data-toggle="dropdown" href="#"> <span>Fulanito de Tal</span>
-					<span class="glyphicon glyphicon-user"></span>
-				</a>
-				<ul class="dropdown-menu" role="menu">
-					<li><g:link controller="PerfilUsuario"
-							action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-					<li><g:link controller="ViajesALosQueMeUni"
-							action="renderMisViajesView">Mis Viajes</g:link></li>
-					<li><g:link controller="index"
-							action="redirectTipoUsuarioController">Tipo Usuario</g:link></li>
-					<li class="divider"></li>
-					<li><a href="index.html">Cerrar Sesión</a></li>
-				</ul>
-			</div>
 
 		</div>
 		<!--fin menu-->
@@ -87,10 +116,19 @@
 
 				<g:each in = "${mensajes}">
 				<div class="alert alert-info">
-					<h4>Mensaje de:</h4>
-					<h5>${it.receptor.nombre}</h5>
-					<p>${it.mensaje}</p>
-					<h5>${it.dateCreated}</h5>
+					<h4>Mensaje de: ${it.receptor.nombre} ${it.receptor.apellido}</h4>
+					<p>${it.mensaje} <abbr class="timeago" title="${it.dateCreated}" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr></p>
+					<g:form controller="DescripcionViaje" action="guardarMensaje" method="post">
+    				        <div class="form-group">
+        						<g:textArea class="form-control mis_mensajes" name="mensaje" placeholder="Reponder mensaje..."/>
+        						<g:field type="hidden" name="receptor" value="29157077"/>
+        					</div>
+        					
+        					<center class="btn_vehiculo hidden">
+                                <button type="submit" class="btn btn-success btn-xs">Enviar</button>
+                                <button type="reset" class="btn btn-default btn-xs">Borrar</button>
+                            </center>
+    				 </g:form>
 				</div>
 				</g:each>
 
