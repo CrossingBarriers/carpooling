@@ -70,7 +70,7 @@
 
 		<div id="contenido">
 			<h1>El sistema es muy fácil de usar</h1>
-			<h2>Seguí estos pasos..</h2>
+			<h1><small class="text-info">¡sigue estos simples pasos!</small></h1>
 
 			<div class="seccion_img caja-sombra como_funciona_1">
 				<span></span> <img
@@ -110,7 +110,7 @@
 
 			<div style="clear: both"></div>
 			
-			<g:link class="btn btn-lg btn-block btn-success" controller="registrate" action="renderRegistrateView">Registrate</g:link>
+			<!--<g:link class="btn btn-lg btn-block btn-success" controller="registrate" action="renderRegistrateView">Registrate</g:link>-->
 
 		</div>
 		<!--fin contenido-->

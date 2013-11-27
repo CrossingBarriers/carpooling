@@ -94,8 +94,8 @@ $(document).ready(function(){
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-							<li><g:link controller="viajesALosQueMeUni"
-									action="renderMisViajesView">Mis Viajes</g:link></li>
+							<!--<li><g:link controller="viajesALosQueMeUni"
+									action="renderMisViajesView">Mis Viajes</g:link></li>-->
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
@@ -110,7 +110,7 @@ $(document).ready(function(){
 		<!--fin menu-->
 
 		<div id="contenido">
-			<h1>Mis Mensajes</h1>
+			<h2>Mis Mensajes</h2>
 
 			<div class="seccion_imgs caja-sombra _imgs">
 

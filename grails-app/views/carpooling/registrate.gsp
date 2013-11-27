@@ -59,57 +59,78 @@
 		</div><!--fin menu-->
 		
 		<div id="contenido">
-		  <h1>Registráte</h1>
-            <div class="seccion_imgs caja-sombra _imgs">
-                
-                <form role="form">
-				
-				<div class="col-md-6">	
-					<div class="form-group">
-						<label for="patente">Nombre:</label>
-						<input type="text" class="form-control" placeholder="Ingrese nombre..">
+		<h3>
+				<center>Complete el formulario para pertenecer a la
+					comunidad Carpooling BA</center>
+			</h3>
+			<div class="seccion_imgs caja-sombra _imgs">
+			
+				<g:form controller="registrate" action="registrarUsuario"
+					method="post" enctype="multipart/form-data">
+
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="nombre">Nombre:</label>
+							<g:textField type="text" class="form-control" name="nombre"
+								placeholder="Ingrese nombre..." />
+						</div>
+						<div class="form-group">
+							<label for="apellido">Apellido:</label>
+							<g:textField type="text" class="form-control" name="apellido"
+								placeholder="Ingrese apellido..." />
+						</div>
+						<div class="form-group">
+							<label for="dni">DNI:</label>
+							<g:textField type="text" class="form-control" name="dni"
+								placeholder="Ingrese dni..." />
+						</div>
+						<div class="form-group">
+							<label for="telefono">Teléfono:</label>
+							<g:textField type="text" class="form-control" name="telefono"
+								placeholder="Ingrese teléfono..." />
+						</div>
+						<div class="form-group">
+							<label for="email">E-mail:</label>
+							<g:textField type="text" class="form-control" name="email"
+								placeholder="Ingrese e-mail..." />
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="marca">Apellido:</label>
-						<input type="text" class="form-control" placeholder="Ingrese apellido..">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="contrasenia">Contraseña:</label>
+							<g:passwordField name="contrasenia" class="form-control"
+								placeholder="Ingrese contraseña..." />
+						</div>
+						<div class="form-group">
+							<label for="repecontraseña">Repetir Contraseña:</label>
+							<g:passwordField name="repetircontrasenia" class="form-control"
+								placeholder="Ingrese contraseña..." />
+						</div>
+
+						<div class="form-group">
+							<label for="tipo">Licencia de conducir/Cedula de
+								identidad:</label>
+								
+							<g:field type="file" name="myFile" />
+							 <center class="text-muted"><i class="glyphicon glyphicon-info-sign"></i> Debe cargar una imagen para garantizar su identidad</center>	
+							<p style="color: red;">
+								${flash.message}
+							</p>
+							
+						</div>
+						
 					</div>
-					<div class="form-group">
-						<label for="Modelo">DNI:</label>
-						<input type="text" class="form-control" placeholder="Ingrese dni..">
-					</div>
-					<div class="form-group">
-						<label for="Modelo">Teléfono:</label>
-						<input type="text" class="form-control" placeholder="Ingrese teléfono..">
-					</div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="form-group">
-						<label for="telefono">E-mail:</label>
-						<input type="text" class="form-control" placeholder="Ingrese e-mail..">
-					</div>
-					<div class="form-group">
-						<label for="telefono">Repetir E-mail:</label>
-						<input type="text" class="form-control" placeholder="Ingrese e-mail..">
-					</div>
-					<div class="form-group">
-						<label for="Modelo">Contraseña:</label>
-						<input type="text" class="form-control" placeholder="Ingrese contraseña..">
-					</div>
-					<div class="form-group">
-						<label for="Modelo">Repetir Contraseña:</label>
-						<input type="text" class="form-control" placeholder="Ingrese contraseña..">
-					</div>
-                </div>
-                
-                <div style="clear: both"></div>
-                
-                <center class="btn_vehiculo">
-                    <button type="submit" class="btn btn-success">Registrarme</button>
-                    <buttom type="reset" class="btn btn-default">Cancelar</buttom>
-                </center>
-                
-                </form>
+
+					<div style="clear: both"></div>
+
+					<center class="btn_vehiculo">
+						<g:submitButton type="submit" name="registrarUsuario"
+							class="btn btn-warning" value="Crear mi cuenta" />
+						<g:submitButton type="reset" name="cancelar"
+							class="btn btn-default" value="Cancelar" />
+					</center>
+
+				</g:form>
             </div>
 			
 		</div><!--fin contenido-->

@@ -124,20 +124,23 @@
 
 			<div id="columna_derecha">
 
-				<h3>Ingresa</h3>
+				<h3>Ingresar</h3>
 
 				<div class="login seccion_img caja-sombra">
 
 					<form role="form">
 						<div class="form-group">
-							<label for="usuario">Usuario</label> <input type="text"
+							<label for="usuario">Usuario</label>
+							<g:field type="text"  id="usuario" name="usuario"
 								class="form-control" placeholder="Ingrese usuario..." />
 						</div>
 						<div class="form-group">
-							<label for="password">Password</label> <input type="password"
-								class="form-control" placeholder="Ingrese contraseña..." />
+							<label for="password">Password</label> <g:field type="password"
+								id="contrasenia" name="contrasenia" class="form-control" placeholder="Ingrese contraseña..." />
 						</div>
-						<button type="submit" class="btn btn-success">Ingresar</button>
+						
+						<g:submitButton name="submit" value="Iniciar Sesión" class="btn btn-warning"/>
+						
 					</form>
 
 				</div>

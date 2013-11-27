@@ -32,7 +32,8 @@ class MisViajesController {
 	}
 
 	def quitarVehiculo(String id){
-		def miVehiculo=Vehiculo.get(id)//El método get recibe como parámetro el id del registro
+		def miVehiculo=Vehiculo.get(id)//Recibe como parámetro el id del registro
+		Usuario.executeUpdate("update Usuario user set user.conductor='false'") //Al eliminar su vehiculo, el usuario sera pasajero
 		miVehiculo.delete()
 		redirect (controller:'misViajes', action:'index')
 	}
