@@ -9,7 +9,7 @@ class UrlMappings {
 	
 		//  "/"(view:"/index")
 
-        "/"(view:"/carpooling/busquedaDeViajes") // Modificado para que comience con el proyecto carpooling.
+        "/"(view:"/carpooling/tipoUsuario") // Modificado para que comience con el proyecto carpooling.
         "500"(view:'/error')
 		
 		"/busqueda" (controller: "BusquedaDeViajes", action: "renderBusquedaDeViajesView")
@@ -22,6 +22,7 @@ class UrlMappings {
 		"/index" (controller:"index", action:"renderIndexView")
 		"/comoFunciona" (controller:"comoFunciona", action:"renderComoFuncionaView")
 		"/registrate" (controller:"registrate", action:"renderRegistrateView")
+		"/miembrosComunidadCarpoolingBA" (controller:"miembrosComunidad", action:"renderMiembrosComunidadView")
 		
 
 	}

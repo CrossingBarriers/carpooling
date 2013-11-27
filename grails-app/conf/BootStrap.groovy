@@ -7,7 +7,7 @@ class BootStrap {
 
 	def init = { servletContext ->
 
-		def usuario1 = new Usuario(dni: 33222000, nombre: 'Maria', apellido: 'Lopez', email: 'marialopez@gmail.com', telefono: 35282463 , contrasenia: 'abc123', conductor: true)
+		def usuario1 = new Usuario(dni: 33222000, nombre: 'Maria', apellido: 'Lopez', email: 'marialopez@gmail.com', telefono: 35282463 , contrasenia: 'abc123', conductor: false)
 		usuario1.save()
 
 		println usuario1
@@ -18,7 +18,7 @@ class BootStrap {
 		println usuario2.errors
 
 
-		def usuario3 = new Usuario(dni: 27100732, nombre: "Marcos", apellido: "Suarez", email: "marcossuarez@gmail.com", telefono: 15309921 , contrasenia: 'ghi000', conductor: false)
+		/*def usuario3 = new Usuario(dni: 27100732, nombre: "Marcos", apellido: "Suarez", email: "marcossuarez@gmail.com", telefono: 15309921 , contrasenia: 'ghi000', conductor: false)
 		usuario3.save()
 
 		println usuario3.errors
@@ -66,7 +66,7 @@ class BootStrap {
 		def pasajero3 = new UsuarioUnido(viaje: viaje1, dia: 'L', usuario: usuario3)
 		pasajero3.save()
 
-		println pasajero3.errors
+		println pasajero3.errors*/
 	}
 
 	def destroy = {

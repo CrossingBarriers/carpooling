@@ -18,7 +18,22 @@ if(formulario.hasta.value == '')
     formulario.hasta.focus();
     return false;
 }
- 
+
+//valida hora
+var horario= document.getElementById("hora").value;
+if( !(/^\d{2}$/.test(horario)) || horario<=0  ) {
+	alert('Ingrese hora en formato 24 hs');
+ return false;
+}
+
+
+//valida minutos
+var min = document.getElementById("minutos").value;
+if( !(/^\d{2}$/.test(min)) || min<0  ) {
+	alert('Ingrese los minutos');
+return false;
+}
+
  //valida colaboracion
 if(formulario.colaboracion.value == '')
 {
@@ -45,6 +60,6 @@ if(formulario.comentario.value == '')
 
   
 //validacion de envio
-alert('Campos validados correctamente');
+//alert('Campos validados correctamente');
 return true;	
 }
