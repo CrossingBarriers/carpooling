@@ -18,7 +18,7 @@ class MisViajesController {
 	}
 
 	def show(String patente){
-		def map=misViajesService.find(patente)
+		def map=misViajesService.buscarVehiculo(patente)
 		//println map
 		if(map!=[])
 		{
@@ -32,17 +32,13 @@ class MisViajesController {
 	}
 
 	def quitarVehiculo(String id){
-		def miVehiculo=Vehiculo.get(id)//Recibe como parámetro el id del registro
-		Usuario.executeUpdate("update Usuario user set user.conductor='false'") //Al eliminar su vehiculo, el usuario sera pasajero
-		miVehiculo.delete()
+		misViajesService.eliminarVehiculo(id)
 		redirect (controller:'misViajes', action:'index')
 	}
 
 	def quitarViaje(Long id){
-		def miViaje=ViajeRegistrado.get(id)
-		miViaje.delete()
+		misViajesService.eliminarViaje(id)
 		redirect (controller:'misViajes', action:'index')
 	}
-
 
 }
