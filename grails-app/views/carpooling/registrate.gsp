@@ -106,19 +106,13 @@
 							<g:passwordField name="repetircontrasenia" class="form-control"
 								placeholder="Ingrese contraseña..." />
 						</div>
-
 						<div class="form-group">
-							<label for="tipo">Licencia de conducir/Cedula de
+							<label for="tipo">Licencia de conducir/Documento de
 								identidad:</label>
-								
 							<g:field type="file" name="myFile" />
-							 <center class="text-muted"><i class="glyphicon glyphicon-info-sign"></i> Debe cargar una imagen para garantizar su identidad</center>	
-							<p style="color: red;">
-								${flash.message}
-							</p>
-							
-						</div>
-						
+							<center class="text-muted"><i class="glyphicon glyphicon-info-sign"></i> Debe cargar una imagen para garantizar su identidad</center>	
+
+						</div>	
 					</div>
 
 					<div style="clear: both"></div>
@@ -129,7 +123,6 @@
 						<g:submitButton type="reset" name="cancelar"
 							class="btn btn-default" value="Cancelar" />
 					</center>
-
 				</g:form>
             </div>
 			

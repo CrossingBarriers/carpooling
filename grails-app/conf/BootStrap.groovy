@@ -7,18 +7,18 @@ class BootStrap {
 
 	def init = { servletContext ->
 
-		def usuario1 = new Usuario(dni: 33222000, nombre: 'Maria', apellido: 'Lopez', email: 'marialopez@gmail.com', telefono: 35282463 , contrasenia: 'abc123', conductor: false)
+		def usuario1 = new Usuario(dni: 33222000, nombre: 'Maria', apellido: 'Lopez', email: 'marialopez@gmail.com',imagen:'ruta', telefono: 35282463 , contrasenia: 'abc123', conductor: false)
 		usuario1.save()
 
 		println usuario1
 		
-		def usuario2 = new Usuario(dni: 29157077, nombre: "Lucia", apellido: "Roldan", email: "luciaroldan@gmail.com", telefono: 44414566 , contrasenia: 'def456', conductor: false)
+		def usuario2 = new Usuario(dni: 29157077, nombre: "Lucia", apellido: "Roldan", email: "luciaroldan@gmail.com",imagen:'ruta', telefono: 44414566 , contrasenia: 'def456', conductor: false)
 		usuario2.save()
 
 		println usuario2.errors
 
 
-		/*def usuario3 = new Usuario(dni: 27100732, nombre: "Marcos", apellido: "Suarez", email: "marcossuarez@gmail.com", telefono: 15309921 , contrasenia: 'ghi000', conductor: false)
+		/*def usuario3 = new Usuario(dni: 27100732, nombre: "Marcos", apellido: "Suarez", email: "marcossuarez@gmail.com",imagen:'ruta', telefono: 15309921 , contrasenia: 'ghi000', conductor: false)
 		usuario3.save()
 
 		println usuario3.errors

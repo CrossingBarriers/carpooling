@@ -7,6 +7,7 @@ class Usuario {
 	String apellido
 	String email
 	Integer telefono
+	String imagen
 	String contrasenia
 	Boolean conductor
 	
