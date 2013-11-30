@@ -95,8 +95,8 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-							<li><g:link controller="viajesALosQueMeUni"
-									action="renderMisViajesView">Mis Viajes</g:link></li>
+							<li><g:link controller="misViajes"
+									action="index">Mis Viajes</g:link></li>
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
@@ -135,12 +135,12 @@
 								<div class="form-group">
 									<label for="hora" class="pull-left">Hora de salida:</label>
 									<div class="col-xs-3">
-										<g:field name="hora" type="text" class="form-control"
+										<g:field name="hora" id="hora" type="text" class="form-control"
 											placeholder="hh" />
 									</div>
 									<label for="hora" class="pull-left" style="padding-left: 0;">:</label>
 									<div class="col-xs-3">
-										<g:field type="text" name="minutos" class="form-control"
+										<g:field type="text" name="minutos" id="minutos" class="form-control"
 											placeholder="mm" />
 									</div>
 									<div class="clearfix"></div>

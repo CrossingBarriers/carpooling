@@ -8,7 +8,7 @@ class AgregarVehiculoService {
 	def serviceMethod() {
 	}
 
-	def find(usuarioDni) {
+	def buscarUsuario(usuarioDni) {
 		Usuario.findAllByDni(usuarioDni)
 	}
 }

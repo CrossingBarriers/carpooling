@@ -7,6 +7,8 @@
 
 <link rel="stylesheet"
 	href="${resource(dir: 'css', file: 'estilos.css')}" type="text/css" />
+<link rel="stylesheet" type="text/css"
+	href="${resource(dir: 'css', file: 'botones_redes_sociales.css')}" />
 <link rel="stylesheet"
 	href="${resource(dir: 'bootstrap/css', file: 'bootstrap-responsive.css')}"
 	media="all" type="text/css" />
@@ -17,7 +19,12 @@
 	src="${resource(dir: 'bootstrap/js', file: 'jquery.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
-
+<script type="text/javascript"
+	src="${resource(dir: 'js', file: 'holder.js')}"></script>
+<script type="text/javascript"
+	src="${resource(dir: 'js', file: 'google.js')}">
+	
+</script>
 </head>
 
 <body>
@@ -44,49 +51,89 @@
 			</g:link>
 		</div>
 		<!--fin header_960-->
-
-		<div class="menu">
-			<ul>
+<div class="menu">
+			<ul class="menu_single">
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
-				<li><a href="como_funciona.html">COMO FUNCIONA</a></li>
-				<li><a href="perfil_usuario.html">MI PERFIL</a></li>
-				<li><a href="agregar_viajes.html">MIS VIAJES</a></li>
-				<li><g:link controller="index" action="renderTipoUsuarioView">TIPO USUARIO</g:link></li>
-				<li><g:link controller="miembrosComunidad"
-						action="renderMiembrosComunidadView">USUARIOS</g:link></li>
-				<li><a href="#">CERRAR SESION</a></li>
+				<li><g:link controller="comoFunciona"
+						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+				<li><a class="activo">COMUNIDAD</a></li>
+				<li class="pull-right">
+					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+						<span class="glyphicon glyphicon-envelope"></span>
+						<em class="ml-count ch-hide" style="display: inline;">2</em>
+					</g:link>
+				</li>
+				
+				<li class="pull-right" style="padding-right:15px;">
+					<div class="dropdown">
+						<a data-toggle="dropdown" href="#"><span>Fulanito de Tal</span>
+							<span class="glyphicon glyphicon-user"></span>
+						</a>
+						
+						<ul class="dropdown-menu" role="menu">
+							<li><g:link controller="perfilUsuario"
+									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+							<li><g:link controller="tipoUsuario"
+									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+							<li class="divider"></li>
+							<li><a href="index.html">Cerrar Sesión</a></li>
+						</ul>
+					</div>
+				</li>
+				<div class="clearfix"></div>
 			</ul>
+
 		</div>
 		<!--fin menu-->
 
 		<div id="contenido">
-			<ul>
+			<h2 style="text-align: center">
+				<i class="glyphicon glyphicon-globe"></i> Miembros de la comunidad
+				Carpooling BA
+			</h2>
+			<div class="seccion_imgs caja-sombra _imgs">
+
 				<g:each var="usuarios" in='${(usuario)}'>
-					<li>Nombre: ${usuarios.nombre} <br /> Apellido: ${usuarios.apellido}
-						<br /> DNI: ${usuarios.dni} <br /> Email: ${usuarios.email} <br />
-						Telefono: ${usuarios.telefono} <br />
-						<div class="seccion_imgs">
-							<h3 style="text-align: center">
-								<i class="glyphicon glyphicon-globe"></i>Usuarios de la
-								comunidad Carpooling BA
-							</h3>
 
-							<g:each var="usuarios" in='${(usuario)}'>
-								<li>
-									<p>
-										Nombre:
-										${usuarios.nombre}
-										- Apellido:
-										${usuarios.apellido}
-									</p>
-									<p>
-										Email:
-										${usuarios.email}
-									</p> <br></br>
-
-								</li>
-							</g:each>
+					<div class="col-md-2">
+						<div class="thumbnail" style="width: 145px;">
+							<img data-src="js/holder.js/140x140" alt="usuario" />
 						</div>
+					</div>
+					<p>
+						<g:if test="${usuarios.conductor==true}">
+							<h4 class="text-warning">
+								<span class="glyphicon glyphicon-ok-sign"></span> Conductor
+							</h4>
+						</g:if>
+						<g:if test="${usuarios.conductor==false }">
+							<h4 class="text-warning">
+								<span class="glyphicon glyphicon-ok-sign"></span> Pasajero
+							</h4>
+
+						</g:if>
+
+					</p>
+					<p>
+						<h5>
+							<strong><span class="glyphicon glyphicon-chevron-right"></span>
+								Apellido - Nombre:</strong>
+							${usuarios.apellido},
+							${usuarios.nombre }
+
+						</h5>
+					</p>
+					<p>
+						<h5>
+							<strong><span class="glyphicon glyphicon-chevron-right"></span>
+								Email:</strong> <a href="mailto:#"> ${usuarios.email}
+							</a>
+						</h5>
+					</p>
+					<br></br>
+				</g:each>
+
+			</div>
 		</div>
 		<!--fin contenido-->
 		<div id="push"></div>

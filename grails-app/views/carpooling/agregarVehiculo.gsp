@@ -77,8 +77,8 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-							<li><g:link controller="viajesALosQueMeUni"
-									action="renderMisViajesView">Mis Viajes</g:link></li>
+							<li><g:link controller="misViajes"
+									action="index">Mis Viajes</g:link></li>
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
@@ -93,7 +93,7 @@
 		<!--fin menu-->
 
 		<div id="contenido">
-			<h1>Registrar vehículo</h1>
+			<h2>Registrar vehículo</h2>
 			<div class="seccion_imgs caja-sombra _imgs">
 
 				<fieldset>

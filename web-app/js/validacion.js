@@ -55,6 +55,6 @@ function validar(formulario)
 	}
 
 	//validacion de envio
-	alert('Campos validados correctamente');
+	//alert('Campos validados correctamente');
 	return true;	
 	}
