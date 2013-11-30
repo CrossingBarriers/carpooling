@@ -12,4 +12,5 @@ class MisMensajesService {
     def buscarMensajes(usuario) {
 		Mensaje.findAllByReceptor(usuario)
     }
+	
 }

@@ -41,6 +41,7 @@ grails.project.dependency.resolution = {
         grailsCentral()
         mavenCentral()
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
+		//mavenRepo "http://snapshots.repository.codehaus.org"
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
@@ -50,7 +51,7 @@ grails.project.dependency.resolution = {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.24'
     }
-
+	
     plugins {
         // plugins for the build system only
         build ":tomcat:7.0.42"
@@ -60,13 +61,13 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.1'
 		
 		//PARA EL GOOGLE MAPS
-		compile ":jquery:1.10.2"
+		compile ":jquery:1.10.2.2"
 		compile ":google-visualization:0.6.2"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.1" // or ":hibernate4:4.1.11.1"
         runtime ":database-migration:1.3.5"
-        runtime ":jquery:1.10.2"
+        runtime ":jquery:1.10.2.2"
         runtime ":resources:1.2"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"

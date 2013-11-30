@@ -28,6 +28,24 @@
         src="${resource(dir: 'js', file: 'google.js')}">
 </script>
 
+<script type="text/javascript">
+
+	function success() {
+		$("textarea.form-control").attr("value","");
+    	$("#success").attr("class","alert alert-info fade in");
+		
+		setTimeout(function () {
+			$("#success").fadeOut(1500);
+		},2000);
+	}
+
+	function precarga_1() {
+			$("#success").attr("class","alert alert-info fade in");
+			$("#success").html('<p style="text-align:center;"><img src="${resource(dir: 'images/carpooling', file: 'ajax-loader.gif')}"/></p>');
+	}
+
+</script>
+
 </head>
 
 <body>
@@ -139,18 +157,21 @@
                     </div>
     				
     				<div class="row">
-    				    <g:form controller="DescripcionViaje" action="guardarMensaje" method="post">
+    				    <g:formRemote name="enviar_mensaje" url="[controller: 'DescripcionViaje', action:'guardarMensaje']" method="post" update="success" onSuccess="success()" onLoading="precarga_1()">
     				        <div class="form-group">
         						<label for="comentario">Mensaje:</label>
         						<g:textArea class="form-control" name="mensaje" placeholder="Enviale un mensaje al conductor..."/>
         						<g:field type="hidden" name="receptor" value="29157077"/>
         					</div>
         					
+        					<div id="success" class="hidden">
+        					</div>
+        					
         					<center class="btn_vehiculo">
                                 <button type="submit" class="btn btn-success btn-xs">Enviar</button>
                                 <button type="reset" class="btn btn-default btn-xs">Borrar</button>
                             </center>
-    				    </g:form>
+    				    </g:formRemote>
     				</div>
     				
                 </div>

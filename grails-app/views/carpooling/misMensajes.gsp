@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 <title>Carpooling BA - Resultado de la Busqueda</title>
 
 <link rel="stylesheet"
@@ -19,11 +18,12 @@
 	src="${resource(dir: 'bootstrap/js', file: 'jquery.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
+
 <script type="text/javascript"
 	src="${resource(dir: 'js', file: 'jquery.timeago.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'js', file: 'jquery.timeago.es.js')}"></script>
-	
+
 <script type="text/javascript">
 $(document).ready(function(){
 	
@@ -36,7 +36,22 @@ $(document).ready(function(){
 	    
 	    $(".btn_vehiculo:eq("+parseInt(current)+")").attr("class","btn_vehiculo show"); 
 	});
+
 })
+
+	function borrarMensaje(current) {
+		setTimeout(function () {
+			$("#"+current+"").fadeOut(1500);
+		},2000);
+	}
+
+
+function precarga(current) {
+	$("#"+current+"").html('<p style="text-align:center;"><img src="${resource(dir: 'images/carpooling', file: 'ajax-loader.gif')}"/></p>');
+}
+
+
+
 </script>
 
 </head>
@@ -81,7 +96,7 @@ $(document).ready(function(){
 				<li class="pull-right">
 					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
-						<em class="ml-count ch-hide" style="display: inline;">2</em>
+						<em class="ml-count" style="display: inline;"></em>
 					</g:link>
 				</li>
 				
@@ -114,19 +129,23 @@ $(document).ready(function(){
 
 			<div class="seccion_imgs caja-sombra _imgs">
 
-				<g:each in = "${mensajes}">
-				<div class="alert alert-info">
+				<g:each in = "${mensajes.reverse()}">
+				
+				<div id="${it.id}" class="alert alert-info fade in">
 					<h4>Mensaje de: ${it.receptor.nombre} ${it.receptor.apellido}</h4>
-					<p>${it.mensaje} <abbr class="timeago" title="${it.dateCreated}" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr></p>
-					<g:form controller="DescripcionViaje" action="guardarMensaje" method="post">
+						<g:remoteLink id="${it.id}" class="close" data-dismiss="alert"
+							controller="misMensajes" action="borrarMensaje" update="${it.id}"
+							onSuccess="borrarMensaje(${it.id})" onLoading="precarga(${it.id})" title="Eliminar mensaje">×</g:remoteLink>
+						<p>${it.mensaje} <abbr class="timeago" title="${it.dateCreated}" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr></p>
+					<g:form controller="MisMensajes" action="guardarMensaje" method="post">
     				        <div class="form-group">
         						<g:textArea class="form-control mis_mensajes" name="mensaje" placeholder="Reponder mensaje..."/>
         						<g:field type="hidden" name="receptor" value="29157077"/>
         					</div>
         					
         					<center class="btn_vehiculo hidden">
-                                <button type="submit" class="btn btn-success btn-xs">Enviar</button>
-                                <button type="reset" class="btn btn-default btn-xs">Borrar</button>
+                                <button type="submit" class="btn btn-success btn-xs">Responder</button>
+                                <button type="reset" class="btn btn-default btn-xs">Cancelar</button>
                             </center>
     				 </g:form>
 				</div>
