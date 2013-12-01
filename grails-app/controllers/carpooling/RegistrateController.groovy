@@ -13,6 +13,7 @@ class RegistrateController {
 	def registrarUsuario(){
 
 		def f =request.getFile('myFile')
+		
 
 		if (!f.empty) {
 			BufferedImage src = ImageIO.read(new ByteArrayInputStream(f.getBytes()));
@@ -25,8 +26,8 @@ class RegistrateController {
 			/*f.transferTo(new File('C:/Users/addministrador/Desktop/img/myFile.jpeg'))*/
 			/*File destination = new File('${absoluta}')*/
 
-			//Ruta donde guardo la foto en mi pc:
-			File destination = new File("C:"+File.separator+"Documents and Settings"+File.separator+"Vaio"+File.separator+"Fotos"+File.separator+"$dniImg")
+			//Ruta generica donde se guardan las imagenes:
+			File destination = new File("C:"+File.separator+"$dniImg")
 
 			ImageIO.write(src, "jpeg", destination);
 
@@ -44,10 +45,10 @@ class RegistrateController {
 			render (view:'/carpooling/perfilUsuario', model: [usuario : usuario])
 
 		}
-		/*else
+		else
 		{
 			flash.message = 'Debe cargar una imagen para garantizar su identidad'
 			redirect action:'renderRegistrateView'
-		}*/
+		}
 	}
 }

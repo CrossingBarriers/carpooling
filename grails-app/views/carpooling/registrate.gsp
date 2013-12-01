@@ -19,7 +19,8 @@
 	src="${resource(dir: 'bootstrap/js', file: 'jquery.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
-
+<script type="text/javascript"
+	src="${resource(dir:'js', file:'validacion-registro.js') }"></script>
 </head>
 
 <body>
@@ -65,53 +66,53 @@
 			</h3>
 			<div class="seccion_imgs caja-sombra _imgs">
 			
-				<g:form controller="registrate" action="registrarUsuario"
+				<g:form onSubmit="return validar(this)" controller="registrate" action="registrarUsuario"
 					method="post" enctype="multipart/form-data">
 
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="nombre">Nombre:</label>
-							<g:textField type="text" class="form-control" name="nombre"
+							<g:textField type="text" class="form-control" id="nombre" name="nombre"
 								placeholder="Ingrese nombre..." />
 						</div>
 						<div class="form-group">
 							<label for="apellido">Apellido:</label>
-							<g:textField type="text" class="form-control" name="apellido"
+							<g:textField type="text" class="form-control" id="apellido" name="apellido"
 								placeholder="Ingrese apellido..." />
 						</div>
 						<div class="form-group">
 							<label for="dni">DNI:</label>
-							<g:textField type="text" class="form-control" name="dni"
+							<g:textField type="text" class="form-control" id="dni" name="dni"
 								placeholder="Ingrese dni..." />
 						</div>
 						<div class="form-group">
 							<label for="telefono">Teléfono:</label>
-							<g:textField type="text" class="form-control" name="telefono"
+							<g:textField type="text" class="form-control" id="telefono" name="telefono"
 								placeholder="Ingrese teléfono..." />
 						</div>
 						<div class="form-group">
 							<label for="email">E-mail:</label>
-							<g:textField type="text" class="form-control" name="email"
+							<g:textField type="text" class="form-control" id="email" name="email"
 								placeholder="Ingrese e-mail..." />
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="contrasenia">Contraseña:</label>
-							<g:passwordField name="contrasenia" class="form-control"
+							<g:passwordField name="contrasenia" id="contrasenia" class="form-control"
 								placeholder="Ingrese contraseña..." />
 						</div>
 						<div class="form-group">
 							<label for="repecontraseña">Repetir Contraseña:</label>
-							<g:passwordField name="repetircontrasenia" class="form-control"
+							<g:passwordField name="repetircontrasenia" id="repetircontrasenia" class="form-control"
 								placeholder="Ingrese contraseña..." />
 						</div>
 						<div class="form-group">
-							<label for="tipo">Licencia de conducir/Documento de
-								identidad:</label>
+							<label for="tipo">Cargar una imagen de su Documento de identidad:</label>
 							<g:field type="file" name="myFile" />
-							<center class="text-muted"><i class="glyphicon glyphicon-info-sign"></i> Debe cargar una imagen para garantizar su identidad</center>	
-
+                        <p class="text-danger">
+                        ${flash.message}
+                        </p>
 						</div>	
 					</div>
 
