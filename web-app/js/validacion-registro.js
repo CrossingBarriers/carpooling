@@ -84,7 +84,14 @@ if(formulario.email.value.indexOf('.')==-1)
 	alert('Debe ingresar su correo electronico correctamente');
 	formulario.email.focus();
 	return false;
-}	
+}
+//valida ocupacion
+if(formulario.ocupacion.value == '')
+{
+    alert('Ingrese su ocupacion');
+    formulario.ocupacion.focus();
+    return false;
+}
 
  //valida contraseña
 if(formulario.contrasenia.value==''){
