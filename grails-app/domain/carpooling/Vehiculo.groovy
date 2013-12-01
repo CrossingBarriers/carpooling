@@ -5,6 +5,7 @@ class Vehiculo {
 	String patente
 	String marca
 	String modelo
+	String imagen
 	Integer cantidadAsientos
 	Usuario usuario
 

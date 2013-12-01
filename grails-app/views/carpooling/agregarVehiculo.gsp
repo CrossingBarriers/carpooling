@@ -99,7 +99,7 @@
 				<fieldset>
 					<g:form onSubmit="return validar(this)"
 						controller="agregarVehiculo" action="guardarVehiculo"
-						method="post">
+						method="post" enctype="multipart/form-data">
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="patente">Patente:</label>
@@ -124,6 +124,14 @@
 								<g:field type="number" id="asientos" name="asientos"
 									class="form-control" placeholder="Seleccione cantidad" />
 							</div>
+							<div class="form-group">
+							<label for="tipo">Cargar una imagen de su Licencia de conducir:</label>
+							<g:field type="file" name="myFile" />
+							<p class="text-danger">
+                        ${flash.message}
+                        </p>
+							
+						</div>
 						</div>
 
 						<div style="clear: both"></div>
