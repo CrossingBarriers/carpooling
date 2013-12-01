@@ -99,6 +99,8 @@
 						<a href="mailto:#"> ${usuario.email}
 						</a> <br /> <span class="glyphicon glyphicon-chevron-right"></span><strong>Telefono:</strong>
 						${usuario.telefono}
+						<br /> <span class="glyphicon glyphicon-chevron-right"></span><strong>Ocupacion:</strong>
+						${usuario.ocupacion}
 					</div>
 					<div class="form-group">
 						<img width="250px" height="165px" class="img-thumbnail"
