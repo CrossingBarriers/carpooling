@@ -23,19 +23,12 @@ class AgregarVehiculoController {
 
 		if (!f.empty) {
 			BufferedImage src = ImageIO.read(new ByteArrayInputStream(f.getBytes()));
-			def patenteImg = File.separator + params.patente.toString()+ '.jpeg'
-
-			/*def base = File.separator+'tmp'+File.separator+'licencias'*/
-			/*def urlRelativa =  base + dniImg*/
-			/*def absoluta = getGrailsApplication().parentContext.getResource(base).file.toString() + dniImg*/
-			/*f.transferTo(new File('${absoluta}'))*/
-			/*f.transferTo(new File('C:/Users/addministrador/Desktop/img/myFile.jpeg'))*/
-			/*File destination = new File('${absoluta}')*/
+			def patenteImg = File.separator + params.patente.toString()+ '.jpg'
 
 			//Ruta generica donde se guardan las imagenes:
 			File destination = new File("C:"+File.separator+"$patenteImg")
 
-			ImageIO.write(src, "jpeg", destination);
+			ImageIO.write(src, "jpg", destination);
 
 			def  imgLugar = destination.getAbsolutePath()
 			def  imaLug = imgLugar.toString()

@@ -5,34 +5,30 @@
 
 <title>Carpooling BA</title>
 
-<link rel="stylesheet"
-	href="${resource(dir: 'css', file: 'estilos.css')}" type="text/css" />
+<link rel="stylesheet" type="text/css"
+	href="${resource(dir: 'css', file: 'estilos.css')}" />
 <link rel="stylesheet" type="text/css"
 	href="${resource(dir: 'css', file: 'botones_redes_sociales.css')}" />
-<link rel="stylesheet"
+<link rel="stylesheet" type="text/css"
 	href="${resource(dir: 'bootstrap/css', file: 'bootstrap-responsive.css')}"
-	media="all" type="text/css" />
-<link rel="stylesheet"
+	media="all" />
+<link rel="stylesheet" type="text/css"
 	href="${resource(dir: 'bootstrap/css', file: 'bootstrap.css')}"
-	media="all" type="text/css" />
+	media="all" />
 <script type="text/javascript"
 	src="${resource(dir: 'bootstrap/js', file: 'jquery.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
-<script type="text/javascript"
-	src="${resource(dir: 'js', file: 'holder.js')}"></script>
-<script type="text/javascript"
-	src="${resource(dir: 'js', file: 'google.js')}">
-	
-</script>
+
 </head>
+
 
 <body>
 
 	<div id="bg_header">
 		<img
 			src="${resource(dir: 'images/carpooling', file: 'header_bg.jpg')}"
-			height="114" width="1159" alt="header_bg" />
+			height="114" width="960" alt="header_bg" />
 
 		<hr class="linea" />
 		<div id="barra"></div>
@@ -49,27 +45,32 @@
 					height="106" width="254" alt="logo" />
 
 			</g:link>
+
+			<ul id="m-soc4">
+				<li><a class="facebook" href="https://www.facebook.com"><span>Facebook</span></a></li>
+				<li><a class="twitter" href="#"><span>Twitter</span></a></li>
+				<li><a class="youtube" href="#"><span>YouTube</span></a></li>
+			</ul>
+
 		</div>
 		<!--fin header_960-->
-<div class="menu">
+		<div class="menu">
 			<ul class="menu_single">
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
 				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
 				<li><a class="activo">COMUNIDAD</a></li>
-				<li class="pull-right">
-					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+				<li class="pull-right"><g:link controller="MisMensajes"
+						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
 						<em class="ml-count ch-hide" style="display: inline;">2</em>
-					</g:link>
-				</li>
-				
-				<li class="pull-right" style="padding-right:15px;">
+					</g:link></li>
+
+				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>Fulanito de Tal</span>
-							<span class="glyphicon glyphicon-user"></span>
-						</a>
-						
+						<a data-toggle="dropdown" href="#"><span>Fulanito de
+								Tal</span> <span class="glyphicon glyphicon-user"></span> </a>
+
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
@@ -94,50 +95,63 @@
 			<div class="seccion_imgs caja-sombra _imgs">
 
 				<g:each var="usuarios" in='${(usuario)}'>
-					
+					<br />
+
 					<div class="col-md-2">
-						<div class="img-thumbnail">
-							<img width="120px" height="120px" class="center-block"
-							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuarios.imagen])}" alt="${usuarios.nombre}" />
-						</div>
+
+						<img width="162px" height="125px" class="center-block"
+							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuarios.imagen])}"
+							alt="${usuarios.nombre}" />
+
 					</div>
-					
+
 					<div class="col-md-6">
 						<p>
-						<g:if test="${usuarios.conductor==true}">
-							<h4 class="text-warning">
-								<span class="glyphicon glyphicon-ok-sign"></span> Conductor
-							</h4>
-						</g:if>
-						<g:if test="${usuarios.conductor==false }">
-							<h4 class="text-warning">
-								<span class="glyphicon glyphicon-ok-sign"></span> Pasajero
-							</h4>
+							<g:if test="${usuarios.conductor==true}">
+								<h4 class="text-warning">
+									<span class="glyphicon glyphicon-ok-sign"></span> Conductor
+								</h4>
+							</g:if>
+							<g:if test="${usuarios.conductor==false }">
+								<h4 class="text-warning">
+									<span class="glyphicon glyphicon-ok-sign"></span> Pasajero
+								</h4>
 
-						</g:if>
+							</g:if>
 
-					</p>
-					<p>
-						<h5>
-							<strong><span class="glyphicon glyphicon-chevron-right"></span>
-								Apellido - Nombre:</strong>
-							${usuarios.apellido},
-							${usuarios.nombre }
+						</p>
+						<p>
+							<h5>
+								<strong><span class="glyphicon glyphicon-chevron-right"></span>
+									Apellido - Nombre:</strong>
+								${usuarios.apellido},
+								${usuarios.nombre }
 
-						</h5>
-					</p>
-					<p>
-						<h5>
-							<strong><span class="glyphicon glyphicon-chevron-right"></span>
-								Email:</strong> <a href="mailto:#"> ${usuarios.email}
-							</a>
-						</h5>
-					</p>
-					<br></br>
+								<strong><span class="glyphicon glyphicon-chevron-right"></span>
+									DNI</strong>
+								${usuarios.dni}
+							</h5>
+
+
+						</p>
+						<p>
+							<h5>
+								<strong><span class="glyphicon glyphicon-chevron-right"></span>
+									Email:</strong> <a href="mailto:#"> ${usuarios.email}
+								</a>
+								</h5>
+								<h5>
+								<strong><span class="glyphicon glyphicon-chevron-right"></span>
+									La ocupacion de ${usuarios.nombre } es:</strong>
+								${usuarios.ocupacion}
+							</h5>
+						</p>
+
+						<br></br>
 					</div>
-					
+
 					<div class="clearfix"></div>
-					
+
 				</g:each>
 
 			</div>
