@@ -17,7 +17,7 @@ class RegistrateController {
 
 		if (!f.empty) {
 			BufferedImage src = ImageIO.read(new ByteArrayInputStream(f.getBytes()));
-			def dniImg = File.separator + params.dni.toString()+ '.jpeg'
+			def dniImg = File.separator + params.dni.toString()+ '.jpg'
 
 			/*def base = File.separator+'tmp'+File.separator+'licencias'*/
 			/*def urlRelativa =  base + dniImg*/
@@ -29,7 +29,7 @@ class RegistrateController {
 			//Ruta generica donde se guardan las imagenes:
 			File destination = new File("C:"+File.separator+"$dniImg")
 
-			ImageIO.write(src, "jpeg", destination);
+			ImageIO.write(src, "jpg", destination);
 
 			def  imgLugar = destination.getAbsolutePath()
 			def  imaLug = imgLugar.toString();

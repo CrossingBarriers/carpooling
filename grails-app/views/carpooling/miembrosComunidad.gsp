@@ -94,13 +94,16 @@
 			<div class="seccion_imgs caja-sombra _imgs">
 
 				<g:each var="usuarios" in='${(usuario)}'>
-
+					
 					<div class="col-md-2">
-						<div class="thumbnail" style="width: 145px;">
-							<img data-src="js/holder.js/140x140" alt="usuario" />
+						<div class="img-thumbnail">
+							<img width="120px" height="120px" class="center-block"
+							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuarios.imagen])}" alt="${usuarios.nombre}" />
 						</div>
 					</div>
-					<p>
+					
+					<div class="col-md-6">
+						<p>
 						<g:if test="${usuarios.conductor==true}">
 							<h4 class="text-warning">
 								<span class="glyphicon glyphicon-ok-sign"></span> Conductor
@@ -131,6 +134,10 @@
 						</h5>
 					</p>
 					<br></br>
+					</div>
+					
+					<div class="clearfix"></div>
+					
 				</g:each>
 
 			</div>
