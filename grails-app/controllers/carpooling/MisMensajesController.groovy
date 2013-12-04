@@ -26,7 +26,7 @@ class MisMensajesController {
 		render '<p style="text-align:center;">Mensaje eliminado</p>'
 	}
 	
-	def guardarMensaje() {
+	def responderMensaje() {
 		Integer idEmisor = 33222000 //aca deberia tomar el dni del usuario logueado
 		
 		Integer idReceptor = Integer.parseInt(params.receptor)
@@ -34,8 +34,30 @@ class MisMensajesController {
 		def emisor = misMensajesService.buscarReceptor(idEmisor)
 		def receptor = misMensajesService.buscarReceptor(idReceptor)
 		
-		def mensaje = new Mensaje(mensaje:params.mensaje, receptor:receptor, emisor:emisor).save()
-		render(view:"/carpooling/descripcionViaje")
+		def respuesta = new Mensaje(mensaje:params.mensaje, receptor:receptor, emisor:emisor, idRespuesta: 0).save()
+		
+		def mensaje = Mensaje.get(params.idMensaje)
+		
+		mensaje.idRespuesta = respuesta.id
+		
+		mensaje.save()
+		
+		try {
+			Thread.sleep(2000);
+			} catch (InterruptedException ex) {
+			// aquí tratamos la excepción como queramos, haciendo nada, sacando por pantalla el error, ...
+			}
+		
+		render ''+respuesta.mensaje+'<abbr class="timeago" title="'+mensaje.dateCreated+'" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr>'
+	}
+	
+	def buscarRespuesta(){
+		
+		println params.idRespuesta
+		
+		def respuesta = Mensaje.get(params.idRespuesta)
+		
+		render '<p>'+respuesta.mensaje+'<abbr class="timeago" title="'+respuesta.dateCreated+'" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr></p>'
 	}
 	
 }

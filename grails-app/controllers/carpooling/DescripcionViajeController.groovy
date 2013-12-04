@@ -18,7 +18,9 @@ class DescripcionViajeController {
 		def emisor = descripcionViajeService.buscarUsuario(idEmisor)
 		def receptor = descripcionViajeService.buscarUsuario(idReceptor)
 		
-		def mensaje = new Mensaje(mensaje:params.mensaje, receptor:receptor, emisor:emisor).save()
+		def mensaje = new Mensaje(mensaje:params.mensaje, receptor:receptor, emisor:emisor, idRespuesta: 0)
+		mensaje.save()
+	
 		
 		try {
 			Thread.sleep(2000);

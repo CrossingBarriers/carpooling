@@ -4,10 +4,12 @@ class Mensaje {
     Usuario emisor
 	Usuario receptor
 	String mensaje
+	Integer idRespuesta
 	Date dateCreated
 	
 	static mapping = {
 				version false
+				order "desc"
 			}
 	
     static constraints = {
