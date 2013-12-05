@@ -219,26 +219,48 @@
 								<td>
 									<center>
 										<g:if test="${viaje.domingo=='D'}">
-                          <strong class="text-primary">Dom</strong> 
-                            </g:if>
+											<strong class="text-warning">Dom</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Dom</strong>
+										</g:else>
 										<g:if test="${viaje.lunes=='L' }">
-                            <strong class="text-danger">Lun</strong>
-                            </g:if>
+											<strong class="text-warning">Lun</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Lun</strong>
+										</g:else>
 										<g:if test="${viaje.martes=='M' }">
-                            <strong class="text-success">Mar</strong>
-                            </g:if>
+											<strong class="text-warning">Mar</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Mar</strong>
+										</g:else>
 										<g:if test="${viaje.miercoles=='X' }">
-                           <strong class="text-warning">Mie</strong>
-                            </g:if>
+											<strong class="text-warning">Mie</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Mie</strong>
+										</g:else>
+
 										<g:if test="${viaje.jueves=='J'}">
-                            <strong class="text-danger">Jue</strong>
-                            </g:if>
+											<strong class="text-warning">Jue</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Jue</strong>
+										</g:else>
 										<g:if test="${viaje.viernes=='V' }">
-                            <strong class="text-primary">Vie</strong>
-                            </g:if>
+											<strong class="text-warning">Vie</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Vie</strong>
+										</g:else>
 										<g:if test="${viaje.sabado=='S' }">
-                            <strong class="text-success">Sab</strong>
-                            </g:if>
+											<strong class="text-warning">Sab</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Sab</strong>
+										</g:else>
 									</center>
 								</td>
 								<td>
