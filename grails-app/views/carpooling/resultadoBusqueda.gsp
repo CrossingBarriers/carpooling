@@ -98,26 +98,36 @@
 
 			<div class="seccion_imgs caja-sombra _imgs">
 
-				<g:each in = "${resultado}">
+				<g:each var="resultado" in = "${resultado}">
+				
+				<g:form controller="descripcionViaje"
+					action="renderDescripcionViajeView" method="post">
+				
 				<div class="alert alert-info">
-					<h4>${it.desde.tokenize(',').first()} - ${it.hasta.tokenize(',').first()}</h4>
-					<h5><strong>Desde:</strong> ${it.desde}<strong>Hasta:</strong> ${it.hasta}</h5>
+					<h4>${resultado.desde.tokenize(',').first()} - ${resultado.hasta.tokenize(',').first()}</h4>
+					<h5><strong>Desde:</strong> ${resultado.desde}<strong>Hasta:</strong> ${resultado.hasta}</h5>
 					<div class="col-md-6 col-xs-3 col-sm-4">
 						<ul>
-							<li><strong>Chofer: </strong>${it.vehiculo.usuario.nombre} ${it.vehiculo.usuario.apellido}</li>
-							<li><strong>Vehiculo: </strong>${it.vehiculo.marca} ${it.vehiculo.modelo}</li>
+							<li><strong>Chofer: </strong>${resultado.vehiculo.usuario.nombre} ${resultado.vehiculo.usuario.apellido}</li>
+							<li><strong>Vehiculo: </strong>${resultado.vehiculo.marca} ${resultado.vehiculo.modelo}</li>
 						</ul>
 					</div>
 					<div class="col-md-6 col-xs-3 col-sm-4">
 						<ul class="pull-left">
-							<li><strong>Lugares disponibles: </strong>${it.asientosLibres}</li>
-							<li><strong>Colaboración: </strong>$${it.colaboracion}</li>
+							<li><strong>Lugares disponibles: </strong>${resultado.asientosLibres}</li>
+							<li><strong>Colaboración: </strong>$${resultado.colaboracion}</li>
 						</ul>
 						<g:link class="btn btn-warning btn-xs pull-right"
 							controller="DescripcionViaje" action="renderDescripcionViajeView">Ver detalle</g:link>
+						
+						<button type="submit" class="btn btn-warning">Ver detalle</button>
+							
 					</div>
 					<div class="clearfix"></div>
 				</div>
+				
+				</g:form>
+				
 				</g:each>
 
 			</div>

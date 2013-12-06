@@ -3,6 +3,9 @@ package carpooling
 class DescripcionViajeController {
 	
 	def descripcionViajeService
+	
+	def descripcionViaje() {
+	}
 
     def renderDescripcionViajeView =  {
 		

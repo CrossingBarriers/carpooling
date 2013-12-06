@@ -16,7 +16,7 @@ class ResultadoBusquedaController {
 		
 		Double valor = 1000
 
-		def busqueda = new Busqueda(desde:params.desde, desdeLatitud:params.desdelat, desdeLongitud:params.desdelong, hasta:params.hasta, hh:params.hh, mm:params.mm).save()
+		def busqueda = new Busqueda(desde:params.desde, desdeLatitud:params.desdelat, desdeLongitud:params.desdelong, hasta:params.hasta, hastaLatitud:params.hastalat, hastaLongitud:params.hastalong, hh:params.hh, mm:params.mm).save()
 		def lista = resultadoBusquedaService.busquedaViajes(busqueda)
 		print lista
 		
@@ -24,9 +24,10 @@ class ResultadoBusquedaController {
 		
 		for ( registro in lista) {
 
-			def distancia = calcularDistancia(registro.desdeLatitud, registro.desdeLongitud, busqueda)
+			def distanciaDesde = calcularDistanciaDesde(registro.desdeLatitud, registro.desdeLongitud, busqueda)
+			def distanciaHasta = calcularDistanciaHasta(registro.hastaLatitud, registro.hastaLongitud, busqueda)
 			
-			if(distancia <= valor){
+			if(distanciaDesde <= valor && distanciaHasta <= valor){
 				listresult.add(registro)
 								
 			}
@@ -52,7 +53,7 @@ class ResultadoBusquedaController {
 //		return d ; // meters
 //	}
 	
-	Double calcularDistancia(desdeLatitud, desdeLongitud, busqueda){
+	Double calcularDistanciaDesde(desdeLatitud, desdeLongitud, busqueda){
 		
 //		Double lat2 = -34.66821;
 //		Double lon2 =  -58.56780;
@@ -90,5 +91,21 @@ class ResultadoBusquedaController {
 		return dist;
 		
 	}*/
+	
+	Double calcularDistanciaHasta(hastaLatitud, hastaLongitud, busqueda){
+		
+		Double buslat =  busqueda.hastaLatitud.toDouble();
+		Double buslong =  busqueda.hastaLongitud.toDouble();
+		Double earthRadius = 6371; //kilometers
+		Double dLat = Math.toRadians(hastaLatitud - buslat);
+		Double dLng = Math.toRadians(hastaLongitud - buslong);
+		Double sindLat = Math.sin(dLat / 2);
+		Double sindLng = Math.sin(dLng / 2);
+		Double a = Math.pow(sindLat, 2) + Math.pow(sindLng, 2) * Math.cos(Math.toRadians(buslat)) * Math.cos(Math.toRadians(hastaLatitud));
+		Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		Double dist = earthRadius * c*1000;
+		return dist;
+		
+	}
 
 }

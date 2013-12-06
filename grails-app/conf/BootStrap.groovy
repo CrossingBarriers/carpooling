@@ -35,16 +35,16 @@ class BootStrap {
 		 println vehiculo2.errors*/
 
 
-		def viaje1 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669938, desdeLongitud: -58.562190999999984, hasta: "Bariloche, Río Negro, Argentina", hora: 16, minutos: 30 , domingo: false, lunes: true, martes: false, miercoles: true, jueves: false, viernes: true, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
+		def viaje1 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669938, desdeLongitud: -58.562190999999984, hasta: "Bariloche, Río Negro, Argentina", hastaLatitud: -41.1334722, hastaLongitud: -71.3102778, hora: 16, minutos: 30 , domingo: false, lunes: true, martes: false, miercoles: true, jueves: false, viernes: true, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
 		viaje1.save()
 
 
-		def viaje2 = new ViajeRegistrado(desde: "Walmart San Justo - Brig. Gral. Juan Manuel de Rosas, San Justo, Buenos Aires Province, Argentina", desdeLatitud: -34.68508, desdeLongitud: -58.558298000000036, hasta: "Bariloche, Río Negro, Argentina", hora: 20, minutos: 00, domingo: false, lunes: false, martes: true, miercoles: false, jueves: true, viernes: false, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
+		def viaje2 = new ViajeRegistrado(desde: "Walmart San Justo - Brig. Gral. Juan Manuel de Rosas, San Justo, Buenos Aires Province, Argentina", desdeLatitud: -34.68508, desdeLongitud: -58.558298000000036, hasta: "Bariloche, Río Negro, Argentina", hastaLatitud: -41.1334722, hastaLongitud: -71.3102778, hora: 20, minutos: 00, domingo: false, lunes: false, martes: true, miercoles: false, jueves: true, viernes: false, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
 		viaje2.save()
 
 		println viaje2.errors
 		
-		def viaje3 = new ViajeRegistrado(desde: "Hospital Italiano de San Justo Agustín Rocca, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669217, desdeLongitud: -58.56751400000002, hasta: "Bariloche, Río Negro, Argentina", hora: 20, minutos: 30 , domingo: false, lunes: false, martes: true, miercoles: false, jueves: false, viernes: false, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
+		def viaje3 = new ViajeRegistrado(desde: "Hospital Italiano de San Justo Agustín Rocca, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669217, desdeLongitud: -58.56751400000002, hasta: "Bariloche, Río Negro, Argentina", hastaLatitud: -41.1334722, hastaLongitud: -71.3102778, hora: 20, minutos: 30 , domingo: false, lunes: false, martes: true, miercoles: false, jueves: false, viernes: false, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
 		viaje3.save()
 
 		println viaje3.errors
