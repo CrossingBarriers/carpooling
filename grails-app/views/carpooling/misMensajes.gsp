@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Carpooling BA - Resultado de la Busqueda</title>
+<title>Carpooling BA - Mis Mensajes</title>
 
 <link rel="stylesheet"
 	href="${resource(dir: 'css', file: 'estilos.css')}" type="text/css" />
@@ -29,6 +29,7 @@ $(document).ready(function(){
 	
 	jQuery("abbr.timeago").timeago();
 
+
 	$('#contenido .alert textarea.mis_mensajes').focus(function () {
 	    $(this).animate({ height: "60px" }, 500);
 	    var current = $("textarea.mis_mensajes").index(this);
@@ -39,18 +40,29 @@ $(document).ready(function(){
 
 })
 
-	function borrarMensaje(current) {
-		setTimeout(function () {
-			$("#"+current+"").fadeOut(1500);
-		},2000);
+function success(current) {
+    	$("#"+current+" h6").attr("class","show");
 	}
 
+function toggle(current) {
+	$("#"+current+" p.respuesta").toggle("slow");
+}
 
-function precarga(current) {
-	$("#"+current+"").html('<p style="text-align:center;"><img src="${resource(dir: 'images/carpooling', file: 'ajax-loader.gif')}"/></p>');
+function borrarMensaje(current) {
+	setTimeout(function () {
+		$("#"+current+"").fadeOut(1500);
+	},2000);
 }
 
 
+function precargaBorrar(current) {
+	$("#"+current+"").html('<p style="text-align:center;"><img src="${resource(dir: 'images/carpooling', file: 'ajax-loader.gif')}"/></p>');
+}
+
+function precargaRespuesta(current) {
+	$("#"+current+" form").remove();
+	$("#"+current+" p.respuesta").html('<p style="text-align:center;"><img src="${resource(dir: 'images/carpooling', file: 'ajax-loader.gif')}"/></p>');
+}
 
 </script>
 
@@ -135,19 +147,32 @@ function precarga(current) {
 					<h4>Mensaje de: ${it.receptor.nombre} ${it.receptor.apellido}</h4>
 						<g:remoteLink id="${it.id}" class="close" data-dismiss="alert"
 							controller="misMensajes" action="borrarMensaje" update="${it.id}"
-							onSuccess="borrarMensaje(${it.id})" onLoading="precarga(${it.id})" title="Eliminar mensaje">×</g:remoteLink>
-						<p>${it.mensaje} <abbr class="timeago" title="${it.dateCreated}" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr></p>
-					<g:form controller="MisMensajes" action="guardarMensaje" method="post">
+							onSuccess="borrarMensaje(${it.id})" onLoading="precargaBorrar(${it.id})" title="Eliminar mensaje">×</g:remoteLink>
+						<p><span class="glyphicon glyphicon-comment"></span> ${it.mensaje} <abbr class="timeago" title="${it.dateCreated}" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr></p>
+						
+					<g:if test="${it.idRespuesta > 0}">
+						<h6><strong><g:remoteLink class="respuestas" controller= 'misMensajes' action= 'buscarRespuesta' params="${[idRespuesta: it.idRespuesta]}" update="${it.id} p.respuesta" onSuccess="toggle(${it.id})">Respuesta:</g:remoteLink></strong></h6>
+						<p class="respuesta"></p>
+					</g:if>
+
+					<g:if test="${it.idRespuesta == 0}">
+						<h6 class="hidden"><strong>Respuesta:</strong></h6>
+    				 	<p class="respuesta"></p>
+						<g:formRemote name="enviar_mensaje" url="[controller: 'misMensajes', action:'responderMensaje']" update="${it.id} p.respuesta" method="post" onLoading="precargaRespuesta(${it.id})" onSuccess="success(${it.id})">
     				        <div class="form-group">
         						<g:textArea class="form-control mis_mensajes" name="mensaje" placeholder="Reponder mensaje..."/>
         						<g:field type="hidden" name="receptor" value="29157077"/>
+        						<g:field type="hidden" name="idMensaje" value="${it.id}"/>
         					</div>
         					
         					<center class="btn_vehiculo hidden">
                                 <button type="submit" class="btn btn-success btn-xs">Responder</button>
                                 <button type="reset" class="btn btn-default btn-xs">Cancelar</button>
                             </center>
-    				 </g:form>
+    				 </g:formRemote>
+    				 
+					</g:if>
+						
 				</div>
 				</g:each>
 

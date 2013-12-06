@@ -55,7 +55,7 @@ grails.project.dependency.resolution = {
     plugins {
         // plugins for the build system only
         build ":tomcat:7.0.42"
-
+		compile ":spring-security-core:1.2.7.1"
         // plugins for the compile step
         compile ":scaffolding:2.0.0"
         compile ':cache:1.1.1'
@@ -63,7 +63,7 @@ grails.project.dependency.resolution = {
 		//PARA EL GOOGLE MAPS
 		compile ":jquery:1.10.2.2"
 		compile ":google-visualization:0.6.2"
-
+		
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.1" // or ":hibernate4:4.1.11.1"
         runtime ":database-migration:1.3.5"

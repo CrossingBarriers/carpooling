@@ -27,12 +27,9 @@ class RegistrateController {
 			def  imgLugar = destination.getAbsolutePath()
 			def  imaLug = imgLugar.toString();
 
-			def usuario=new Usuario(nombre:params.nombre,apellido:params.apellido,dni:params.dni,email:params.email,
-			telefono:params.telefono,imagen: "${imaLug}",ocupacion:params.ocupacion,contrasenia:params.contrasenia,conductor: false)
+			def usuario=new Usuario(enabled: true, nombre:params.nombre,apellido:params.apellido,dni:params.dni,username:params.email,
+			telefono:params.telefono,imagen: "${imaLug}",ocupacion:params.ocupacion,password:params.contrasenia,conductor: false)
 			usuario.save()
-
-			def unUsuario = params.email
-			session["usuarioLogueado"] = unUsuario
 
 			render (view:'/carpooling/perfilUsuario', model: [usuario : usuario])
 

@@ -128,20 +128,24 @@
 
 				<div class="login seccion_img caja-sombra">
 
-					<form role="form">
+					<form action="/Carpooling/j_spring_security_check" method="POST" id="loginForm" autocomplete="off">
 						<div class="form-group">
 							<label for="usuario">Usuario</label>
-							<g:field type="text"  id="usuario" name="usuario"
+							<g:field type="text"  id="email" name="j_username"
 								class="form-control" placeholder="Ingrese usuario..." />
 						</div>
 						<div class="form-group">
 							<label for="password">Password</label> <g:field type="password"
-								id="contrasenia" name="contrasenia" class="form-control" placeholder="Ingrese contraseña..." />
+								name="j_password" id="contrasenia" class="form-control" placeholder="Ingrese contraseña..." />
 						</div>
 						
 						<g:submitButton name="submit" value="Iniciar Sesión" class="btn btn-warning"/>
 						
 					</form>
+					
+					<g:if test='${flash.message}'>
+						<div class='alert alert-danger'>${flash.message}</div>
+					</g:if>
 
 				</div>
 			</div>

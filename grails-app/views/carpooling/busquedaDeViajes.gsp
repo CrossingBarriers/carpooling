@@ -115,50 +115,61 @@
 					action="renderResultadoBusquedaView" method="post">
 					<div class="col-md-6">
 						<div class="form-group">
-							<label for="desde">Desde:</label>
-							<input type="text" id="desde" name="desde" class="form-control" />
+							<label for="desde">Desde:</label> <input type="text" id="desde"
+								name="desde" class="form-control" />
 						</div>
-						<div class="form-group"> <!-- Ver si sirve -->
-									<label for="coord" class="pull-left">Coordenadas:</label>
-									<div class="col-xs-4">
-									  <center>Latitud</center> 
-										<g:field name="desdelat" id="desdelat" type="text" class="form-control" />
-									</div>
-									
-									<div class="col-xs-4">
-									<center>Longitud</center>
-										<g:field name="desdelong" id="desdelong" type="text" class="form-control"/>
-									</div>
-									<div class="clearfix"></div>
-						</div> <!--FIN: Ver si sirve -->
 						<div class="form-group">
-							<label for="hasta">Hasta:</label>
-							<input type="text" id="hasta" name="hasta" class="form-control" />
+							<!-- Ver si sirve -->
+							<label for="coord" class="pull-left">Coordenadas:</label>
+							<div class="col-xs-4">
+								<center>Latitud</center>
+								<g:field name="desdelat" id="desdelat" type="text"
+									class="form-control" />
+							</div>
+
+							<div class="col-xs-4">
+								<center>Longitud</center>
+								<g:field name="desdelong" id="desdelong" type="text"
+									class="form-control" />
+							</div>
+							<div class="clearfix"></div>
 						</div>
-						<div class="form-group">  <!-- Ver si sirve -->
-									<label for="coord" class="pull-left">Coordenadas:</label>
-									<div class="col-xs-4">
-									  <center>Latitud</center> 
-										<g:field name="hastalat" id="hastalat" type="text" class="form-control" />
-									</div>
-									
-									<div class="col-xs-4">
-									<center>Longitud</center>
-										<g:field name="hastalong" id="hastalong" type="text" class="form-control"/>
-									</div>
-									<div class="clearfix"></div>
-						</div> <!--FIN: Ver si sirve -->
-						
+						<!--FIN: Ver si sirve -->
+						<div class="form-group">
+							<label for="hasta">Hasta:</label> <input type="text" id="hasta"
+								name="hasta" class="form-control" />
+						</div>
+						<div class="form-group">
+							<!-- Ver si sirve -->
+							<label for="coord" class="pull-left">Coordenadas:</label>
+							<div class="col-xs-4">
+								<center>Latitud</center>
+								<g:field name="hastalat" id="hastalat" type="text"
+									class="form-control" />
+							</div>
+
+							<div class="col-xs-4">
+								<center>Longitud</center>
+								<g:field name="hastalong" id="hastalong" type="text"
+									class="form-control" />
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<!--FIN: Ver si sirve -->
+
 						<div class="form-group">
 							<label for="hora" class="pull-left">Hora de salida:</label>
 							<div class="col-xs-3">
-							<input type="text"name="hh" class="form-control" placeholder="hh" />
+								<input type="text" name="hh" class="form-control"
+									placeholder="hh" />
 							</div>
-							<label for="dos_puntos" class="pull-left" style="padding-left:0;">:</label>
+							<label for="dos_puntos" class="pull-left"
+								style="padding-left: 0;">:</label>
 							<div class="col-xs-3">
-							<input type="text" name="mm" class="form-control" placeholder="mm" />
-						   </div>
-						   <div class="clearfix"></div>
+								<input type="text" name="mm" class="form-control"
+									placeholder="mm" />
+							</div>
+							<div class="clearfix"></div>
 						</div>
 
 						<label for="frecuencia">Frecuencia:</label>

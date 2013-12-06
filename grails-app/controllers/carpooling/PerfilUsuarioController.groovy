@@ -11,17 +11,17 @@ class PerfilUsuarioController {
 
 	def renderPerfilUsuarioView =  {
 
-
 		/*def usuario = Usuario.get(2)*/
-		def logueado = session.getAttribute("usuarioLogueado")
+		def logueado = sec.loggedInUserInfo(field: 'username')
 
 
-		if(logueado != null)
+		if(logueado)
 		{
-			def usuario = Usuario.findByEmail(logueado)
+			def usuario = Usuario.findByUsername(logueado)
 			render(view:"/carpooling/perfilUsuario", model: [usuario : usuario])
 
 		}
+		
 		else{
 			def redirectIndexController = {
 
@@ -34,21 +34,12 @@ class PerfilUsuarioController {
 
 	def mostrarImagen(){
 
-		def logueado = session.getAttribute("usuarioLogueado")
-		def usuario = Usuario.findByEmail(logueado)
-		/*def rutaArchivo = getGrailsApplication.mainContext.servletContext.getRealPath(usuario.imagen)*/
-		/*def rutaArchivo = grailsAttributes.getApplicationContext().getResource(usuario.imagen).getFile()*/
-		/*def rutaArchivo = getGrailsApplication().parentContext.getResource(usuario.imagen).getFile()*/
-
-		def a  = usuario.imagen
-		println a
-		File b = new File(a)
-		OutputStream out = response.getOutputStream();
-		out.write(b.bytes);
-		out.close();
-
-
-		/*response.outputStream<< new ByteArrayInputStream(usuario.imagen)*/
+			def usuario = Usuario.findByUsername(logueado)
+			def a  = usuario.imagen
+			File b = new File(a)
+			OutputStream out = response.getOutputStream();
+			out.write(b.bytes);
+			out.close();
 
 	}
 

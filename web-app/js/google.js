@@ -73,9 +73,6 @@ function initialize() {
     var lat_1 = place_1.geometry.location.pb;
     var lng_1 = place_1.geometry.location.qb;
     
-    //alert("lat_1: " + lat_1);
-    //alert("lng_1: " + lng_1);
-    
     var desdelatitud = document.getElementById("desdelat");
     desdelatitud.value = lat_1;
     
@@ -105,10 +102,7 @@ function initialize() {
 		
 	    var lat_2 = place_2.geometry.location.pb;
 	    var lng_2 = place_2.geometry.location.qb;
-	    
-	    //alert("lat_2: " + lat_2);
-	    //alert("lng_2: " + lng_2);
-	    
+
 	    var hastalatitud = document.getElementById("hastalat");
 	    hastalatitud.value = lat_2;
 	    

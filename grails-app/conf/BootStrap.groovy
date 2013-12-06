@@ -4,14 +4,15 @@ import carpooling.UsuarioUnido
 import carpooling.ViajeRegistrado
 
 class BootStrap {
-
+	/*def springSecuritySevice*/
 	def init = { servletContext ->
-
+		
 		def usuario1 = new Usuario(dni: 33222000, nombre: 'Maria', apellido: 'Lopez', email: 'marialopez@gmail.com',imagen:"C:\33222000.jpg",ocupacion:'Estudiante en UNLAM', telefono: 35282463 , contrasenia: 'abc123', conductor: false)
 		usuario1.save()
 
 		println usuario1
 		
+
 		def usuario2 = new Usuario(dni: 29157077, nombre: "Lucia", apellido: "Roldan", email: "luciaroldan@gmail.com",imagen:"C:\29157077.jpg", ocupacion:'Auditora en Nestle', telefono: 44414566 , contrasenia: 'def456', conductor: false)
 		usuario2.save()
 
@@ -22,7 +23,6 @@ class BootStrap {
 		usuario3.save()
 
 		println usuario3.errors*/
-
 
 		def vehiculo1 = new Vehiculo(patente: "MUA123", marca: "Chevrolet", modelo: "Cruze", cantidadAsientos: 3, imagen:"D:\\MUA123.jpg", usuario: usuario1) // El usuario 1 es conductor
 		vehiculo1.save(failOnError:true)
@@ -38,8 +38,6 @@ class BootStrap {
 		def viaje1 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669938, desdeLongitud: -58.562190999999984, hasta: "Bariloche, Río Negro, Argentina", hora: 16, minutos: 30 , domingo: false, lunes: true, martes: false, miercoles: true, jueves: false, viernes: true, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
 		viaje1.save()
 
-		println viaje1.errors
-
 
 		def viaje2 = new ViajeRegistrado(desde: "Walmart San Justo - Brig. Gral. Juan Manuel de Rosas, San Justo, Buenos Aires Province, Argentina", desdeLatitud: -34.68508, desdeLongitud: -58.558298000000036, hasta: "Bariloche, Río Negro, Argentina", hora: 20, minutos: 00, domingo: false, lunes: false, martes: true, miercoles: false, jueves: true, viernes: false, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
 		viaje2.save()
@@ -50,23 +48,23 @@ class BootStrap {
 		viaje3.save()
 
 		println viaje3.errors
-		
-		/*def pasajero1 = new UsuarioUnido(viaje: viaje1, dia: 'L', usuario: usuario2)
-		pasajero1.save()
-
-		println pasajero1.errors
-
-
-		def pasajero2 = new UsuarioUnido(viaje: viaje1, dia: 'X', usuario: usuario2)
-		pasajero2.save()
-
-		println pasajero2.errors
-
-
-		def pasajero3 = new UsuarioUnido(viaje: viaje1, dia: 'L', usuario: usuario3)
-		pasajero3.save()
-
-		println pasajero3.errors*/
+	
+//		def pasajero1 = new UsuarioUnido(viaje: viaje1, dia: 'L', usuario: usuario2)
+//		pasajero1.save()
+//
+//		println pasajero1.errors
+//
+//
+//		def pasajero2 = new UsuarioUnido(viaje: viaje1, dia: 'X', usuario: usuario2)
+//		pasajero2.save()
+//
+//		println pasajero2.errors
+//
+//
+//		def pasajero3 = new UsuarioUnido(viaje: viaje1, dia: 'L', usuario: usuario3)
+//		pasajero3.save()
+//
+//		println pasajero3.errors
 	}
 
 	def destroy = {

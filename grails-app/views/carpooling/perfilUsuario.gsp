@@ -59,27 +59,35 @@
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
 				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-				<li class="pull-right"><g:link controller="MisMensajes"
+				
+				<g:if test="${sec.loggedInUserInfo(field: 'username') == ''}">
+					<li><g:link controller="index"
+						action="renderIndexView">INGRESAR</g:link></li>
+				</g:if>
+				
+				<sec:ifLoggedIn>
+					<li class="pull-right"><g:link controller="MisMensajes"
 						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
 						<em class="ml-count ch-hide" style="display: inline;">2</em>
 					</g:link></li>
-
-				<li class="pull-right" style="padding-right: 15px;">
-					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>Fulanito de
-								Tal</span> <span class="glyphicon glyphicon-user"></span> </a>
-
-						<ul class="dropdown-menu" role="menu">
-							<li><g:link controller="perfilUsuario"
-									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-							<li><g:link controller="tipoUsuario"
-									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
-							<li class="divider"></li>
-							<li><a href="index.html">Cerrar Sesión</a></li>
-						</ul>
-					</div>
-				</li>
+				
+					<li class="pull-right" style="padding-right: 15px;">
+						<div class="dropdown">
+							<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span> <span class="glyphicon glyphicon-user"></span> </a>
+	
+							<ul class="dropdown-menu" role="menu">
+								<li><g:link controller="perfilUsuario"
+										action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+								<li><g:link controller="tipoUsuario"
+										action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+								<li class="divider"></li>
+								<li><a href="index.html">Cerrar Sesión</a></li>
+							</ul>
+						</div>
+					</li>
+				</sec:ifLoggedIn>
+				
 				<div class="clearfix"></div>
 			</ul>
 		</div>
@@ -96,7 +104,7 @@
 						<br /> <span class="glyphicon glyphicon-chevron-right"></span><strong>DNI:</strong>
 						${usuario.dni}
 						<br /> <span class="glyphicon glyphicon-chevron-right"></span><strong>Email:</strong>
-						<a href="mailto:#"> ${usuario.email}
+						<a href="mailto:#"> ${usuario.username}
 						</a> <br /> <span class="glyphicon glyphicon-chevron-right"></span><strong>Telefono:</strong>
 						${usuario.telefono}
 						<br /> <span class="glyphicon glyphicon-chevron-right"></span><strong>Ocupacion:</strong>
@@ -104,7 +112,7 @@
 					</div>
 					<div class="form-group">
 						<img width="250px" height="165px" class="img-thumbnail"
-							src="${createLink(controller:'perfilUsuario', action:'mostrarImagen')}" />
+							src="${createLink(controller:'perfilUsuario', action:'mostrarImagen' , params: ['imagen': usuario.imagen])}" />
 						<br /> <br />
 					</div>
 				</div>
