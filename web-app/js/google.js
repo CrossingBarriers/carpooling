@@ -34,7 +34,8 @@ function initialize() {
   google.maps.event.addListener(autocomplete_1, 'place_changed', function() {
     infowindow.close();
     marker.setVisible(false);
-    var place_1 = autocomplete_1.getPlace();
+    var place_1 = autocomplete_1.getPlace(); 
+    
     if (!place_1.geometry) {
       // Inform the user that the place was not found and return.
       input_1.className = 'notfound';
@@ -66,9 +67,23 @@ function initialize() {
         (place_1.address_components[2] && place_1.address_components[2].short_name || '')
       ].join(' ');
     }
-
+    
+    /* Para obtener las coordenadas del campo DESDE */
+    
+    var lat_1 = place_1.geometry.location.pb;
+    var lng_1 = place_1.geometry.location.qb;
+    
+    var desdelatitud = document.getElementById("desdelat");
+    desdelatitud.value = lat_1;
+    
+    var desdelongitud = document.getElementById("desdelong");
+    desdelongitud.value = lng_1;
+    
+    /**/
+    
     infowindow.setContent('<div><strong>' + place_1.name + '</strong><br>' + address);
     infowindow.open(map, marker);
+    
   });
 
 //fin input 1
@@ -80,6 +95,21 @@ function initialize() {
 
 		var start = document.getElementById("desde").value;
 		var end = document.getElementById("hasta").value;
+		
+		/* Para obtener las coordenadas del campo HASTA */
+	    
+	    var place_2 = autocomplete_2.getPlace();
+		
+	    var lat_2 = place_2.geometry.location.pb;
+	    var lng_2 = place_2.geometry.location.qb;
+	    
+	    var hastalatitud = document.getElementById("hastalat");
+	    hastalatitud.value = lat_2;
+	    
+	    var hastalongitud = document.getElementById("hastalong");
+	    hastalongitud.value = lng_2;
+	    
+	    /**/
   
 		var request = {
 			  origin:start,
