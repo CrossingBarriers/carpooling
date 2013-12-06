@@ -3,6 +3,8 @@ package carpooling
 class ViajeRegistrado {
 
 	String desde
+	Double desdeLatitud
+	Double desdeLongitud
 	String hasta
 	Integer hora
 	Integer minutos
