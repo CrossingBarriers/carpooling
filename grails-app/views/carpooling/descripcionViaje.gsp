@@ -95,7 +95,7 @@
 				
 				<li class="pull-right" style="padding-right:15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>Fulanito de Tal</span>
+						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span>
 							<span class="glyphicon glyphicon-user"></span>
 						</a>
 						
@@ -107,7 +107,7 @@
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
-							<li><a href="index.html">Cerrar Sesión</a></li>
+							<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
 						</ul>
 					</div>
 				</li>
@@ -125,34 +125,36 @@
                     <div class="row">
                         <div class="col-md-8">
                             <h4>Conductor</h4>
-                            <h5><strong>Nombre: </strong>Fulanito de Tal</h5>
-                            <h5><strong>DNI: </strong>33157053</h5>
-                            <h5><strong>Teléfono: </strong>1130306084</h5>
+                            <h5><strong>Nombre: </strong>${usuario.nombre}</h5>
+                            <h5><strong>DNI: </strong>${usuario.dni}</h5>
+                            <h5><strong>Teléfono: </strong>${usuario.telefono}</h5>
                             </br>
                             <h5><strong>Reputacion: </strong></h5>
                             <h5>Positivo: 1 | Negativo: 0 | Neutro: 0</h5>
                         </div>
                         <div class="col-md-4">
-                            <div class="thumbnail" style="width: 148px;">
-                                <img data-src="js/holder.js/140x140" alt="conductor"/>
-                            </div>
+                            <div class="img-thumbnail">
+							<img width="140px" height="140px" class="center-block"
+							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuario.imagen])}" alt="${usuario.nombre}" />
+			             </div>
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="col-md-6">
                             <h4>Vehiculo</h4>
-                            <h5><strong>Marca: </strong>Renault</h5>
-                            <h5><strong>Model: </strong>Clio</h5>
-                            <h5><strong>Patente: </strong>MND405</h5>
+                            <h5><strong>Marca: </strong>${vehiculo.marca}</h5>
+                            <h5><strong>Model: </strong>${vehiculo.modelo}</h5>
+                            <h5><strong>Patente: </strong>${vehiculo.patente}</h5>
                             </br>
-                            <h5><strong>Lugares Disponibles: </strong>3</h5>
-                            <h5><strong>Colaboración: </strong>$20</h5>
+                            <h5><strong>Lugares Disponibles: </strong>${viaje.asientosLibres}</h5>
+                            <h5><strong>Colaboración: </strong>$${viaje.colaboracion}</h5>
                         </div>
                         <div class="col-md-6">
-                            <div class="thumbnail" style="width: 228px;">
-                                <img data-src="js/holder.js/220x200" alt="cedula"/>
-                            </div>
+                            <div class="img-thumbnail">
+							<img width="220px" height="200px" class="center-block"
+							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': vehiculo.imagen])}" alt="${vehiculo.patente}" />
+			             </div>
                         </div>
                     </div>
     				
@@ -161,7 +163,7 @@
     				        <div class="form-group">
         						<label for="comentario">Mensaje:</label>
         						<g:textArea class="form-control" name="mensaje" placeholder="Enviale un mensaje al conductor..."/>
-        						<g:field type="hidden" name="receptor" value="29157077"/>
+        						<g:field type="hidden" name="receptor" value="${usuario.username}"/>
         					</div>
         					
         					<div id="success" class="hidden">
@@ -178,10 +180,10 @@
                 
                 <div class="col-md-6">
                     <h4>Viaje</h4>
-                    <h5><strong>Desde: </strong>Basualdo 626 - Villa Luro</h5>
-                    <h5><strong>Hasta: </strong>Bolivar 2874 - Lomas del Mirador</h5>
-                    <h5><strong>Hora de Salida: </strong>6:30</h5>
-                    <h5><strong>Dia/as: </strong>Lun - Mar - Mier - Jue - Vie</h5>
+                    <h5><strong>Desde: </strong>${viaje.desde}</h5>
+                    <h5><strong>Hasta: </strong>${viaje.hasta}</h5>
+                    <h5><strong>Hora de Salida: </strong>${viaje.hora}:${viaje.minutos}</h5>
+                    <h5><strong>Dia/as: </strong>${viaje.domingo} - ${viaje.lunes} - ${viaje.martes} - ${viaje.miercoles} - ${viaje.jueves} - ${viaje.viernes} - ${viaje.sabado}</h5>
     				<div id="map-canvas" style="width: 410px; height: 281px; margin: 75px auto 0"></div>
     				<center class="btn_vehiculo">
 	                    <button type="submit" class="btn btn-lg btn-block btn-success">Unirme</button>

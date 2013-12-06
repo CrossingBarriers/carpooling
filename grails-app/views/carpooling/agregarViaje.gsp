@@ -88,8 +88,7 @@
 
 				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>Fulanito de
-								Tal</span> <span class="glyphicon glyphicon-user"></span> </a>
+						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span> <span class="glyphicon glyphicon-user"></span> </a>
 
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
@@ -98,7 +97,7 @@
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
-							<li><a href="index.html">Cerrar Sesión</a></li>
+							<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
 						</ul>
 					</div>
 				</li>

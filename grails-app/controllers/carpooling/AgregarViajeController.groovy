@@ -16,10 +16,9 @@ class AgregarViajeController {
 	}
 
 	def guardarViaje(){
-		//def usuarioDni = springSecurityService.principal.dni
-		//println usuarioDni
-		Integer usuarioDni=33222000
-		def usuario=agregarViajeService.buscarUsuario(usuarioDni)
+		String logueado = sec.loggedInUserInfo(field: 'username')
+		
+		def usuario = agregarViajeService.buscarUsuario(logueado)
 		def vehiculo=agregarViajeService.buscarVehiculo(usuario)
 		def viaje=new ViajeRegistrado(desde:params.desde,desdeLatitud:params.desdelat,desdeLongitud:params.desdelong,hasta:params.hasta,
 		hastaLatitud:params.hastalat,hastaLongitud:params.hastalong,hora:params.hora,minutos:params.minutos,

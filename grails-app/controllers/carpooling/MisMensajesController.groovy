@@ -5,9 +5,9 @@ class MisMensajesController {
 	def misMensajesService
 	
     def listarMensajes() {
-		Integer usuario = 29157077
+		String logueado = sec.loggedInUserInfo(field: 'username')
 		
-		def receptor = misMensajesService.buscarReceptor(usuario)
+		def receptor = misMensajesService.buscarReceptor(logueado)
 		def mensajes = misMensajesService.buscarMensajes(receptor)
 		
 		render (view:"/carpooling/misMensajes", model:[mensajes:mensajes])
@@ -27,11 +27,11 @@ class MisMensajesController {
 	}
 	
 	def responderMensaje() {
-		Integer idEmisor = 33222000 //aca deberia tomar el dni del usuario logueado
+		String logueado = sec.loggedInUserInfo(field: 'username')
 		
-		Integer idReceptor = Integer.parseInt(params.receptor)
+		String idReceptor = params.receptor
 		
-		def emisor = misMensajesService.buscarReceptor(idEmisor)
+		def emisor = misMensajesService.buscarReceptor(logueado)
 		def receptor = misMensajesService.buscarReceptor(idReceptor)
 		
 		def respuesta = new Mensaje(mensaje:params.mensaje, receptor:receptor, emisor:emisor, idRespuesta: 0).save()

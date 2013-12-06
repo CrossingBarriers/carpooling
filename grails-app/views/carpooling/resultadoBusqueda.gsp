@@ -68,7 +68,7 @@
 				
 				<li class="pull-right" style="padding-right:15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>Fulanito de Tal</span>
+						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span>
 							<span class="glyphicon glyphicon-user"></span>
 						</a>
 						
@@ -80,7 +80,7 @@
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
-							<li><a href="index.html">Cerrar Sesión</a></li>
+							<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
 						</ul>
 					</div>
 				</li>
@@ -114,7 +114,7 @@
 							<li><strong>Colaboración: </strong>$${it.colaboracion}</li>
 						</ul>
 						<g:link class="btn btn-warning btn-xs pull-right"
-							controller="DescripcionViaje" action="renderDescripcionViajeView">Ver detalle</g:link>
+							controller="DescripcionViaje" action="renderDescripcionViajeView" params="${[idUsuario: it.vehiculo.usuario.username]}">Ver detalle</g:link>
 					</div>
 					<div class="clearfix"></div>
 				</div>

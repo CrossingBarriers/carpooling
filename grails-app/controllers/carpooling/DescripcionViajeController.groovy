@@ -6,16 +6,21 @@ class DescripcionViajeController {
 
     def renderDescripcionViajeView =  {
 		
-		render(view:"/carpooling/descripcionViaje")
+		String idUsuario = params.idUsuario
+		def usuario = descripcionViajeService.buscarUsuario(idUsuario)
+		def vehiculo = descripcionViajeService.buscarVehiculo(usuario)
+		def viaje = descripcionViajeService.buscarViaje(vehiculo)
+		
+		render(view:"/carpooling/descripcionViaje", model:[usuario:usuario, vehiculo:vehiculo, viaje:viaje])
 		
 	}
 	
 	def guardarMensaje() {
-		Integer idEmisor = 33222000 //aca deberia tomar el dni del usuario logueado
+		String logueado = sec.loggedInUserInfo(field: 'username')
 		
-		Integer idReceptor = Integer.parseInt(params.receptor)
+		String idReceptor = params.receptor
 		
-		def emisor = descripcionViajeService.buscarUsuario(idEmisor)
+		def emisor = descripcionViajeService.buscarUsuario(logueado)
 		def receptor = descripcionViajeService.buscarUsuario(idReceptor)
 		
 		def mensaje = new Mensaje(mensaje:params.mensaje, receptor:receptor, emisor:emisor, idRespuesta: 0)

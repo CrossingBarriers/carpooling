@@ -33,9 +33,7 @@ class PerfilUsuarioController {
 	}
 
 	def mostrarImagen(){
-
-			def usuario = Usuario.findByUsername(logueado)
-			def a  = usuario.imagen
+			def a  = params.imagen
 			File b = new File(a)
 			OutputStream out = response.getOutputStream();
 			out.write(b.bytes);

@@ -9,8 +9,8 @@ class AgregarViajeService {
     def serviceMethod() {
 
     }
-	def buscarUsuario(usuarioDni) {
-		Usuario.findAllByDni(usuarioDni)
+	def buscarUsuario(usuario) {
+		Usuario.findByUsername(usuario)
 	}
 	def buscarVehiculo(usuario){
 		Vehiculo.findAllByUsuario(usuario)

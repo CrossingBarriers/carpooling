@@ -114,7 +114,7 @@ function precargaRespuesta(current) {
 				
 				<li class="pull-right" style="padding-right:15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>Fulanito de Tal</span>
+						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span>
 							<span class="glyphicon glyphicon-user"></span>
 						</a>
 						
@@ -126,7 +126,7 @@ function precargaRespuesta(current) {
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
-							<li><a href="index.html">Cerrar Sesión</a></li>
+							<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
 						</ul>
 					</div>
 				</li>
@@ -144,7 +144,7 @@ function precargaRespuesta(current) {
 				<g:each in = "${mensajes.reverse()}">
 				
 				<div id="${it.id}" class="alert alert-info fade in">
-					<h4>Mensaje de: ${it.receptor.nombre} ${it.receptor.apellido}</h4>
+					<h4>Mensaje de: ${it.emisor.nombre} ${it.emisor.apellido}</h4>
 						<g:remoteLink id="${it.id}" class="close" data-dismiss="alert"
 							controller="misMensajes" action="borrarMensaje" update="${it.id}"
 							onSuccess="borrarMensaje(${it.id})" onLoading="precargaBorrar(${it.id})" title="Eliminar mensaje">×</g:remoteLink>
@@ -161,7 +161,7 @@ function precargaRespuesta(current) {
 						<g:formRemote name="enviar_mensaje" url="[controller: 'misMensajes', action:'responderMensaje']" update="${it.id} p.respuesta" method="post" onLoading="precargaRespuesta(${it.id})" onSuccess="success(${it.id})">
     				        <div class="form-group">
         						<g:textArea class="form-control mis_mensajes" name="mensaje" placeholder="Reponder mensaje..."/>
-        						<g:field type="hidden" name="receptor" value="29157077"/>
+        						<g:field type="hidden" name="receptor" value="${it.emisor.username}"/>
         						<g:field type="hidden" name="idMensaje" value="${it.id}"/>
         					</div>
         					
