@@ -12,9 +12,18 @@ class MisViajesController {
 	def renderMisViajesView =  {render(view:"/carpooling/misViajes")}
 
 	def index(){
-		def map=Vehiculo.list()
-		def viajes=ViajeRegistrado.list()
-		render (view:'/carpooling/misViajes', model:[map:map,viajes:viajes])
+		def logueado = sec.loggedInUserInfo(field: 'username')
+		def usuario=misViajesService.buscarUsuarioLogueado(logueado)
+		 
+				if(logueado)
+				{
+					def map=misViajesService.buscarUsuario(usuario)
+					def viajes=misViajesService.buscarViaje(map)
+					
+					render (view:'/carpooling/misViajes', model:[map:map,viajes:viajes])
+		
+				}
+	
 	}
 
 	def show(String patente){
@@ -33,6 +42,9 @@ class MisViajesController {
 
 	def quitarVehiculo(String id){
 		misViajesService.eliminarVehiculo(id)
+		//El usuario cambia su estado:sera pasajero
+		String logueado = sec.loggedInUserInfo(field: 'username')
+		Usuario.executeUpdate("update Usuario user set user.conductor='false' where user.username=?",[logueado])
 		redirect (controller:'misViajes', action:'index')
 	}
 
