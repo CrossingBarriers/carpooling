@@ -7,13 +7,15 @@ class BootStrap {
 	/*def springSecuritySevice*/
 	def init = { servletContext ->
 		
-		
-		def usuario1 = new Usuario( enabled: true ,dni: 33222000, nombre: 'Maria', apellido: 'Lopez', username: 'marialopez@gmail.com',imagen:'C:'+File.separator+'33222000.jpg',ocupacion:'Estudiante en UNLAM', telefono: 35282463 , password: 'abc123', conductor: false)
+		def usuario1 = new Usuario(dni: 33222000, nombre: 'Maria', apellido: 'Lopez', email: 'marialopez@gmail.com',imagen:'C:/33222000.jpg',ocupacion:'Estudiante en UNLAM', telefono: 35282463 , contrasenia: 'abc123', conductor: false)
+
 		usuario1.save()
 
 		println usuario1
 		
-		def usuario2 = new Usuario( enabled: true, dni: 29157077, nombre: "Lucia", apellido: "Roldan", username: "luciaroldan@gmail.com",imagen:'C:'+File.separator+'29157077.jpg', ocupacion:'Auditora en Nestle', telefono: 44414566 , password: 'def456', conductor: false)
+
+		def usuario2 = new Usuario(dni: 29157077, nombre: "Lucia", apellido: "Roldan", email: "luciaroldan@gmail.com",imagen:'C:/29157077.jpg', ocupacion:'Auditora en Nestle', telefono: 44414566 , contrasenia: 'def456', conductor: false)
+
 		usuario2.save()
 
 		println usuario2
@@ -25,10 +27,10 @@ class BootStrap {
 //		println usuario3.errors
 
 
-		def vehiculo1 = new Vehiculo(patente: "MUA123", marca: "Chevrolet", modelo: "Cruze", cantidadAsientos: 3, usuario: usuario1, imagen:'ruta') // El usuario 1 es conductor
-		vehiculo1.save(failOnError:true)
+//		def vehiculo1 = new Vehiculo(patente: "MUA123", marca: "Chevrolet", modelo: "Cruze", cantidadAsientos: 3, usuario: usuario1, imagen:'ruta') // El usuario 1 es conductor
+//		vehiculo1.save(failOnError:true)
 
-		println vehiculo1.errors
+//		println vehiculo1.errors
 
 
 //		def vehiculo2 = new Vehiculo(patente: "JAA123", marca: "Chevrolet", modelo: "Cruze", cantidadAsientos: 3, usuario: usuario1) // El usuario 1 es conductor
@@ -36,10 +38,10 @@ class BootStrap {
 //		 println vehiculo2.errors
 
 
-		def viaje1 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", hasta: "Palermo, Buenos Aires, Argentina", hora: 16, minutos: 30 , domingo: false, lunes: true, martes: false, miercoles: true, jueves: false, viernes: true, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
-		viaje1.save()
+//		def viaje1 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", hasta: "Palermo, Buenos Aires, Argentina", hora: 16, minutos: 30 , domingo: false, lunes: true, martes: false, miercoles: true, jueves: false, viernes: true, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")
+//		viaje1.save()
 
-		println viaje1.errors
+//		println viaje1.errors
 
 
 //		def viaje2 = new ViajeRegistrado(desde: "Walmart San Justo - Brig. Gral. Juan Manuel de Rosas, San Justo, Buenos Aires Province, Argentina", hasta: "Plaza de Mayo - Hipólito Yrigoyen, Buenos Aires, Argentina", hora: 20, minutos: 00, domingo: false, lunes: false, martes: true, miercoles: false, jueves: true, viernes: false, sabado: false, vehiculo: vehiculo1, colaboracion: 20, asientosLibres: 3, comentario: "-")

@@ -42,6 +42,7 @@
 
 </head>
 
+
 <body>
 
 	<div id="bg_header">
@@ -79,24 +80,21 @@
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
 				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-				<li class="pull-right">
-					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+				<li class="pull-right"><g:link controller="MisMensajes"
+						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
 						<em class="ml-count ch-hide" style="display: inline;">2</em>
-					</g:link>
-				</li>
-				
-				<li class="pull-right" style="padding-right:15px;">
+					</g:link></li>
+
+				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>Fulanito de Tal</span>
-							<span class="glyphicon glyphicon-user"></span>
-						</a>
-						
+						<a data-toggle="dropdown" href="#"><span>Fulanito de
+								Tal</span> <span class="glyphicon glyphicon-user"></span> </a>
+
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-							<li><g:link controller="misViajes"
-									action="index">Mis Viajes</g:link></li>
+							<li><g:link controller="misViajes" action="index">Mis Viajes</g:link></li>
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
@@ -128,54 +126,94 @@
 										class="form-control" id="desde" />
 								</div>
 								<div class="form-group">
+									<label for="coord" class="pull-left">Coordenadas:</label>
+									<div class="col-xs-4">
+										<center>Latitud</center>
+										<g:field name="desdelat" id="desdelat" type="text"
+											class="form-control" />
+									</div>
+
+									<div class="col-xs-4">
+										<center>Longitud</center>
+										<g:field name="desdelong" id="desdelong" type="text"
+											class="form-control" />
+									</div>
+									<div class="clearfix"></div>
+								</div>
+
+								<div class="form-group">
 									<label for="hasta">Hasta:</label>
 									<g:field name="hasta" id="hasta" type="text"
 										class="form-control" id="hasta" />
 								</div>
 								<div class="form-group">
+									<label for="coord" class="pull-left">Coordenadas:</label>
+									<div class="col-xs-4">
+										<center>Latitud</center>
+										<g:field name="hastalat" id="hastalat" type="text"
+											class="form-control" />
+									</div>
+
+									<div class="col-xs-4">
+										<center>Longitud</center>
+										<g:field name="hastalong" id="hastalong" type="text"
+											class="form-control" />
+									</div>
+									<div class="clearfix"></div>
+								</div>
+
+
+								<div class="form-group">
 									<label for="hora" class="pull-left">Hora de salida:</label>
 									<div class="col-xs-3">
-										<g:field name="hora" id="hora" type="text" class="form-control"
-											placeholder="hh" />
+										<g:field name="hora" id="hora" type="text"
+											class="form-control" placeholder="hh" />
 									</div>
 									<label for="hora" class="pull-left" style="padding-left: 0;">:</label>
 									<div class="col-xs-3">
-										<g:field type="text" name="minutos" id="minutos" class="form-control"
-											placeholder="mm" />
+										<g:field type="text" name="minutos" id="minutos"
+											class="form-control" placeholder="mm" />
 									</div>
 									<div class="clearfix"></div>
 								</div>
 								<label for="frecuencia">Frecuencia:</label>
 								<div id="checkboxset">
-									
-									<g:checkBox type="checkbox" id="checkbox1" name="domingo" value="D" checked="false"/><label
-										for="checkbox1">Dom</label> <g:checkBox type="checkbox"
-										id="checkbox2" name="lunes" value="L" checked="false"/><label
-											for="checkbox2">Lun</label> <g:checkBox type="checkbox"
-											id="checkbox3" name="martes" value="M" checked="false"/><label
-												for="checkbox3">Mar</label> <g:checkBox type="checkbox"
-												id="checkbox4" name="miercoles" value="X" checked="false"/><label
-													for="checkbox4">Mier</label> <g:checkBox type="checkbox"
-													id="checkbox5" name="jueves" value="J" checked="false"/><label
-														for="checkbox5">Jue</label> <g:checkBox type="checkbox"
-														id="checkbox6" name="viernes" value="V" checked="false"/><label
-															for="checkbox6">Vie</label> <g:checkBox type="checkbox"
-															id="checkbox7" name="sabado" value="S" checked="false"/><label
-																for="checkbox7">Sab</label>
+
+									<g:checkBox type="checkbox" id="checkbox1" name="domingo"
+										value="D" checked="false" />
+									<label for="checkbox1">Dom</label>
+									<g:checkBox type="checkbox" id="checkbox2" name="lunes"
+										value="L" checked="false" />
+									<label for="checkbox2">Lun</label>
+									<g:checkBox type="checkbox" id="checkbox3" name="martes"
+										value="M" checked="false" />
+									<label for="checkbox3">Mar</label>
+									<g:checkBox type="checkbox" id="checkbox4" name="miercoles"
+										value="X" checked="false" />
+									<label for="checkbox4">Mier</label>
+									<g:checkBox type="checkbox" id="checkbox5" name="jueves"
+										value="J" checked="false" />
+									<label for="checkbox5">Jue</label>
+									<g:checkBox type="checkbox" id="checkbox6" name="viernes"
+										value="V" checked="false" />
+									<label for="checkbox6">Vie</label>
+									<g:checkBox type="checkbox" id="checkbox7" name="sabado"
+										value="S" checked="false" />
+									<label for="checkbox7">Sab</label>
 								</div>
 								<div class="form-group">
 									<label for="colaboracion">Colaboración:</label>
 									<g:field name="colaboracion" id="colaboracion" type="text"
 										class="form-control" placeholder="Pesos" />
 								</div>
-								<div class="form-group">
-									<label for="disponibilidad">Lugares disponibles:</label>
-									<g:textField name="lugares" id="lugares" type="text"
-										class="form-control" placeholder="Ingrese cantidad" />
-								</div>
 								<br></br>
 							</div>
 							<div class="col-md-6">
+								<div class="form-group">
+									<label for="disponibilidad">Lugares disponibles:</label>
+									<g:textField name="lugares" id="lugares" type="text"
+										class="form-control" placeholder="Ingrese cantidad por dia" />
+								</div>
 								<div id="map-canvas"
 									style="width: 390px; height: 261px; margin: 0 auto 17px;"></div>
 								<div class="form-group">
@@ -189,7 +227,8 @@
 							<center class="btn_vehiculo">
 								<g:submitButton name="submit" value="Publicar mi viaje"
 									class="btn btn-warning" />
-								<g:submitButton name="reset" type="reset" class="btn btn-default" value="Borrar"/>
+								<g:submitButton name="reset" type="reset"
+									class="btn btn-default" value="Borrar" />
 							</center>
 						</g:form>
 					</fieldset>

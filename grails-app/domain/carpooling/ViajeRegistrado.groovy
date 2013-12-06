@@ -3,7 +3,11 @@ package carpooling
 class ViajeRegistrado {
 
 	String desde
+	Double desdeLatitud
+	Double desdeLongitud
 	String hasta
+	Double hastaLatitud
+	Double hastaLongitud
 	Integer hora
 	Integer minutos
 	String domingo
@@ -32,7 +36,11 @@ class ViajeRegistrado {
 	static constraints = {
 
 		desde (blank: false, nullable: false)
+		desdeLatitud(blank:false, nullable:false)
+		desdeLongitud(blank:false, nullable:false)
 		hasta (blank: false, nullable: false)
+		hastaLatitud(blank:false, nullable:false)
+		hastaLongitud(blank:false, nullable:false)
 		hora (blank: false, nullable: false)
 		minutos (blank: false, nullable: false)
 		domingo(nullable:true)
