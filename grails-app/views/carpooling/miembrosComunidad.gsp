@@ -83,7 +83,7 @@
 								<li><g:link controller="tipoUsuario"
 										action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 								<li class="divider"></li>
-								<li><a href="index.html">Cerrar Sesión</a></li>
+								<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
 							</ul>
 						</div>
 					</li>

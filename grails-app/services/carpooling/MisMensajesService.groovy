@@ -6,7 +6,7 @@ import grails.transaction.Transactional
 class MisMensajesService {
 	
     def buscarReceptor(usuario) {
-		Usuario.findByDni(usuario)
+		Usuario.findByUsername(usuario)
 	}
 	
     def buscarMensajes(usuario) {
