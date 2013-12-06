@@ -4,15 +4,16 @@ import carpooling.UsuarioUnido
 import carpooling.ViajeRegistrado
 
 class BootStrap {
-
+	/*def springSecuritySevice*/
 	def init = { servletContext ->
-
-		def usuario1 = new Usuario(dni: 33222000, nombre: 'Maria', apellido: 'Lopez', email: 'marialopez@gmail.com',imagen:'A:/Jorge/Grails/Fotos/33222000.jpg',ocupacion:'Estudiante en UNLAM', telefono: 35282463 , contrasenia: 'abc123', conductor: false)
+		
+		
+		def usuario1 = new Usuario( enabled: true ,dni: 33222000, nombre: 'Maria', apellido: 'Lopez', username: 'marialopez@gmail.com',imagen:'C:'+File.separator+'33222000.jpg',ocupacion:'Estudiante en UNLAM', telefono: 35282463 , password: 'abc123', conductor: false)
 		usuario1.save()
 
 		println usuario1
 		
-		def usuario2 = new Usuario(dni: 29157077, nombre: "Lucia", apellido: "Roldan", email: "luciaroldan@gmail.com",imagen:'A:/Jorge/Grails/Fotos/29157077.jpg', ocupacion:'Auditora en Nestle', telefono: 44414566 , contrasenia: 'def456', conductor: false)
+		def usuario2 = new Usuario( enabled: true, dni: 29157077, nombre: "Lucia", apellido: "Roldan", username: "luciaroldan@gmail.com",imagen:'C:'+File.separator+'29157077.jpg', ocupacion:'Auditora en Nestle', telefono: 44414566 , password: 'def456', conductor: false)
 		usuario2.save()
 
 		println usuario2

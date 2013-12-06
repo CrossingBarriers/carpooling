@@ -113,3 +113,13 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = '/tipoUsuario/renderTipoUsuarioView'
+grails.plugins.springSecurity.errors.login.fail = 'Usuario o Password incorrectos'
+plugins.springsecurity.logout.afterLogoutUrl = '/index'
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'carpooling.SecUsuario'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'carpooling.SecUsuarioSecRol'
+grails.plugins.springsecurity.authority.className = 'carpooling.SecRol'

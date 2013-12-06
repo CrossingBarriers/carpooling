@@ -71,17 +71,16 @@
 				
 				<li class="pull-right" style="padding-right:15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>Fulanito de Tal</span>
+						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span>
 							<span class="glyphicon glyphicon-user"></span>
 						</a>
-						
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
-							<li><a href="index.html">Cerrar Sesión</a></li>
+							<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
 						</ul>
 					</div>
 				</li>
@@ -92,6 +91,7 @@
 		<!--fin menu-->
 
 		<div id="contenido">
+		
 			<div class="Layer-32 caja-sombra">
 				<g:link controller="misViajes" action="index">
 					<img class="tipo_usuario"
