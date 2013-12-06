@@ -99,9 +99,10 @@
 
 					<div class="col-md-2">
 
-						<img width="162px" height="125px" class="center-block"
-							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuarios.imagen])}"
-							alt="${usuarios.nombre}" />
+						<div class="img-thumbnail">
+							<img width="120px" height="120px" class="center-block"
+							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuarios.imagen])}" alt="${usuarios.nombre}" />
+			             </div>
 
 					</div>
 
@@ -131,9 +132,8 @@
 									DNI</strong>
 								${usuarios.dni}
 							</h5>
-
-
 						</p>
+						
 						<p>
 							<h5>
 								<strong><span class="glyphicon glyphicon-chevron-right"></span>
@@ -146,7 +146,6 @@
 								${usuarios.ocupacion}
 							</h5>
 						</p>
-
 						<br></br>
 					</div>
 

@@ -29,6 +29,7 @@ $(document).ready(function(){
 	
 	jQuery("abbr.timeago").timeago();
 
+
 	$('#contenido .alert textarea.mis_mensajes').focus(function () {
 	    $(this).animate({ height: "60px" }, 500);
 	    var current = $("textarea.mis_mensajes").index(this);
@@ -42,6 +43,10 @@ $(document).ready(function(){
 function success(current) {
     	$("#"+current+" h6").attr("class","show");
 	}
+
+function toggle(current) {
+	$("#"+current+" p.respuesta").toggle("slow");
+}
 
 function borrarMensaje(current) {
 	setTimeout(function () {
@@ -143,18 +148,16 @@ function precargaRespuesta(current) {
 						<g:remoteLink id="${it.id}" class="close" data-dismiss="alert"
 							controller="misMensajes" action="borrarMensaje" update="${it.id}"
 							onSuccess="borrarMensaje(${it.id})" onLoading="precargaBorrar(${it.id})" title="Eliminar mensaje">×</g:remoteLink>
-						<p>${it.mensaje} <abbr class="timeago" title="${it.dateCreated}" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr></p>
+						<p><span class="glyphicon glyphicon-comment"></span> ${it.mensaje} <abbr class="timeago" title="${it.dateCreated}" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr></p>
 						
 					<g:if test="${it.idRespuesta > 0}">
-						<h6><strong>Respuesta:</strong></h6>
-						<g:remoteLink class="respuestas" controller= 'misMensajes' action= 'buscarRespuesta' params="${[idRespuesta: it.idRespuesta]}" update="${it.id} p.respuesta">prt</g:remoteLink>
+						<h6><strong><g:remoteLink class="respuestas" controller= 'misMensajes' action= 'buscarRespuesta' params="${[idRespuesta: it.idRespuesta]}" update="${it.id} p.respuesta" onSuccess="toggle(${it.id})">Respuesta:</g:remoteLink></strong></h6>
 						<p class="respuesta"></p>
 					</g:if>
 
 					<g:if test="${it.idRespuesta == 0}">
 						<h6 class="hidden"><strong>Respuesta:</strong></h6>
     				 	<p class="respuesta"></p>
-    				 	
 						<g:formRemote name="enviar_mensaje" url="[controller: 'misMensajes', action:'responderMensaje']" update="${it.id} p.respuesta" method="post" onLoading="precargaRespuesta(${it.id})" onSuccess="success(${it.id})">
     				        <div class="form-group">
         						<g:textArea class="form-control mis_mensajes" name="mensaje" placeholder="Reponder mensaje..."/>

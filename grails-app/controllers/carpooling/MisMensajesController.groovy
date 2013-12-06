@@ -48,7 +48,7 @@ class MisMensajesController {
 			// aquí tratamos la excepción como queramos, haciendo nada, sacando por pantalla el error, ...
 			}
 		
-		render ''+respuesta.mensaje+'<abbr class="timeago" title="'+mensaje.dateCreated+'" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr>'
+		render '<script type="text/javascript">jQuery("abbr.timeago").timeago();</script><span class="glyphicon glyphicon-comment"></span> '+respuesta.mensaje+' <abbr class="timeago" title="'+mensaje.dateCreated+'" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr>'
 	}
 	
 	def buscarRespuesta(){
@@ -57,7 +57,7 @@ class MisMensajesController {
 		
 		def respuesta = Mensaje.get(params.idRespuesta)
 		
-		render '<p>'+respuesta.mensaje+'<abbr class="timeago" title="'+respuesta.dateCreated+'" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr></p>'
+		render '<script type="text/javascript">jQuery("abbr.timeago").timeago();</script><span class="glyphicon glyphicon-comment"></span> '+respuesta.mensaje+' <abbr class="timeago" title="'+respuesta.dateCreated+'" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr>'
 	}
 	
 }
