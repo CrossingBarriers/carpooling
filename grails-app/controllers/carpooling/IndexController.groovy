@@ -12,17 +12,28 @@ class IndexController {
 	}
 	
 	def renderIndexView =  {
+		def logueado = sec.loggedInUserInfo(field: 'username')
 		
-		render(view:"/carpooling/index")
+		
+				if(logueado)
+				{
+					def usuario = Usuario.findByUsername(logueado)
+					render(view:"/carpooling/index", model: [usuario : usuario])
+		
+				}
+				else{
+			
+
+				render (view:"/carpooling/index")
+			}
 		
 	}
+	def mostrarImagen(String imagen){
+		File b = new File(imagen)
+		OutputStream out = response.getOutputStream();
+		out.write(b.bytes);
+		out.close();
+	}
 	
-	//def redirectTipoUsuarioController={
-	//	redirect(controller:"tipoUsuario", action:"renderTipoUsuarioView")
-	//}
-	
-	//def redirectComoFuncionaController={
-	//	redirect(controller:"comoFunciona", action:"renderComoFuncionaView")
-	//}
 	
 }
