@@ -129,17 +129,19 @@
 								</div>
 								<div class="form-group">
 							
-							<label for="coord" class="pull-left">Coordenadas:</label>
+							<!-- <label for="coord" class="pull-left">Coordenadas:</label>-->
 							<div class="col-xs-4">
-								<center>Latitud</center>
-								<g:field name="desdelat" id="desdelat" type="text"
-									class="form-control" />
+								<!--<center>Latitud</center>-->
+								<g:hiddenField name="desdelat" id="desdelat" class="form-control" />
+								<!--<g:field name="desdelat" id="desdelat" type="text"
+									class="form-control" />-->
 							</div>
 
 							<div class="col-xs-4">
-								<center>Longitud</center>
-								<g:field name="desdelong" id="desdelong" type="text"
-									class="form-control" />
+								<!--<center>Longitud</center>-->
+								<g:hiddenField name="desdelong" id="desdelong" type="text" class="form-control" />
+								<!--<g:field name="desdelong" id="desdelong" type="text"
+									class="form-control" />-->
 							</div>
 							<div class="clearfix"></div>
 						</div>
@@ -149,21 +151,22 @@
 										class="form-control" id="hasta" />
 								</div>
 							<div class="form-group">
-							<label for="coord" class="pull-left">Coordenadas:</label>
+							<!--<label for="coord" class="pull-left">Coordenadas:</label>-->
 							<div class="col-xs-4">
-								<center>Latitud</center>
-								<g:field name="hastalat" id="hastalat" type="text"
-									class="form-control" />
+								<!--<center>Latitud</center>-->
+								<g:hiddenField name="hastalat" id="hastalat" type="text" class="form-control" />
+								<!--<g:field name="hastalat" id="hastalat" type="text"
+									class="form-control" />-->
 							</div>
 
 							<div class="col-xs-4">
-								<center>Longitud</center>
-								<g:field name="hastalong" id="hastalong" type="text"
-									class="form-control" />
+								<!--<center>Longitud</center>-->
+								<g:hiddenField name="hastalong" id="hastalong" type="text" class="form-control" />
+								<!--<g:field name="hastalong" id="hastalong" type="text"
+									class="form-control" />-->
 							</div>
 							<div class="clearfix"></div>
 						</div>
-						<br/>
 								<div class="form-group">
 									<label for="hora" class="pull-left">Hora de salida:</label>
 									<div class="col-xs-3">
@@ -209,15 +212,19 @@
 									<g:field name="colaboracion" id="colaboracion" type="text"
 										class="form-control" placeholder="Pesos" />
 								</div>
-							</div>
-							<div class="col-md-6">
-							   <div class="form-group">
+								<br/>
+								<div class="form-group">
 									<label for="disponibilidad">Lugares disponibles:</label>
 									<g:textField name="lugares" id="lugares" type="text"
 										class="form-control" placeholder="Ingrese cantidad" />
 								</div>
+								
+							</div>
+							<div class="col-md-6">
+							   
 								<div id="map-canvas"
 									style="width: 390px; height: 261px; margin: 0 auto 17px;"></div>
+									<br/>
 								<div class="form-group">
 									<label for="comentario">Comentario:</label>
 									<g:textArea name="comentario" id="comentario"
