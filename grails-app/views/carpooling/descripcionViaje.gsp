@@ -23,13 +23,44 @@
 	src="${resource(dir: 'js', file: 'holder.js')}"></script>
 	
 <script
-        src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-<script type="text/javascript"
-        src="${resource(dir: 'js', file: 'google.js')}">
-</script>
+	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 
 <script type="text/javascript">
 
+	var directionsDisplay;
+	var directionsService = new google.maps.DirectionsService();
+	var map;
+
+	function initialize() {
+		  directionsDisplay = new google.maps.DirectionsRenderer();
+		  var mapOptions = {
+				    zoom:10,
+				    mapTypeId: google.maps.MapTypeId.ROADMAP,
+				  }
+		  
+		  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+		  directionsDisplay.setMap(map);
+		  
+		  calcRoute();
+
+			function calcRoute() {
+				var start = $('<div />').html("${viaje.desde}").text();
+				var end = $('<div />').html("${viaje.hasta}").text();
+
+				var request = {
+					  origin: start,
+					  destination: end,
+					  travelMode: google.maps.DirectionsTravelMode.DRIVING
+				  };
+				 directionsService.route(request, function(response, status) {
+						if (status == google.maps.DirectionsStatus.OK) {
+						  directionsDisplay.setDirections(response);
+						}
+					  });
+			}
+	}
+
+			 
 	function success() {
 		$("textarea.form-control").attr("value","");
     	$("#success").attr("class","alert alert-info fade in");
@@ -44,6 +75,7 @@
 			$("#success").html('<p style="text-align:center;"><img src="${resource(dir: 'images/carpooling', file: 'ajax-loader.gif')}"/></p>');
 	}
 
+	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
 </head>
@@ -184,6 +216,7 @@
                     <h5><strong>Hasta: </strong>${viaje.hasta}</h5>
                     <h5><strong>Hora de Salida: </strong>${viaje.hora}:${viaje.minutos}</h5>
                     <h5><strong>Dia/as: </strong>${viaje.domingo} - ${viaje.lunes} - ${viaje.martes} - ${viaje.miercoles} - ${viaje.jueves} - ${viaje.viernes} - ${viaje.sabado}</h5>
+    				
     				<div id="map-canvas" style="width: 410px; height: 281px; margin: 75px auto 0"></div>
     				<center class="btn_vehiculo">
 	                    <button type="submit" class="btn btn-lg btn-block btn-success">Unirme</button>

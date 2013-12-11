@@ -1,5 +1,6 @@
 package carpooling
 
+import java.text.DecimalFormat;
 
 class ResultadoBusquedaController {
 
@@ -23,19 +24,21 @@ class ResultadoBusquedaController {
 		def listresult = []
 		
 		for ( registro in lista) {
+			
+			println registro.desdeLatitud
+			println busqueda.desdeLatitud
 
 			def distanciaDesde = calcularDistanciaDesde(registro.desdeLatitud, registro.desdeLongitud, busqueda)
+			println distanciaDesde
 			def distanciaHasta = calcularDistanciaHasta(registro.hastaLatitud, registro.hastaLongitud, busqueda)
+			println distanciaHasta
 			
 			if(distanciaDesde <= valor && distanciaHasta <= valor){
 				listresult.add(registro)
-								
 			}
 
 		}
 		
-		print listresult
-
 		render(view:"/carpooling/resultadoBusqueda", model:[resultado:listresult])
 
 	}
@@ -69,8 +72,8 @@ class ResultadoBusquedaController {
 //		double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 //		double dist = earthRadius * c*1000;
 		
-		Double buslat =  busqueda.desdeLatitud.toDouble();
-		Double buslong =  busqueda.desdeLongitud.toDouble();
+		Double buslat =  busqueda.desdeLatitud;
+		Double buslong =  busqueda.desdeLongitud;
 		Double earthRadius = 6371; //kilometers
 		Double dLat = Math.toRadians(desdeLatitud - buslat);
 		Double dLng = Math.toRadians(desdeLongitud - buslong);
@@ -78,7 +81,7 @@ class ResultadoBusquedaController {
 		Double sindLng = Math.sin(dLng / 2);
 		Double a = Math.pow(sindLat, 2) + Math.pow(sindLng, 2) * Math.cos(Math.toRadians(buslat)) * Math.cos(Math.toRadians(desdeLatitud));
 		Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		Double dist = earthRadius * c*1000;
+		Double dist = earthRadius * c/1000;
 		return dist;
 		
 	}
@@ -94,8 +97,8 @@ class ResultadoBusquedaController {
 	
 	Double calcularDistanciaHasta(hastaLatitud, hastaLongitud, busqueda){
 		
-		Double buslat =  busqueda.hastaLatitud.toDouble();
-		Double buslong =  busqueda.hastaLongitud.toDouble();
+		Double buslat =  busqueda.hastaLatitud
+		Double buslong =  busqueda.hastaLongitud
 		Double earthRadius = 6371; //kilometers
 		Double dLat = Math.toRadians(hastaLatitud - buslat);
 		Double dLng = Math.toRadians(hastaLongitud - buslong);
@@ -103,7 +106,7 @@ class ResultadoBusquedaController {
 		Double sindLng = Math.sin(dLng / 2);
 		Double a = Math.pow(sindLat, 2) + Math.pow(sindLng, 2) * Math.cos(Math.toRadians(buslat)) * Math.cos(Math.toRadians(hastaLatitud));
 		Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		Double dist = earthRadius * c*1000;
+		Double dist = earthRadius * c/1000;
 		return dist;
 		
 	}

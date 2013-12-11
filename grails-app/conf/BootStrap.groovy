@@ -8,12 +8,12 @@ class BootStrap {
 	/*def springSecuritySevice*/
 	def init = { servletContext ->
 		
-		def usuario1 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 33222000, nombre: 'Maria', apellido: 'Lopez', username: 'marialopez@gmail.com',imagen:"C:/33222000.jpg",ocupacion:'Estudiante en UNLAM', telefono: 35282463 , password: '123', passwordExpired:false,conductor: false)
+		def usuario1 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 33222000, nombre: 'Maria', apellido: 'Lopez', username: 'marialopez@gmail.com',imagen:"A:/33222000.jpg",ocupacion:'Estudiante en UNLAM', telefono: 35282463 , password: '123', passwordExpired:false,conductor: false)
 		usuario1.save()
 
 		println usuario1
 		
-		def usuario2 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 29157077, nombre: "Lucia", apellido: "Roldan", username: "luciaroldan@gmail.com",imagen:"C:/29157077.jpg", ocupacion:'Auditora en Nestle', telefono: 44414566 , password: 'abc123', passwordExpired:false,conductor: false)
+		def usuario2 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 29157077, nombre: "Lucia", apellido: "Roldan", username: "luciaroldan@gmail.com",imagen:"A:/29157077.jpg", ocupacion:'Auditora en Nestle', telefono: 44414566 , password: 'abc123', passwordExpired:false,conductor: false)
 		usuario2.save()
 
 		println usuario2
