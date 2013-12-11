@@ -1,7 +1,5 @@
 package carpooling
 
-import java.text.DecimalFormat;
-
 class ResultadoBusquedaController {
 
 	def resultadoBusquedaService
@@ -19,19 +17,13 @@ class ResultadoBusquedaController {
 
 		def busqueda = new Busqueda(desde:params.desde, desdeLatitud:params.desdelat, desdeLongitud:params.desdelong, hasta:params.hasta, hastaLatitud:params.hastalat, hastaLongitud:params.hastalong, hh:params.hh, mm:params.mm).save()
 		def lista = resultadoBusquedaService.busquedaViajes(busqueda)
-		print lista
 		
 		def listresult = []
 		
 		for ( registro in lista) {
-			
-			println registro.desdeLatitud
-			println busqueda.desdeLatitud
 
 			def distanciaDesde = calcularDistanciaDesde(registro.desdeLatitud, registro.desdeLongitud, busqueda)
-			println distanciaDesde
 			def distanciaHasta = calcularDistanciaHasta(registro.hastaLatitud, registro.hastaLongitud, busqueda)
-			println distanciaHasta
 			
 			if(distanciaDesde <= valor && distanciaHasta <= valor){
 				listresult.add(registro)
