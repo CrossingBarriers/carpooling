@@ -25,9 +25,9 @@ class ResultadoBusquedaController {
 		for ( registro in lista) {
 
 			def distanciaDesde = calcularDistanciaDesde(registro.desdeLatitud, registro.desdeLongitud, busqueda)
-			def distanciaHasta = calcularDistanciaHasta(registro.hastaLatitud, registro.hastaLongitud, busqueda)
+			//def distanciaHasta = calcularDistanciaHasta(registro.hastaLatitud, registro.hastaLongitud, busqueda)
 			
-			if(distanciaDesde <= valor && distanciaHasta <= valor){
+			if(distanciaDesde <= valor /*&& distanciaHasta <= valor*/){
 				listresult.add(registro)
 								
 			}
