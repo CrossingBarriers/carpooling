@@ -3,11 +3,11 @@ package carpooling
 class Busqueda {
 	
 	String desde
-	String desdeLatitud
-	String desdeLongitud
+	BigDecimal desdeLatitud
+	BigDecimal desdeLongitud
 	String hasta
-	Double hastaLatitud
-	Double hastaLongitud
+	BigDecimal hastaLatitud
+	BigDecimal hastaLongitud
 	Integer hh
 	Integer mm
 

@@ -51,14 +51,28 @@
 
 		</div>
 		<!--fin header_960-->
+		<g:if test="${sec.loggedInUserInfo(field: 'username') == ''}">
+			<div class="menu">
+				<ul class="menu_single">
+					<li><a class="activo">HOME</a></li>
+					<li><g:link controller="comoFunciona"
+							action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+					<li><g:link controller="registrate"
+							action="renderRegistrateView">REGISTRATE</g:link></li>
+				</ul>
+			</div>
+		</g:if>
+		<sec:ifLoggedIn>
+			<div class="menu">
+				<ul class="menu_single">
+					<li><a class="activo">HOME</a></li>
+					<li><g:link controller="comoFunciona"
+							action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
 
-		<div class="menu">
-			<ul class="menu_single">
-				<li><a class="activo">HOME</a></li>
-				<li><g:link controller="comoFunciona" action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-				<li><g:link controller="registrate" action="renderRegistrateView">REGISTRATE</g:link></li>
-			</ul>
-		</div>
+				</ul>
+			</div>
+		</sec:ifLoggedIn>
+
 		<!--fin menu-->
 
 		<div id="contenido">
@@ -122,34 +136,78 @@
 			</div>
 			<!--fin columna_izquierda -->
 
-			<div id="columna_derecha">
+			<g:if test="${sec.loggedInUserInfo(field: 'username') == ''}">
+				<div id="columna_derecha">
 
-				<h3>Ingresar</h3>
+					<h3>Ingresar</h3>
 
-				<div class="login seccion_img caja-sombra">
+					<div class="login seccion_img caja-sombra">
 
-					<form action="/Carpooling/j_spring_security_check" method="POST" id="loginForm" autocomplete="off">
+						<form action="/Carpooling/j_spring_security_check" method="POST"
+							id="loginForm" autocomplete="off">
+							<div class="form-group">
+								<label for="usuario">Usuario</label>
+								<g:field type="text" id="email" name="j_username"
+									class="form-control" placeholder="Ingrese su email..." />
+							</div>
+							<div class="form-group">
+								<label for="password">Password</label>
+								<g:field type="password" name="j_password" id="contrasenia"
+									class="form-control" placeholder="Ingrese contraseña..." />
+							</div>
+
+							<g:submitButton name="submit" value="Iniciar Sesión"
+								class="btn btn-warning" />
+
+						</form>
+
+						<g:if test='${flash.message}'>
+							<div class='alert alert-danger'>
+								${flash.message}
+							</div>
+						</g:if>
+
+					</div>
+				</div>
+			</g:if>
+			<!-- fin columna_derecha-->
+			<sec:ifLoggedIn>
+				<div id="columna_derecha">
+					<h3>
+						Bienvenido/a,
+						${session.usuarioLogueado.nombre}
+					</h3>
+					<div class="login seccion_img caja-sombra">
 						<div class="form-group">
-							<label for="usuario">Usuario</label>
-							<g:field type="text"  id="email" name="j_username"
-								class="form-control" placeholder="Ingrese usuario..." />
+							<!-- Imagen de perfil, con que se registro -->
+							<img  width="223px" height="185px" class="center-block"
+							src="${createLink(controller:'index', action:'mostrarImagen' , params: ['imagen': usuario.imagen])}" />
+							<br /> <br />
 						</div>
-						<div class="form-group">
-							<label for="password">Password</label> <g:field type="password"
-								name="j_password" id="contrasenia" class="form-control" placeholder="Ingrese contraseña..." />
+					</div>
+					<br />
+
+					<!-- Small button group -->
+					<center>
+						<div class="btn-group">
+
+							<button class="btn btn-warning btn-sm dropdown-toggle"
+								type="button" data-toggle="dropdown">
+								Opciones<span class="caret"></span>
+							</button>
+
+							<ul class="dropdown-menu">
+								<li><g:link controller="tipoUsuario"
+										action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+
+								<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
+							</ul>
 						</div>
-						
-						<g:submitButton name="submit" value="Iniciar Sesión" class="btn btn-warning"/>
-						
-					</form>
-					
-					<g:if test='${flash.message}'>
-						<div class='alert alert-danger'>${flash.message}</div>
-					</g:if>
+					</center>
 
 				</div>
-			</div>
-			<!-- fin columna_derecha-->
+
+			</sec:ifLoggedIn>
 
 			<div style="clear: both"></div>
 
@@ -167,8 +225,10 @@
 				<h3>CARPOOLING</h3>
 				<ul>
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
-					<li><g:link controller="comoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="registrate" action="renderRegistrateView">Registrate</g:link></li>
+					<li><g:link controller="comoFunciona"
+							action="renderComoFuncionaView">Como Funciona</g:link></li>
+					<li><g:link controller="registrate"
+							action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
 					<li><g:link controller="index"
 							action="redirectMiembrosComunidadController">Miembros de la comunidad</g:link></li>

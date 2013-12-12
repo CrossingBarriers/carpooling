@@ -57,15 +57,26 @@
 		</div>
 		<!--fin header_960-->
 
-		<div class="menu">
-			<ul class="menu_single">
-				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
-				<li><a class="activo">COMO FUNCIONA</a></li>
-				<li><g:link controller="registrate"
-						action="renderRegistrateView">REGISTRATE</g:link></li>
-			</ul>
-
-		</div>
+		<g:if test="${sec.loggedInUserInfo(field: 'username') == ''}">
+			<div class="menu">
+				<ul class="menu_single">
+					<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
+					<li><g:link controller="comoFunciona"
+							action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+					<li><g:link controller="registrate"
+							action="renderRegistrateView">REGISTRATE</g:link></li>
+				</ul>
+			</div>
+		</g:if>
+		<sec:ifLoggedIn>
+			<div class="menu">
+				<ul class="menu_single">
+					<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
+					<li><g:link controller="comoFunciona"
+							action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+				</ul>
+			</div>
+		</sec:ifLoggedIn>
 		<!--fin menu-->
 
 		<div id="contenido">
@@ -110,8 +121,6 @@
 
 			<div style="clear: both"></div>
 			
-			<!--<g:link class="btn btn-lg btn-block btn-success" controller="registrate" action="renderRegistrateView">Registrate</g:link>-->
-
 		</div>
 		<!--fin contenido-->
 

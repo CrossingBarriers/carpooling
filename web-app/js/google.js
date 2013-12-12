@@ -10,6 +10,7 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     center: sanjusto
   }
+  
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   directionsDisplay.setMap(map);
   
@@ -70,8 +71,8 @@ function initialize() {
     
     /* Para obtener las coordenadas del campo DESDE */
     
-    var lat_1 = place_1.geometry.location.pb;
-    var lng_1 = place_1.geometry.location.qb;
+    var lat_1 = place_1.geometry.location.lat();
+    var lng_1 = place_1.geometry.location.lng();
     
     var desdelatitud = document.getElementById("desdelat");
     desdelatitud.value = lat_1;
@@ -100,8 +101,8 @@ function initialize() {
 	    
 	    var place_2 = autocomplete_2.getPlace();
 		
-	    var lat_2 = place_2.geometry.location.pb;
-	    var lng_2 = place_2.geometry.location.qb;
+	    var lat_2 = place_2.geometry.location.lat();
+	    var lng_2 = place_2.geometry.location.lng();
 
 	    var hastalatitud = document.getElementById("hastalat");
 	    hastalatitud.value = lat_2;

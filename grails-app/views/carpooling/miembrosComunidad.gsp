@@ -106,8 +106,8 @@
 
 					<div class="col-md-2">
 
-						<div class="img-thumbnail">
-							<img width="120px" height="120px" class="center-block"
+						<div>
+							<img width="160px" height="125px" class="center-block"
 							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuarios.imagen])}" alt="${usuarios.nombre}" />
 			             </div>
 

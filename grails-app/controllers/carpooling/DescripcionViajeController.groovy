@@ -10,9 +10,10 @@ class DescripcionViajeController {
     def renderDescripcionViajeView =  {
 		
 		String idUsuario = params.idUsuario
+		String idViaje = params.idViaje
 		def usuario = descripcionViajeService.buscarUsuario(idUsuario)
 		def vehiculo = descripcionViajeService.buscarVehiculo(usuario)
-		def viaje = descripcionViajeService.buscarViaje(vehiculo)
+		def viaje = descripcionViajeService.buscarViaje(idViaje)
 		
 		render(view:"/carpooling/descripcionViaje", model:[usuario:usuario, vehiculo:vehiculo, viaje:viaje])
 		

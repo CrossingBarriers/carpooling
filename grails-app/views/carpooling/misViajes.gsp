@@ -184,11 +184,7 @@
 									<strong> Horario </strong>
 								</p>
 							</th>
-							<th>
-								<p class="text-center">
-									<strong> Lugares disponibles </strong>
-								</p>
-							</th>
+							
 							<th>
 								<p class="text-center">
 									<strong> Colaboración </strong>
@@ -267,11 +263,7 @@
 										${viaje.hora }:${viaje.minutos }
 									</center>
 								</td>
-								<td>
-									<center>
-										${viaje.asientosLibres }
-									</center>
-								</td>
+								
 								<td><center>
 										$
 										${viaje.colaboracion }

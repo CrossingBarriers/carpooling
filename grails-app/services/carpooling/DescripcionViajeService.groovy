@@ -13,7 +13,7 @@ class DescripcionViajeService {
 		Vehiculo.findByUsuario(usuario)
 	}
 	
-	def buscarViaje(vehiculo) {
-		ViajeRegistrado.findByVehiculo(vehiculo)
+	def buscarViaje(idViaje) {
+		ViajeRegistrado.findById(idViaje)
 	}
 }

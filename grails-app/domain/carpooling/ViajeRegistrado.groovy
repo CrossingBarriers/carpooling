@@ -3,11 +3,11 @@ package carpooling
 class ViajeRegistrado {
 
 	String desde
-	Double desdeLatitud
-	Double desdeLongitud
+	BigDecimal desdeLatitud
+	BigDecimal desdeLongitud
 	String hasta
-	Double hastaLatitud
-	Double hastaLongitud
+	BigDecimal hastaLatitud
+	BigDecimal hastaLongitud
 	Integer hora
 	Integer minutos
 	String domingo

@@ -118,43 +118,19 @@
 							<label for="desde">Desde:</label> <input type="text" id="desde"
 								name="desde" class="form-control" />
 						</div>
-						<div class="form-group">
-							<!-- Ver si sirve -->
-							<label for="coord" class="pull-left">Coordenadas:</label>
-							<div class="col-xs-4">
-								<center>Latitud</center>
-								<g:field name="desdelat" id="desdelat" type="text"
-									class="form-control" />
-							</div>
-
-							<div class="col-xs-4">
-								<center>Longitud</center>
-								<g:field name="desdelong" id="desdelong" type="text"
-									class="form-control" />
-							</div>
-							<div class="clearfix"></div>
-						</div>
+						
+						<g:hiddenField name="desdelat" id="desdelat" class="form-control" />
+						<g:hiddenField name="desdelong" id="desdelong" type="text" class="form-control" />
+						
 						<!--FIN: Ver si sirve -->
 						<div class="form-group">
 							<label for="hasta">Hasta:</label> <input type="text" id="hasta"
 								name="hasta" class="form-control" />
 						</div>
-						<div class="form-group">
-							<!-- Ver si sirve -->
-							<label for="coord" class="pull-left">Coordenadas:</label>
-							<div class="col-xs-4">
-								<center>Latitud</center>
-								<g:field name="hastalat" id="hastalat" type="text"
-									class="form-control" />
-							</div>
-
-							<div class="col-xs-4">
-								<center>Longitud</center>
-								<g:field name="hastalong" id="hastalong" type="text"
-									class="form-control" />
-							</div>
-							<div class="clearfix"></div>
-						</div>
+						
+						<g:hiddenField name="hastalat" id="hastalat" type="text" class="form-control" />
+						<g:hiddenField name="hastalong" id="hastalong" type="text" class="form-control" />
+						
 						<!--FIN: Ver si sirve -->
 
 						<div class="form-group">
