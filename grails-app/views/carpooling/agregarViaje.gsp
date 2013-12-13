@@ -132,16 +132,16 @@
 							<!-- <label for="coord" class="pull-left">Coordenadas:</label>-->
 							<div class="col-xs-4">
 								<!--<center>Latitud</center>-->
-								<g:hiddenField name="desdelat" id="desdelat" class="form-control" />
-								<!--<g:field name="desdelat" id="desdelat" type="text"
-									class="form-control" />-->
+								<!--<g:hiddenField name="desdelat" id="desdelat" class="form-control" />-->
+								<g:field name="desdelat" id="desdelat" type="text"
+									class="form-control" />
 							</div>
 
 							<div class="col-xs-4">
 								<!--<center>Longitud</center>-->
-								<g:hiddenField name="desdelong" id="desdelong" type="text" class="form-control" />
-								<!--<g:field name="desdelong" id="desdelong" type="text"
-									class="form-control" />-->
+								<!--<g:hiddenField name="desdelong" id="desdelong" type="text" class="form-control" />-->
+								<g:field name="desdelong" id="desdelong" type="text"
+									class="form-control" />
 							</div>
 							<div class="clearfix"></div>
 						</div>

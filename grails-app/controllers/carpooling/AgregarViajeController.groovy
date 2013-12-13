@@ -20,8 +20,8 @@ class AgregarViajeController {
 		
 		def usuario = agregarViajeService.buscarUsuario(logueado)
 		def vehiculo=agregarViajeService.buscarVehiculo(usuario)
-		def viaje=new ViajeRegistrado(desde:params.desde,desdeLatitud:params.desdelat,desdeLongitud:params.desdelong,hasta:params.hasta,
-		hastaLatitud:params.hastalat,hastaLongitud:params.hastalong,hora:params.hora,minutos:params.minutos,
+		def viaje=new ViajeRegistrado(desde:params.desde,desdeLatitud:params.desdelat.toDouble(),desdeLongitud:params.desdelong.toDouble(),hasta:params.hasta,
+		hastaLatitud:params.hastalat.toDouble(),hastaLongitud:params.hastalong.toDouble(),hora:params.hora,minutos:params.minutos,
 		domingo:params.domingo,lunes:params.lunes,martes:params.martes,miercoles:params.miercoles,jueves:params.jueves,
 		viernes:params.viernes,sabado:params.sabado,colaboracion:params.colaboracion,asientosLibres:params.lugares,
 		comentario:params.comentario,vehiculo:vehiculo)
