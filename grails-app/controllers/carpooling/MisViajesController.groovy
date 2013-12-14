@@ -9,7 +9,7 @@ class MisViajesController {
 	def misViajes() {
 	}
 
-	def renderMisViajesView =  {render(view:"/carpooling/misViajes")}
+	def renderMisViajesView =  {render(view:"/carpooling/misViajes")} // Se debe sacar???
 
 	def index(){
 		def logueado = sec.loggedInUserInfo(field: 'username')

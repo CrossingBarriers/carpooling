@@ -130,10 +130,10 @@
 				</table>
 				<br></br>
 				<center class="btn-vehiculo">
-					<g:link controller="BusquedaDeViajes"
+					<g:link controller="busquedaDeViajes"
 						action="renderBusquedaDeViajesView" type="button"
 						class="btn btn-warning btn-xs">
-						<span class="glyphicon glyphicon-search"></span> Buscar viaje</g:link>
+						<span class="glyphicon glyphicon-search"></span> Buscar viaje </g:link>
 				</center>
 				<br />
 

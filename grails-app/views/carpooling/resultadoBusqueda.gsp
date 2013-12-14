@@ -125,7 +125,7 @@
 									<li><strong>Colaboración: </strong>$${it.colaboracion}</li>
 								</ul>
 								<g:link class="btn btn-warning btn-xs pull-right"
-									controller="DescripcionViaje"
+									controller="descripcionViaje"
 									action="renderDescripcionViajeView"
 									params="${[idUsuario: it.vehiculo.usuario.username, idViaje: it.id]}">Ver detalle</g:link>
 							</div>

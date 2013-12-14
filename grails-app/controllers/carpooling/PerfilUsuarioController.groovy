@@ -21,7 +21,7 @@ class PerfilUsuarioController {
 			render(view:"/carpooling/perfilUsuario", model: [usuario : usuario])
 
 		}
-		
+
 		else{
 			def redirectIndexController = {
 
@@ -33,11 +33,11 @@ class PerfilUsuarioController {
 	}
 
 	def mostrarImagen(){
-			def a  = params.imagen
-			File b = new File(a)
-			OutputStream out = response.getOutputStream();
-			out.write(b.bytes);
-			out.close();
+		def a  = params.imagen
+		File b = new File(a)
+		OutputStream out = response.getOutputStream();
+		out.write(b.bytes);
+		out.close();
 
 	}
 
