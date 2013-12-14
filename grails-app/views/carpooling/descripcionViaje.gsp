@@ -121,7 +121,7 @@
 				<li class="pull-right"><g:link controller="MisMensajes"
 						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
-						<em class="ml-count ch-hide" style="display: inline;">2</em>
+						<em class="ml-count ch-hide" style="display: inline;"></em>
 					</g:link></li>
 
 				<li class="pull-right" style="padding-right: 15px;">
