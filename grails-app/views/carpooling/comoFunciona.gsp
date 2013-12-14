@@ -27,7 +27,7 @@
 <body>
 
 	<div id="bg_header">
-	<img
+		<img
 			src="${resource(dir: 'images/carpooling', file: 'header_bg.jpg')}"
 			height="114" width="960" alt="header_bg" />
 
@@ -81,7 +81,9 @@
 
 		<div id="contenido">
 			<h1>El sistema es muy fácil de usar</h1>
-			<h1><small class="text-info">¡sigue estos simples pasos!</small></h1>
+			<h1>
+				<small class="text-info">¡sigue estos simples pasos!</small>
+			</h1>
 
 			<div class="seccion_img caja-sombra como_funciona_1">
 				<span></span> <img
@@ -120,7 +122,7 @@
 			</div>
 
 			<div style="clear: both"></div>
-			
+
 		</div>
 		<!--fin contenido-->
 

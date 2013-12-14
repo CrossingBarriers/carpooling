@@ -25,48 +25,52 @@
 <body>
 
 	<div id="bg_header">
-		<img src="${resource(dir: 'images/carpooling', file: 'header_bg.jpg')}" height="114" width="960" alt="header_bg" />
-		
-		<hr class="linea"/>
+		<img
+			src="${resource(dir: 'images/carpooling', file: 'header_bg.jpg')}"
+			height="114" width="960" alt="header_bg" />
+
+		<hr class="linea" />
 		<div id="barra"></div>
 		<div class="bg_contenido"></div>
 	</div>
 
 	<div id="contenedor">
-		
+
 		<div class="header">
 			<g:link controller="index" action="renderIndexView">
 
-				<img class="logo" src="${resource(dir: 'images/carpooling', file: 'logo.png')}" height="106" width="254" alt="logo" />
-				
+				<img class="logo"
+					src="${resource(dir: 'images/carpooling', file: 'logo.png')}"
+					height="106" width="254" alt="logo" />
+
 			</g:link>
-			
+
 			<ul id="m-soc4">
 				<li><a class="facebook" href="#"><span>Facebook</span></a></li>
 				<li><a class="twitter" href="#"><span>Twitter</span></a></li>
 				<li><a class="youtube" href="#"><span>YouTube</span></a></li>
 			</ul>
-			
-		</div><!--fin header_960-->
+
+		</div>
+		<!--fin header_960-->
 
 		<div class="menu">
 			<ul class="menu_single">
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
 				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-				<li class="pull-right">
-					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+				<li class="pull-right"><g:link controller="MisMensajes"
+						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
 						<em class="ml-count ch-hide" style="display: inline;">2</em>
-					</g:link>
-				</li>
-				
-				<li class="pull-right" style="padding-right:15px;">
+					</g:link></li>
+
+				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span>
-							<span class="glyphicon glyphicon-user"></span>
-						</a>
-						
+						<a data-toggle="dropdown" href="#"><span>
+								${session.usuarioLogueado.nombre}
+						</span> <span class="glyphicon glyphicon-user"></span> </a>
+
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
@@ -81,90 +85,82 @@
 				</li>
 				<div class="clearfix"></div>
 			</ul>
-            
-		</div><!--fin menu-->
-		
-		<div id="contenido">
-		  <h1>Viajes a los que me uní</h1>
-            <div class="seccion_imgs caja-sombra _imgs">
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th>
-                            <center>
-                                Nombre
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Nombre
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Nombre
-                                </center>
-                            </th>
-                            <th>
-                            <center>
-                                Nombre
-                                </center>
-                            </th>
-                        </tr>
-                    </thead>
-                      <tbody>
-                    <g:each var="" in="">
-                        <tr>
-                            <td>
-                            <center>
-                            
-                            </center>
-                            </td>
-                            <td>
-                            <center>
-                            
-                            </center>
-                            </td>
-                            <td>
-                            <center>
-                            
-                            </center>
-                            </td>
-                            <td>
-                            <center>
-                            
-                            </center>
-                           </td>
-                        </tr>
-                        </g:each>
-                    </tbody>
-                </table>
-                <br></br>
-                <center class="btn-vehiculo">
-                    <g:link controller="BusquedaDeViajes" action="renderBusquedaDeViajesView" type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-search"></span> Buscar viaje</g:link>
-                </center>
-                <br />
 
-            </div>
-            <div style="clear: both"></div>
-		</div><!--fin contenido-->
+		</div>
+		<!--fin menu-->
+
+		<div id="contenido">
+			<h1>Viajes a los que me uní</h1>
+			<div class="seccion_imgs caja-sombra _imgs">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>
+								<center>Nombre</center>
+							</th>
+							<th>
+								<center>Nombre</center>
+							</th>
+							<th>
+								<center>Nombre</center>
+							</th>
+							<th>
+								<center>Nombre</center>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<g:each var="" in="">
+							<tr>
+								<td>
+									<center></center>
+								</td>
+								<td>
+									<center></center>
+								</td>
+								<td>
+									<center></center>
+								</td>
+								<td>
+									<center></center>
+								</td>
+							</tr>
+						</g:each>
+					</tbody>
+				</table>
+				<br></br>
+				<center class="btn-vehiculo">
+					<g:link controller="BusquedaDeViajes"
+						action="renderBusquedaDeViajesView" type="button"
+						class="btn btn-warning btn-xs">
+						<span class="glyphicon glyphicon-search"></span> Buscar viaje</g:link>
+				</center>
+				<br />
+
+			</div>
+			<div style="clear: both"></div>
+		</div>
+		<!--fin contenido-->
 		<div id="push"></div>
-	</div><!--fin contenedor-->
-	
+	</div>
+	<!--fin contenedor-->
+
 	<div id="footer">
-		
+
 		<div class="footer_960">
-			
+
 			<div id="foot_carpooling" class="secciones_foot">
 				<h3>CARPOOLING</h3>
 				<ul>
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
-					<li><g:link controller="comoFunciona" action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="registrate" action="renderRegistrateView">Registrate</g:link></li>
+					<li><g:link controller="comoFunciona"
+							action="renderComoFuncionaView">Como Funciona</g:link></li>
+					<li><g:link controller="registrate"
+							action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
 				</ul>
 			</div>
-			
+
 			<div id="foot_mas_info" class="secciones_foot">
 				<h3>MAS INFORMACION</h3>
 				<ul>
@@ -174,18 +170,22 @@
 					<li><a href="#">Políticas de Privacidad</a></li>
 				</ul>
 			</div>
-			
+
 			<div id="foot_redes_sociales" class="secciones_foot">
 				<h3>REDES SOCIALES</h3>
-				<img src="${resource(dir: 'images/carpooling', file: 'redes_icons.png')}" height="33" width="117" alt="redes_icons" />
+				<img
+					src="${resource(dir: 'images/carpooling', file: 'redes_icons.png')}"
+					height="33" width="117" alt="redes_icons" />
 			</div>
 
-			<hr class="linea_2"/>
+			<hr class="linea_2" />
 
-			<p>© 2013  |  Crossing Barriers  |  Todos los derechos Reservados</p>
+			<p>© 2013 | Crossing Barriers | Todos los derechos Reservados</p>
 
-		</div><!--fin footer_960-->
+		</div>
+		<!--fin footer_960-->
 
-	</div><!--fin footer-->
+	</div>
+	<!--fin footer-->
 </body>
 </html>

@@ -180,8 +180,8 @@
 					<div class="login seccion_img caja-sombra">
 						<div class="form-group">
 							<!-- Imagen de perfil, con que se registro -->
-							<img  width="223px" height="185px" class="center-block"
-							src="${createLink(controller:'index', action:'mostrarImagen' , params: ['imagen': usuario.imagen])}" />
+							<img width="223px" height="185px" class="center-block"
+								src="${createLink(controller:'index', action:'mostrarImagen' , params: ['imagen': usuario.imagen])}" />
 							<br /> <br />
 						</div>
 					</div>

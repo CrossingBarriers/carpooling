@@ -62,18 +62,17 @@
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
 				<li><g:link controller="miembrosComunidad"
 						action="renderMiembrosComunidadView">COMUNIDAD</g:link></li>
-				<li class="pull-right">
-					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+				<li class="pull-right"><g:link controller="MisMensajes"
+						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
 						<em class="ml-count ch-hide" style="display: inline;">2</em>
-					</g:link>
-				</li>
-				
-				<li class="pull-right" style="padding-right:15px;">
+					</g:link></li>
+
+				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span>
-							<span class="glyphicon glyphicon-user"></span>
-						</a>
+						<a data-toggle="dropdown" href="#"><span>
+								${session.usuarioLogueado.nombre}
+						</span> <span class="glyphicon glyphicon-user"></span> </a>
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
@@ -91,7 +90,7 @@
 		<!--fin menu-->
 
 		<div id="contenido">
-		
+
 			<div class="Layer-32 caja-sombra">
 				<g:link controller="misViajes" action="index">
 					<img class="tipo_usuario"

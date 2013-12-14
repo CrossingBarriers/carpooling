@@ -67,8 +67,7 @@
 
 				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>
-								${session.usuarioLogueado.nombre}
+						<a data-toggle="dropdown" href="#"><span> ${session.usuarioLogueado.nombre}
 						</span> <span class="glyphicon glyphicon-user"></span> </a>
 
 						<ul class="dropdown-menu" role="menu">
@@ -115,16 +114,14 @@
 							</h5>
 							<div class="col-md-6 col-xs-3 col-sm-4">
 								<ul>
-									<li><strong>Chofer: </strong>
-										${it.vehiculo.usuario.nombre} ${it.vehiculo.usuario.apellido}</li>
-									<li><strong>Vehiculo: </strong>
-										${it.vehiculo.marca} ${it.vehiculo.modelo}</li>
+									<li><strong>Chofer: </strong> ${it.vehiculo.usuario.nombre}
+										${it.vehiculo.usuario.apellido}</li>
+									<li><strong>Vehiculo: </strong> ${it.vehiculo.marca} ${it.vehiculo.modelo}</li>
 								</ul>
 							</div>
 							<div class="col-md-6 col-xs-3 col-sm-4">
 								<ul class="pull-left">
-									<li><strong>Lugares disponibles: </strong>
-										${it.asientosLibres}</li>
+									<li><strong>Lugares disponibles: </strong> ${it.asientosLibres}</li>
 									<li><strong>Colaboración: </strong>$${it.colaboracion}</li>
 								</ul>
 								<g:link class="btn btn-warning btn-xs pull-right"

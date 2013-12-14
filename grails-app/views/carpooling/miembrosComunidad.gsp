@@ -60,23 +60,24 @@
 				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
 				<li><a class="activo">COMUNIDAD</a></li>
-				
+
 				<g:if test="${sec.loggedInUserInfo(field: 'username') == ''}">
-					<li><g:link controller="index"
-						action="renderIndexView">INGRESAR</g:link></li>
+					<li><g:link controller="index" action="renderIndexView">INGRESAR</g:link></li>
 				</g:if>
-				
+
 				<sec:ifLoggedIn>
 					<li class="pull-right"><g:link controller="MisMensajes"
-						action="listarMensajes" title="Mis Mensajes">
-						<span class="glyphicon glyphicon-envelope"></span>
-						<em class="ml-count ch-hide" style="display: inline;">2</em>
-					</g:link></li>
-				
+							action="listarMensajes" title="Mis Mensajes">
+							<span class="glyphicon glyphicon-envelope"></span>
+							<em class="ml-count ch-hide" style="display: inline;">2</em>
+						</g:link></li>
+
 					<li class="pull-right" style="padding-right: 15px;">
 						<div class="dropdown">
-							<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span> <span class="glyphicon glyphicon-user"></span> </a>
-	
+							<a data-toggle="dropdown" href="#"><span>
+									${session.usuarioLogueado.nombre}
+							</span> <span class="glyphicon glyphicon-user"></span> </a>
+
 							<ul class="dropdown-menu" role="menu">
 								<li><g:link controller="perfilUsuario"
 										action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
@@ -108,8 +109,9 @@
 
 						<div>
 							<img width="160px" height="125px" class="center-block"
-							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuarios.imagen])}" alt="${usuarios.nombre}" />
-			             </div>
+								src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuarios.imagen])}"
+								alt="${usuarios.nombre}" />
+						</div>
 
 					</div>
 
@@ -140,14 +142,14 @@
 								${usuarios.dni}
 							</h5>
 						</p>
-						
+
 						<p>
 							<h5>
 								<strong><span class="glyphicon glyphicon-chevron-right"></span>
 									Email:</strong> <a href="mailto:#"> ${usuarios.username}
 								</a>
-								</h5>
-								<h5>
+							</h5>
+							<h5>
 								<strong><span class="glyphicon glyphicon-chevron-right"></span>
 									La ocupacion de ${usuarios.nombre } es:</strong>
 								${usuarios.ocupacion}

@@ -67,7 +67,9 @@
 
 				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span> <span class="glyphicon glyphicon-user"></span> </a>
+						<a data-toggle="dropdown" href="#"><span>
+								${session.usuarioLogueado.nombre}
+						</span> <span class="glyphicon glyphicon-user"></span> </a>
 
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
@@ -184,7 +186,7 @@
 									<strong> Horario </strong>
 								</p>
 							</th>
-							
+
 							<th>
 								<p class="text-center">
 									<strong> Colaboración </strong>
@@ -263,7 +265,7 @@
 										${viaje.hora }:${viaje.minutos }
 									</center>
 								</td>
-								
+
 								<td><center>
 										$
 										${viaje.colaboracion }

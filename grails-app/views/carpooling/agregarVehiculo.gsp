@@ -61,24 +61,22 @@
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
 				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-				<li class="pull-right">
-					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+				<li class="pull-right"><g:link controller="MisMensajes"
+						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
 						<em class="ml-count ch-hide" style="display: inline;">2</em>
-					</g:link>
-				</li>
-				
-				<li class="pull-right" style="padding-right:15px;">
+					</g:link></li>
+
+				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span>
-							<span class="glyphicon glyphicon-user"></span>
-						</a>
-						
+						<a data-toggle="dropdown" href="#"><span>
+								${session.usuarioLogueado.nombre}
+						</span> <span class="glyphicon glyphicon-user"></span> </a>
+
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-							<li><g:link controller="misViajes"
-									action="index">Mis Viajes</g:link></li>
+							<li><g:link controller="misViajes" action="index">Mis Viajes</g:link></li>
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
@@ -125,13 +123,14 @@
 									class="form-control" placeholder="Seleccione cantidad" />
 							</div>
 							<div class="form-group">
-							<label for="tipo">Cargar una imagen de su Licencia de conducir/Cedula verde:</label>
-							<g:field type="file" name="myFile" />
-							<p class="text-danger">
-                        ${flash.message}
-                        </p>
-							
-						</div>
+								<label for="tipo">Cargar una imagen de su Licencia de
+									conducir/Cedula verde:</label>
+								<g:field type="file" name="myFile" />
+								<p class="text-danger">
+									${flash.message}
+								</p>
+
+							</div>
 						</div>
 
 						<div style="clear: both"></div>
@@ -139,7 +138,8 @@
 						<center class="btn_vehiculo">
 							<g:submitButton name="submit" value="Agregar"
 								class="btn btn-warning" />
-							<g:submitButton name="reset" type="reset" class="btn btn-default" value="Borrar"/>
+							<g:submitButton name="reset" type="reset" class="btn btn-default"
+								value="Borrar" />
 						</center>
 
 					</g:form>

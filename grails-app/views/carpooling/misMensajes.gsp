@@ -105,19 +105,18 @@ function precargaRespuesta(current) {
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
 				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-				<li class="pull-right">
-					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+				<li class="pull-right"><g:link controller="MisMensajes"
+						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
 						<em class="ml-count" style="display: inline;"></em>
-					</g:link>
-				</li>
-				
-				<li class="pull-right" style="padding-right:15px;">
+					</g:link></li>
+
+				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span>
-							<span class="glyphicon glyphicon-user"></span>
-						</a>
-						
+						<a data-toggle="dropdown" href="#"><span>
+								${session.usuarioLogueado.nombre}
+						</span> <span class="glyphicon glyphicon-user"></span> </a>
+
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
@@ -141,39 +140,62 @@ function precargaRespuesta(current) {
 
 			<div class="seccion_imgs caja-sombra _imgs">
 
-				<g:each in = "${mensajes.reverse()}">
-				
-				<div id="${it.id}" class="alert alert-info fade in">
-					<h4>Mensaje de: ${it.emisor.nombre} ${it.emisor.apellido}</h4>
+				<g:each in="${mensajes.reverse()}">
+
+					<div id="${it.id}" class="alert alert-info fade in">
+						<h4>
+							Mensaje de:
+							${it.emisor.nombre}
+							${it.emisor.apellido}
+						</h4>
 						<g:remoteLink id="${it.id}" class="close" data-dismiss="alert"
 							controller="misMensajes" action="borrarMensaje" update="${it.id}"
-							onSuccess="borrarMensaje(${it.id})" onLoading="precargaBorrar(${it.id})" title="Eliminar mensaje">×</g:remoteLink>
-						<p><span class="glyphicon glyphicon-comment"></span> ${it.mensaje} <abbr class="timeago" title="${it.dateCreated}" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr></p>
-						
-					<g:if test="${it.idRespuesta > 0}">
-						<h6><strong><g:remoteLink class="respuestas" controller= 'misMensajes' action= 'buscarRespuesta' params="${[idRespuesta: it.idRespuesta]}" update="${it.id} p.respuesta" onSuccess="toggle(${it.id})">Respuesta:</g:remoteLink></strong></h6>
-						<p class="respuesta"></p>
-					</g:if>
+							onSuccess="borrarMensaje(${it.id})"
+							onLoading="precargaBorrar(${it.id})" title="Eliminar mensaje">×</g:remoteLink>
+						<p>
+							<span class="glyphicon glyphicon-comment"></span>
+							${it.mensaje}
+							<abbr class="timeago" title="${it.dateCreated}"
+								style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr>
+						</p>
 
-					<g:if test="${it.idRespuesta == 0}">
-						<h6 class="hidden"><strong>Respuesta:</strong></h6>
-    				 	<p class="respuesta"></p>
-						<g:formRemote name="enviar_mensaje" url="[controller: 'misMensajes', action:'responderMensaje']" update="${it.id} p.respuesta" method="post" onLoading="precargaRespuesta(${it.id})" onSuccess="success(${it.id})">
-    				        <div class="form-group">
-        						<g:textArea class="form-control mis_mensajes" name="mensaje" placeholder="Reponder mensaje..."/>
-        						<g:field type="hidden" name="receptor" value="${it.emisor.username}"/>
-        						<g:field type="hidden" name="idMensaje" value="${it.id}"/>
-        					</div>
-        					
-        					<center class="btn_vehiculo hidden">
-                                <button type="submit" class="btn btn-success btn-xs">Responder</button>
-                                <button type="reset" class="btn btn-default btn-xs">Cancelar</button>
-                            </center>
-    				 </g:formRemote>
-    				 
-					</g:if>
-						
-				</div>
+						<g:if test="${it.idRespuesta > 0}">
+							<h6>
+								<strong><g:remoteLink class="respuestas"
+										controller='misMensajes' action='buscarRespuesta'
+										params="${[idRespuesta: it.idRespuesta]}"
+										update="${it.id} p.respuesta" onSuccess="toggle(${it.id})">Respuesta:</g:remoteLink></strong>
+							</h6>
+							<p class="respuesta"></p>
+						</g:if>
+
+						<g:if test="${it.idRespuesta == 0}">
+							<h6 class="hidden">
+								<strong>Respuesta:</strong>
+							</h6>
+							<p class="respuesta"></p>
+							<g:formRemote name="enviar_mensaje"
+								url="[controller: 'misMensajes', action:'responderMensaje']"
+								update="${it.id} p.respuesta" method="post"
+								onLoading="precargaRespuesta(${it.id})"
+								onSuccess="success(${it.id})">
+								<div class="form-group">
+									<g:textArea class="form-control mis_mensajes" name="mensaje"
+										placeholder="Reponder mensaje..." />
+									<g:field type="hidden" name="receptor"
+										value="${it.emisor.username}" />
+									<g:field type="hidden" name="idMensaje" value="${it.id}" />
+								</div>
+
+								<center class="btn_vehiculo hidden">
+									<button type="submit" class="btn btn-success btn-xs">Responder</button>
+									<button type="reset" class="btn btn-default btn-xs">Cancelar</button>
+								</center>
+							</g:formRemote>
+
+						</g:if>
+
+					</div>
 				</g:each>
 
 			</div>

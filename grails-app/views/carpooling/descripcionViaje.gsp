@@ -21,7 +21,7 @@
 	src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'js', file: 'holder.js')}"></script>
-	
+
 <script
 	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 
@@ -113,24 +113,22 @@
 		<!--fin header_960-->
 
 		<div class="menu">
-			
+
 			<ul class="menu_single">
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
 				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-				<li class="pull-right">
-					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+				<li class="pull-right"><g:link controller="MisMensajes"
+						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
 						<em class="ml-count ch-hide" style="display: inline;">2</em>
-					</g:link>
-				</li>
-				
-				<li class="pull-right" style="padding-right:15px;">
+					</g:link></li>
+
+				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span>
-							<span class="glyphicon glyphicon-user"></span>
-						</a>
-						
+						<a data-toggle="dropdown" href="#"><span> ${session.usuarioLogueado.nombre}
+						</span> <span class="glyphicon glyphicon-user"></span> </a>
+
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
@@ -151,85 +149,141 @@
 
 		<div id="contenido">
 			<h1>Descripción de viaje seleccionado</h1>
-            <div class="seccion_imgs caja-sombra _imgs">
-                <div class="col-md-6">
-                
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h4>Conductor</h4>
-                            <h5><strong>Nombre: </strong>${usuario.nombre}</h5>
-                            <h5><strong>DNI: </strong>${usuario.dni}</h5>
-                            <h5><strong>Teléfono: </strong>${usuario.telefono}</h5>
-                            </br>
-                            <h5><strong>Reputacion: </strong></h5>
-                            <h5>Positivo: 1 | Negativo: 0 | Neutro: 0</h5>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="img-thumbnail">
-							<img width="140px" height="140px" class="center-block"
-							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuario.imagen])}" alt="${usuario.nombre}" />
-			             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4>Vehiculo</h4>
-                            <h5><strong>Marca: </strong>${vehiculo.marca}</h5>
-                            <h5><strong>Model: </strong>${vehiculo.modelo}</h5>
-                            <h5><strong>Patente: </strong>${vehiculo.patente}</h5>
-                            </br>
-                            <h5><strong>Lugares Disponibles: </strong>${viaje.asientosLibres}</h5>
-                            <h5><strong>Colaboración: </strong>$${viaje.colaboracion}</h5>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="img-thumbnail">
-							<img width="220px" height="200px" class="center-block"
-							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': vehiculo.imagen])}" alt="${vehiculo.patente}" />
-			             </div>
-                        </div>
-                    </div>
-    				
-    				<div class="row">
-    				    <g:formRemote name="enviar_mensaje" url="[controller: 'DescripcionViaje', action:'guardarMensaje']" method="post" update="success" onSuccess="success()" onLoading="precarga_1()">
-    				        <div class="form-group">
-        						<label for="comentario">Mensaje:</label>
-        						<g:textArea class="form-control" name="mensaje" placeholder="Enviale un mensaje al conductor..."/>
-        						<g:field type="hidden" name="receptor" value="${usuario.username}"/>
-        					</div>
-        					
-        					<div id="success" class="hidden">
-        					</div>
-        					
-        					<center class="btn_vehiculo">
-                                <button type="submit" class="btn btn-success btn-xs">Enviar</button>
-                                <button type="reset" class="btn btn-default btn-xs">Borrar</button>
-                            </center>
-    				    </g:formRemote>
-    				</div>
-    				
-                </div>
-                
-                <div class="col-md-6">
-                    <h4>Viaje</h4>
-                    <h5><strong>Desde: </strong>${viaje.desde}</h5>
-                    <h5><strong>Hasta: </strong>${viaje.hasta}</h5>
-                    <h5><strong>Hora de Salida: </strong>${viaje.hora}:${viaje.minutos}</h5>
-                    <h5><strong>Dia/as: </strong>${viaje.domingo} - ${viaje.lunes} - ${viaje.martes} - ${viaje.miercoles} - ${viaje.jueves} - ${viaje.viernes} - ${viaje.sabado}</h5>
-    				
-    				<div id="map-canvas" style="width: 410px; height: 281px; margin: 75px auto 0"></div>
-    				<center class="btn_vehiculo">
-	                    <button type="submit" class="btn btn-lg btn-block btn-success">Unirme</button>
-	                </center>
-                </div>
-                <div class="clearfix"></div>
-                
-                
-            </div>
-            <div class"clearfix"></div>
-            
-		</div><!--fin contenido-->
-		<div id="push"></div>
+			<div class="seccion_imgs caja-sombra _imgs">
+				<div class="col-md-6">
+
+					<div class="row">
+						<div class="col-md-8">
+							<h4>Conductor</h4>
+							<h5>
+								<strong>Nombre: </strong>
+								${usuario.nombre}
+							</h5>
+							<h5>
+								<strong>Apellido: </strong>
+								${usuario.apellido}
+							</h5>
+							<h5>
+								<strong>DNI: </strong>
+								${usuario.dni}
+							</h5>
+							<h5>
+								<strong>Teléfono: </strong>
+								${usuario.telefono}
+							</h5>
+							</br>
+							<!-- Ver si lo saco -->
+
+						</div>
+						<div class="col-md-4">
+							<div class="img-thumbnail">
+								<img width="140px" height="140px" class="center-block"
+									src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuario.imagen])}"
+									alt="${usuario.nombre}" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<h4>Vehiculo</h4>
+							<h5>
+								<strong>Marca: </strong>
+								${vehiculo.marca}
+							</h5>
+							<h5>
+								<strong>Model: </strong>
+								${vehiculo.modelo}
+							</h5>
+							<h5>
+								<strong>Patente: </strong>
+								${vehiculo.patente}
+							</h5>
+							</br>
+							<h5>
+								<strong>Colaboración: </strong>$${viaje.colaboracion}
+							</h5>
+						</div>
+						<div class="col-md-6">
+							<div class="img-thumbnail">
+								<img width="220px" height="200px" class="center-block"
+									src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': vehiculo.imagen])}"
+									alt="${vehiculo.patente}" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<g:formRemote name="enviar_mensaje"
+							url="[controller: 'DescripcionViaje', action:'guardarMensaje']"
+							method="post" update="success" onSuccess="success()"
+							onLoading="precarga_1()">
+							<div class="form-group">
+								<label for="comentario">Mensaje:</label>
+								<g:textArea class="form-control" name="mensaje"
+									placeholder="Enviale un mensaje al conductor..." />
+								<g:field type="hidden" name="receptor"
+									value="${usuario.username}" />
+							</div>
+
+							<div id="success" class="hidden"></div>
+
+							<center class="btn_vehiculo">
+								<button type="submit" class="btn btn-success btn-xs">Enviar</button>
+								<button type="reset" class="btn btn-default btn-xs">Borrar</button>
+							</center>
+						</g:formRemote>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+					<h4>Viaje</h4>
+					<h5>
+						<strong>Desde: </strong>
+						${viaje.desde}
+					</h5>
+					<h5>
+						<strong>Hasta: </strong>
+						${viaje.hasta}
+					</h5>
+					<h5>
+						<strong>Hora de Salida: </strong>
+						${viaje.hora}:${viaje.minutos}
+					</h5>
+					<h5>
+						<strong>Dia/as: </strong>
+						${viaje.domingo}
+						-
+						${viaje.lunes}
+						-
+						${viaje.martes}
+						-
+						${viaje.miercoles}
+						-
+						${viaje.jueves}
+						-
+						${viaje.viernes}
+						-
+						${viaje.sabado}
+					</h5>
+
+					<div id="map-canvas"
+						style="width: 410px; height: 281px; margin: 75px auto 0"></div>
+					<center class="btn_vehiculo">
+						<button type="submit" class="btn btn-lg btn-block btn-success">Unirme</button>
+					</center>
+				</div>
+				<div class="clearfix"></div>
+
+
+			</div>
+			<divclass"clearfix">
+		</div>
+
+	</div>
+	<!--fin contenido-->
+	<div id="push"></div>
 	</div>
 
 	<!--fin contenedor-->

@@ -79,19 +79,18 @@
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
 				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-				<li class="pull-right">
-					<g:link controller="MisMensajes" action="listarMensajes" title="Mis Mensajes">
+				<li class="pull-right"><g:link controller="MisMensajes"
+						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
 						<em class="ml-count ch-hide" style="display: inline;">2</em>
-					</g:link>
-				</li>
-				
-				<li class="pull-right" style="padding-right:15px;">
+					</g:link></li>
+
+				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>${session.usuarioLogueado.nombre}</span>
-							<span class="glyphicon glyphicon-user"></span>
-						</a>
-						
+						<a data-toggle="dropdown" href="#"><span>
+								${session.usuarioLogueado.nombre}
+						</span> <span class="glyphicon glyphicon-user"></span> </a>
+
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
@@ -106,8 +105,9 @@
 				</li>
 				<div class="clearfix"></div>
 			</ul>
-		</div><!--fin menu-->
-		
+		</div>
+		<!--fin menu-->
+
 		<div id="contenido">
 			<h2>Realizar nueva busqueda</h2>
 			<div class="seccion_imgs _imgs caja-sombra">
@@ -118,19 +118,22 @@
 							<label for="desde">Desde:</label> <input type="text" id="desde"
 								name="desde" class="form-control" />
 						</div>
-						
+
 						<g:hiddenField name="desdelat" id="desdelat" class="form-control" />
-						<g:hiddenField name="desdelong" id="desdelong" type="text" class="form-control" />
-						
+						<g:hiddenField name="desdelong" id="desdelong" type="text"
+							class="form-control" />
+
 						<!--FIN: Ver si sirve -->
 						<div class="form-group">
 							<label for="hasta">Hasta:</label> <input type="text" id="hasta"
 								name="hasta" class="form-control" />
 						</div>
-						
-						<g:hiddenField name="hastalat" id="hastalat" type="text" class="form-control" />
-						<g:hiddenField name="hastalong" id="hastalong" type="text" class="form-control" />
-						
+
+						<g:hiddenField name="hastalat" id="hastalat" type="text"
+							class="form-control" />
+						<g:hiddenField name="hastalong" id="hastalong" type="text"
+							class="form-control" />
+
 						<!--FIN: Ver si sirve -->
 
 						<div class="form-group">
