@@ -34,6 +34,22 @@ if( !(/^\d{2}$/.test(min)) || min<0  ) {
 return false;
 }
 
+//valida frecuencia
+valido=false; 
+for(a=0;a<formulario.elements.length;a++){ 
+if(formulario[a].type=="checkbox" && formulario[a].checked==true){ 
+valido=true; 
+break 
+} 
+
+} 
+if(!valido){ 
+alert("Seleccione al menos un dia");
+return false; 
+} 
+ 
+
+
  //valida colaboracion
 if(formulario.colaboracion.value == '')
 {
@@ -44,21 +60,21 @@ if(formulario.colaboracion.value == '')
   
 
 //valida lugares disponibles
- var disponibilidad = document.getElementById("lugares").value;
+/* var disponibilidad = document.getElementById("lugares").value;
 if( !(/^\d{1}$/.test(disponibilidad)) || disponibilidad<=0  ) {
-	alert('Ingrese la cantidad de lugares disponibles');
+	alert('Ingrese la cantidad de lugares disponibles!!');
   return false;
-}
+}*/
 
-//valida comentario
+//Valida comentario
 if(formulario.comentario.value == '')
 {
-    alert('Ingrese comentario');
+    alert('Ingrese un comentario adicional');
     formulario.comentario.focus();
     return false;
-} 
+}
 
-  
+
 //validacion de envio
 //alert('Campos validados correctamente');
 return true;	
