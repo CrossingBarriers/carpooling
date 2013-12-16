@@ -53,7 +53,13 @@ function validar(formulario)
 		alert('Seleccione la cantidad de asientos');
 	  return false;
 	}
-
+   //valida imagen
+	if(formulario.myFile.value == '')
+	{
+	    alert('Ingrese una imagen para garantizar la identidad de su vehiculo');
+	    formulario.myFile.focus();
+	    return false;
+	}
 	//validacion de envio
 	//alert('Campos validados correctamente');
 	return true;	

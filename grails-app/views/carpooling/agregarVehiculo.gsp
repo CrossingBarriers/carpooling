@@ -126,9 +126,6 @@
 								<label for="tipo">Cargar una imagen de su Licencia de
 									conducir/Cedula verde:</label>
 								<g:field type="file" name="myFile" />
-								<p class="text-danger">
-									${flash.message}
-								</p>
 
 							</div>
 						</div>

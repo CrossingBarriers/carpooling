@@ -43,11 +43,11 @@ class AgregarVehiculoController {
 			vehiculo.save()
 			redirect (controller:'misViajes', action: 'show', params:[patente:params.patente])
 		}
-		else
+		/*else
 		{
 			flash.message = 'Debe cargar una imagen para garantizar su identidad'
 			redirect action:'renderAgregarVehiculoView'
-		}
+		}*/
 	}
 
 }
