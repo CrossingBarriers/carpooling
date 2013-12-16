@@ -101,10 +101,10 @@
 				<g:each var="usuarios" in='${(usuario)}'>
 					<br />
 
-					<div class="col-md-2">
+					<div class="col-xs-7 col-md-3">
 
 						<div>
-							<img width="160px" height="125px" class="center-block"
+							<img width="190px" height="135px" class="center-block"
 								src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuarios.imagen])}"
 								alt="${usuarios.nombre}" />
 						</div>
@@ -112,8 +112,9 @@
 					</div>
 
 					<div class="col-md-6">
-						<p>
+						
 							<g:if test="${usuarios.conductor==true}">
+							
 								<h4 class="text-warning">
 									<span class="glyphicon glyphicon-ok-sign"></span> Conductor
 								</h4>
@@ -125,7 +126,7 @@
 
 							</g:if>
 
-						</p>
+						
 						<p>
 							<h5>
 								<strong><span class="glyphicon glyphicon-chevron-right"></span>
