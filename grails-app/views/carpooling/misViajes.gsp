@@ -221,19 +221,19 @@
 										<g:else>
 											<strong class="text-muted">Dom</strong>
 										</g:else>
-										<g:if test="${viaje.lunes=='L' }">
+										<g:if test="${viaje.lunes=='L'}">
 											<strong class="text-warning">Lun</strong>
 										</g:if>
 										<g:else>
 											<strong class="text-muted">Lun</strong>
 										</g:else>
-										<g:if test="${viaje.martes=='M' }">
+										<g:if test="${viaje.martes=='M'}">
 											<strong class="text-warning">Mar</strong>
 										</g:if>
 										<g:else>
 											<strong class="text-muted">Mar</strong>
 										</g:else>
-										<g:if test="${viaje.miercoles=='X' }">
+										<g:if test="${viaje.miercoles=='X'}">
 											<strong class="text-warning">Mie</strong>
 										</g:if>
 										<g:else>
@@ -246,13 +246,13 @@
 										<g:else>
 											<strong class="text-muted">Jue</strong>
 										</g:else>
-										<g:if test="${viaje.viernes=='V' }">
+										<g:if test="${viaje.viernes=='V'}">
 											<strong class="text-warning">Vie</strong>
 										</g:if>
 										<g:else>
 											<strong class="text-muted">Vie</strong>
 										</g:else>
-										<g:if test="${viaje.sabado=='S' }">
+										<g:if test="${viaje.sabado=='S'}">
 											<strong class="text-warning">Sab</strong>
 										</g:if>
 										<g:else>

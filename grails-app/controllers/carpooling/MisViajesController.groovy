@@ -4,7 +4,7 @@ import carpooling.ViajeRegistrado
 
 class MisViajesController {
 
-	def misViajesService
+	def MisViajesService
 
 	def misViajes() {
 	}
@@ -13,12 +13,12 @@ class MisViajesController {
 
 	def index(){
 		def logueado = sec.loggedInUserInfo(field: 'username')
-		def usuario=misViajesService.buscarUsuarioLogueado(logueado)
+		def usuario = MisViajesService.buscarUsuarioLogueado(logueado)
 		 
 				if(logueado)
 				{
-					def map=misViajesService.buscarUsuario(usuario)
-					def viajes=misViajesService.buscarViaje(map)
+					def map = MisViajesService.buscarUsuario(usuario)
+					def viajes = MisViajesService.buscarViaje(map)
 					
 					render (view:'/carpooling/misViajes', model:[map:map,viajes:viajes])
 		
@@ -27,7 +27,7 @@ class MisViajesController {
 	}
 
 	def show(String patente){
-		def map=misViajesService.buscarVehiculo(patente)
+		def map = MisViajesService.buscarVehiculo(patente)
 		//println map
 		if(map!=[])
 		{
@@ -41,7 +41,7 @@ class MisViajesController {
 	}
 
 	def quitarVehiculo(String id){
-		misViajesService.eliminarVehiculo(id)
+		MisViajesService.eliminarVehiculo(id)
 		//El usuario cambia su estado:sera pasajero
 		String logueado = sec.loggedInUserInfo(field: 'username')
 		Usuario.executeUpdate("update Usuario user set user.conductor='false' where user.username=?",[logueado])
@@ -49,7 +49,7 @@ class MisViajesController {
 	}
 
 	def quitarViaje(Long id){
-		misViajesService.eliminarViaje(id)
+		MisViajesService.eliminarViaje(id)
 		redirect (controller:'misViajes', action:'index')
 	}
 

@@ -87,8 +87,7 @@
 
 				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>
-								${session.usuarioLogueado.nombre}
+						<a data-toggle="dropdown" href="#"><span> ${session.usuarioLogueado.nombre}
 						</span> <span class="glyphicon glyphicon-user"></span> </a>
 
 						<ul class="dropdown-menu" role="menu">
@@ -119,7 +118,8 @@
 								name="desde" class="form-control" />
 						</div>
 
-						<g:hiddenField name="desdelat" id="desdelat" class="form-control" />
+						<g:hiddenField name="desdelat" id="desdelat" type="text"
+							class="form-control" />
 						<g:hiddenField name="desdelong" id="desdelong" type="text"
 							class="form-control" />
 

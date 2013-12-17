@@ -67,8 +67,7 @@
 
 				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>
-								${session.usuarioLogueado.nombre}
+						<a data-toggle="dropdown" href="#"><span> ${session.usuarioLogueado.nombre}
 						</span> <span class="glyphicon glyphicon-user"></span> </a>
 
 						<ul class="dropdown-menu" role="menu">
@@ -96,16 +95,29 @@
 					<thead>
 						<tr>
 							<th>
-								<center>Nombre</center>
+								<p class="text-center">
+									<strong> Desde </strong>
+								</p>
 							</th>
 							<th>
-								<center>Nombre</center>
+								<p class="text-center">
+									<strong> Hasta </strong>
+								</p>
 							</th>
 							<th>
-								<center>Nombre</center>
+								<p class="text-center">
+									<strong> Días </strong>
+								</p>
 							</th>
 							<th>
-								<center>Nombre</center>
+								<p class="text-center">
+									<strong> Horario </strong>
+								</p>
+							</th>
+							<th>
+								<p class="text-center">
+									<strong> Colaboración </strong>
+								</p>
 							</th>
 						</tr>
 					</thead>

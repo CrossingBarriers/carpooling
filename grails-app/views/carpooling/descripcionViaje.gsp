@@ -150,6 +150,7 @@
 		<div id="contenido">
 			<h1>Descripción de viaje seleccionado</h1>
 			<div class="seccion_imgs caja-sombra _imgs">
+
 				<div class="col-md-6">
 
 					<div class="row">
@@ -237,53 +238,97 @@
 
 				</div>
 
-				<div class="col-md-6">
-					<h4>Viaje</h4>
-					<h5>
-						<strong>Desde: </strong>
-						${viaje.desde}
-					</h5>
-					<h5>
-						<strong>Hasta: </strong>
-						${viaje.hasta}
-					</h5>
-					<h5>
-						<strong>Hora de Salida: </strong>
-						${viaje.hora}:${viaje.minutos}
-					</h5>
-					<h5>
-						<strong>Dia/as: </strong>
-						${viaje.domingo}
-						-
-						${viaje.lunes}
-						-
-						${viaje.martes}
-						-
-						${viaje.miercoles}
-						-
-						${viaje.jueves}
-						-
-						${viaje.viernes}
-						-
-						${viaje.sabado}
-					</h5>
+				<g:form controller="viajesALosQueMeUni" action="usuarioQueSeUne"
+					method="post" enctype="multipart/form-data">
+					<div class="col-md-6">
+						<h4>Viaje</h4>
+						<h5>
+							<strong>Desde: </strong>
+							${viaje.desde}
+						</h5>
+						<h5>
+							<strong>Hasta: </strong>
+							${viaje.hasta}
+						</h5>
+						<h5>
+							<strong>Hora de Salida: </strong>
+							${viaje.hora}:${viaje.minutos}
+						</h5>
+						<h5>
+							<strong>Dia/as: </strong>
+						</h5>
 
-					<div id="map-canvas"
-						style="width: 410px; height: 281px; margin: 75px auto 0"></div>
-					<center class="btn_vehiculo">
-						<button type="submit" class="btn btn-lg btn-block btn-success">Unirme</button>
-					</center>
-				</div>
+						<g:if test="${viaje.domingo}">
+							<div>
+								${viaje.domingo}
+								<g:checkBox type="checkbox" id="checkbox1"
+									name="domingoCheckbox" value="D" checked="false" />
+							</div>
+						</g:if>
+						<g:if test="${viaje.lunes}">
+							<div>
+								${viaje.lunes}
+								<g:checkBox type="checkbox" id="checkbox2" name="lunesCheckbox"
+									value="L" checked="false" />
+							</div>
+						</g:if>
+						<g:if test="${viaje.martes}">
+							<div>
+								${viaje.martes}
+								<g:checkBox type="checkbox" id="checkbox3" name="martesCheckbox"
+									value="M" checked="false" />
+							</div>
+						</g:if>
+						<g:if test="${viaje.miercoles}">
+							<div>
+								${viaje.miercoles}
+								<g:checkBox type="checkbox" id="checkbox4"
+									name="miercolesCheckbox" value="X" checked="false" />
+							</div>
+						</g:if>
+						<g:if test="${viaje.jueves}">
+							<div>
+								${viaje.jueves}
+								<g:checkBox type="checkbox" id="checkbox5" name="juevesCheckbox"
+									value="J" checked="false" />
+							</div>
+						</g:if>
+						<g:if test="${viaje.viernes}">
+							<div>
+								${viaje.viernes}
+								<g:checkBox type="checkbox" id="checkbox6"
+									name="viernesCheckbox" value="V" checked="false" />
+							</div>
+						</g:if>
+						<g:if test="${viaje.sabado}">
+							<div>
+								${viaje.sabado}
+								<g:checkBox type="checkbox" id="checkbox7" name="sabadoCheckbox"
+									value="S" checked="false" />
+							</div>
+						</g:if>
+
+						<g:hiddenField name="idViaje" id="idViaje" value="${viaje.id}"
+							type="text" class="form-control" />
+
+						<div id="map-canvas"
+							style="width: 410px; height: 281px; margin: 75px auto 0"></div>
+						<center class="btn_vehiculo">
+							<g:submitButton name="submit" value="Unirme!"
+								class="btn btn-lg btn-block btn-success" />
+						</center>
+					</div>
+				</g:form>
 				<div class="clearfix"></div>
-
-
 			</div>
-			<divclass"clearfix">
+
+			<div class="clearfix"></div>
+
 		</div>
 
-	</div>
-	<!--fin contenido-->
-	<div id="push"></div>
+		<!--fin contenido-->
+
+		<div id="push"></div>
 	</div>
 
 	<!--fin contenedor-->
