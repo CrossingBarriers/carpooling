@@ -150,7 +150,7 @@
 		<div id="contenido">
 			<h1>Descripción de viaje seleccionado</h1>
 			<div class="seccion_imgs caja-sombra _imgs">
-				<div class="col-md-6">
+				<div class="col-md-6" style="border-right: 0">
 
 					<div class="row">
 						<div class="col-md-8">
@@ -232,12 +232,20 @@
 								<button type="submit" class="btn btn-success btn-xs">Enviar</button>
 								<button type="reset" class="btn btn-default btn-xs">Borrar</button>
 							</center>
+							
+							<ul class="pager">
+								<li class="previous">
+									<g:link onClick="history.back()">&larr;Volver</g:link>
+								</li>
+							</ul>
+							
 						</g:formRemote>
+						
 					</div>
 
 				</div>
 
-				<div class="col-md-6">
+				<div class="col-md-6" style="border-left: 1px solid #5dbedb;">
 					<h4>Viaje</h4>
 					<h5>
 						<strong>Desde: </strong>
@@ -253,19 +261,153 @@
 					</h5>
 					<h5>
 						<strong>Dia/as: </strong>
-						${viaje.domingo}
-						-
-						${viaje.lunes}
-						-
-						${viaje.martes}
-						-
-						${viaje.miercoles}
-						-
-						${viaje.jueves}
-						-
-						${viaje.viernes}
-						-
-						${viaje.sabado}
+						
+					<table class="table table-striped table-hover">
+						<thead>
+							<tr>
+								<th>
+									<p class="text-center">
+										<strong> Dia </strong>
+									</p>
+								</th>
+								<th>
+									<p class="text-center">
+										<strong> Asientos Disponibles </strong>
+									</p>
+								</th>
+								<th>
+									<p class="text-center">
+										<strong> Seleccionar </strong>
+									</p>
+								</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+										<g:if test="${viaje.domingo=='D'}">
+											<tr>
+												<td>
+													<center>
+														<strong class="text-warning">Domingo</strong>
+													</center>
+												</td>
+												<td>
+													<center>
+														<p>${viaje.asientosLibres}</p>
+													</center>
+												</td>
+												<td>
+													<center>
+														<input type="checkbox"></input>
+													</center>
+												</td>
+											</tr>
+										</g:if>
+										<g:if test="${viaje.lunes=='L' }">
+											<tr>
+												<td>
+													<strong class="text-warning">Lunes</strong>
+												</td>
+												<td>
+													<center>
+														<p>${viaje.asientosLibres}</p>
+													</center>
+												</td>
+												<td>
+													<center>
+														<input type="checkbox"></input>
+													</center>
+												</td>
+											</tr>
+										</g:if>
+										<g:if test="${viaje.martes=='M' }">
+										<tr>
+											<td>
+												<strong class="text-warning">Martes</strong>
+											</td>
+											<td>
+												<center>
+													<p>${viaje.asientosLibres}</p>
+												</center>
+											</td>
+											<td>
+												<center>
+													<input type="checkbox"></input>
+												</center>
+											</td>
+										</tr>
+										</g:if>
+										<g:if test="${viaje.miercoles=='X' }">
+											<tr>
+												<td>
+													<strong class="text-warning">Miercoles</strong>
+												</td>
+												<td>
+													<center>
+														<p>${viaje.asientosLibres}</p>
+													</center>
+												</td>
+												<td>
+													<center>
+														<input type="checkbox"></input>
+													</center>
+												</td>
+											</tr>
+										</g:if>
+
+										<g:if test="${viaje.jueves=='J'}">
+											<tr>
+												<td>
+													<strong class="text-warning">Jueves</strong>
+												</td>
+												<td>
+													<center>
+														<p>${viaje.asientosLibres}</p>
+													</center>
+												</td>
+												<td>
+													<center>
+														<input type="checkbox"></input>
+													</center>
+												</td>
+											</tr>
+										</g:if>
+										<g:if test="${viaje.viernes=='V' }">
+											<tr>
+												<td>
+													<strong class="text-warning">Viernes</strong>
+												</td>
+												<td>
+													<center>
+														<p>${viaje.asientosLibres}</p>
+													</center>
+												</td>
+												<td>
+													<center>
+														<input type="checkbox"></input>
+													</center>
+												</td>
+											</tr>
+										</g:if>
+										<g:if test="${viaje.sabado=='S' }">
+											<tr>
+												<td>
+													<strong class="text-warning">Sábado</strong>
+												</td>
+												<td>
+													<center>
+														<p>${viaje.asientosLibres}</p>
+													</center>
+												</td>
+												<td>
+													<center>
+														<input type="checkbox"></input>
+													</center>
+												</td>
+											</tr>
+										</g:if>
+					</tbody>
+				</table>
 					</h5>
 
 					<div id="map-canvas"
