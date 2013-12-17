@@ -64,7 +64,7 @@
 				<li class="pull-right"><g:link controller="MisMensajes"
 						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
-						<em class="ml-count ch-hide" style="display: inline;">2</em>
+						<em class="ml-count ch-hide" style="display: inline;"></em>
 					</g:link></li>
 
 				<li class="pull-right" style="padding-right: 15px;">
@@ -126,9 +126,6 @@
 								<label for="tipo">Cargar una imagen de su Licencia de
 									conducir/Cedula verde:</label>
 								<g:field type="file" name="myFile" />
-								<p class="text-danger">
-									${flash.message}
-								</p>
 
 							</div>
 						</div>

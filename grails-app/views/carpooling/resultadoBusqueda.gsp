@@ -62,7 +62,7 @@
 				<li class="pull-right"><g:link controller="MisMensajes"
 						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
-						<em class="ml-count ch-hide" style="display: inline;">2</em>
+						<em class="ml-count ch-hide" style="display: inline;"></em>
 					</g:link></li>
 
 				<li class="pull-right" style="padding-right: 15px;">
@@ -89,10 +89,10 @@
 		<!--fin menu-->
 
 		<div id="contenido">
-			<h1>
+			<h2>
 				<i class="glyphicon glyphicon-map-marker"></i> Viajes publicados que
 				coinciden con su busqueda
-			</h1>
+			</h2>
 
 			<div class="seccion_imgs caja-sombra _imgs">
 
@@ -121,7 +121,38 @@
 							</div>
 							<div class="col-md-6 col-xs-3 col-sm-4">
 								<ul class="pull-left">
-									<li><strong>Lugares disponibles: </strong> ${it.asientosLibres}</li>
+									<li><strong>Días: </strong> <g:if
+											test="${it.domingo=='D' }">
+											<strong class="text-warning">Dom</strong>
+										</g:if> <g:else>
+											<strong class="text-muted">Dom</strong>
+										</g:else> <g:if test="${it.lunes=='L' }">
+											<strong class="text-warning">Lun</strong>
+										</g:if> <g:else>
+											<strong class="text-muted">Lun</strong>
+										</g:else> <g:if test="${it.martes=='M' }">
+											<strong class="text-warning">Mar</strong>
+										</g:if> <g:else>
+											<strong class="text-muted">Mar</strong>
+										</g:else> <g:if test="${it.miercoles=='X' }">
+											<strong class="text-warning">Mie</strong>
+										</g:if> <g:else>
+											<strong class="text-muted">Mie</strong>
+										</g:else> <g:if test="${it.jueves=='J' }">
+											<strong class="text-warning">Jue</strong>
+										</g:if> <g:else>
+											<strong class="text-muted">Jue</strong>
+										</g:else> <g:if test="${it.viernes=='V' }">
+											<strong class="text-warning">Vie</strong>
+										</g:if> <g:else>
+											<strong class="text-muted">Vie</strong>
+										</g:else> <g:if test="${it.sabado=='S' }">
+											<strong class="text-warning">Sab</strong>
+										</g:if> <g:else>
+											<strong class="text-muted">Sab</strong>
+										</g:else></li>
+									<li><strong>Horario: </strong>
+										${it.hora}:${it.minutos}</li>
 									<li><strong>Colaboración: </strong>$${it.colaboracion}</li>
 								</ul>
 								<g:link class="btn btn-warning btn-xs pull-right"
@@ -135,7 +166,11 @@
 					</g:form>
 
 				</g:each>
-
+				<ul class="pager">
+				<li><g:link controller="BusquedaDeViajes"
+						action="renderBusquedaDeViajesView" class="previous">&larr;Volver</g:link>
+				</li>
+				</ul>
 			</div>
 
 			<div style="clear: both"></div>

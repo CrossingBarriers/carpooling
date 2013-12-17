@@ -3,8 +3,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Carpooling BA</title>
-
 <title>Carpooling BA - Como Funciona</title>
 
 <link rel="stylesheet" type="text/css"
@@ -21,6 +19,8 @@
 	src="${resource(dir: 'bootstrap/js', file: 'jquery.js')}"></script>
 <script type="text/javascript"
 	src="${resource(dir: 'bootstrap/js', file: 'bootstrap.js')}"></script>
+<script type="text/javascript"
+	src="${resource(dir:'js', file:'validacion.js') }"></script>
 
 </head>
 
@@ -39,7 +39,6 @@
 	<div id="contenedor">
 
 		<div class="header">
-
 			<g:link controller="index" action="renderIndexView">
 
 				<img class="logo"
@@ -49,15 +48,14 @@
 			</g:link>
 
 			<ul id="m-soc4">
-				<li><a class="facebook" href="https://www.facebook.com"><span>Facebook</span></a></li>
+				<li><a class="facebook" href="#"><span>Facebook</span></a></li>
 				<li><a class="twitter" href="#"><span>Twitter</span></a></li>
 				<li><a class="youtube" href="#"><span>YouTube</span></a></li>
 			</ul>
 
 		</div>
 		<!--fin header_960-->
-
-		<g:if test="${sec.loggedInUserInfo(field: 'username') == ''}">
+		<g:if test="${sec.loggedInUserInfo(field:'username')=='' }">
 			<div class="menu">
 				<ul class="menu_single">
 					<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
@@ -69,16 +67,40 @@
 			</div>
 		</g:if>
 		<sec:ifLoggedIn>
-			<div class="menu">
-				<ul class="menu_single">
+		<div class="menu">
+			<ul class="menu_single">
+				
 					<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
 					<li><g:link controller="comoFunciona"
 							action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
-				</ul>
-			</div>
+					<li class="pull-right"><g:link controller="MisMensajes"
+							action="listarMensajes" title="Mis Mensajes">
+							<span class="glyphicon glyphicon-envelope"></span>
+							<em class="ml-count ch-hide" style="display: inline;"></em>
+						</g:link></li>
+
+					<li class="pull-right" style="padding-right: 15px;">
+						<div class="dropdown">
+							<a data-toggle="dropdown" href="#"><span> ${session.usuarioLogueado.nombre}
+							</span> <span class="glyphicon glyphicon-user"></span> </a>
+
+							<ul class="dropdown-menu" role="menu">
+								<li><g:link controller="perfilUsuario"
+										action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+								<li><g:link controller="tipoUsuario"
+										action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+								<li class="divider"></li>
+								<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
+							</ul>
+						</div>
+					</li>
+				
+
+				<div class="clearfix"></div>
+			</ul>
+		</div>
 		</sec:ifLoggedIn>
 		<!--fin menu-->
-
 		<div id="contenido">
 			<h1>El sistema es muy fácil de usar</h1>
 			<h1>
@@ -172,6 +194,6 @@
 		<!--fin footer_960-->
 
 	</div>
-	<!--fin footer-->
+
 </body>
 </html>

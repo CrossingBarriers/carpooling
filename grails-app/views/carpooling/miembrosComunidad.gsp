@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>Carpooling BA</title>
+<title>Carpooling BA - Miembros de la Comunidad</title>
 
 <link rel="stylesheet" type="text/css"
 	href="${resource(dir: 'css', file: 'estilos.css')}" />
@@ -61,15 +61,11 @@
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
 				<li><a class="activo">COMUNIDAD</a></li>
 
-				<g:if test="${sec.loggedInUserInfo(field: 'username') == ''}">
-					<li><g:link controller="index" action="renderIndexView">INGRESAR</g:link></li>
-				</g:if>
-
 				<sec:ifLoggedIn>
 					<li class="pull-right"><g:link controller="MisMensajes"
 							action="listarMensajes" title="Mis Mensajes">
 							<span class="glyphicon glyphicon-envelope"></span>
-							<em class="ml-count ch-hide" style="display: inline;">2</em>
+							<em class="ml-count ch-hide" style="display: inline;"></em>
 						</g:link></li>
 
 					<li class="pull-right" style="padding-right: 15px;">
@@ -105,10 +101,10 @@
 				<g:each var="usuarios" in='${(usuario)}'>
 					<br />
 
-					<div class="col-md-2">
+					<div class="col-xs-7 col-md-3">
 
 						<div>
-							<img width="160px" height="125px" class="center-block"
+							<img width="190px" height="135px" class="center-block"
 								src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuarios.imagen])}"
 								alt="${usuarios.nombre}" />
 						</div>
@@ -116,8 +112,9 @@
 					</div>
 
 					<div class="col-md-6">
-						<p>
+						
 							<g:if test="${usuarios.conductor==true}">
+							
 								<h4 class="text-warning">
 									<span class="glyphicon glyphicon-ok-sign"></span> Conductor
 								</h4>
@@ -129,7 +126,7 @@
 
 							</g:if>
 
-						</p>
+						
 						<p>
 							<h5>
 								<strong><span class="glyphicon glyphicon-chevron-right"></span>

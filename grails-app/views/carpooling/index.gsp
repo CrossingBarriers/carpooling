@@ -230,8 +230,6 @@
 					<li><g:link controller="registrate"
 							action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
-					<li><g:link controller="index"
-							action="redirectMiembrosComunidadController">Miembros de la comunidad</g:link></li>
 				</ul>
 			</div>
 

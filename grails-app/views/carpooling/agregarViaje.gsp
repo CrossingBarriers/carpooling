@@ -85,7 +85,7 @@
 				<li class="pull-right"><g:link controller="MisMensajes"
 						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
-						<em class="ml-count ch-hide" style="display: inline;">2</em>
+						<em class="ml-count ch-hide" style="display: inline;"></em>
 					</g:link></li>
 
 				<li class="pull-right" style="padding-right: 15px;">
@@ -130,20 +130,14 @@
 										class="form-control" id="desde" />
 								</div>
 								<div class="form-group">
-
-									<!-- <label for="coord" class="pull-left">Coordenadas:</label>-->
 									<div class="col-xs-4">
 										<!--<center>Latitud</center>-->
-										<!--<g:hiddenField name="desdelat" id="desdelat" class="form-control" />-->
-										<g:field name="desdelat" id="desdelat" type="text"
-											class="form-control" />
+										<g:hiddenField name="desdelat" id="desdelat" class="form-control" />
 									</div>
 
 									<div class="col-xs-4">
 										<!--<center>Longitud</center>-->
-										<!--<g:hiddenField name="desdelong" id="desdelong" type="text" class="form-control" />-->
-										<g:field name="desdelong" id="desdelong" type="text"
-											class="form-control" />
+										<g:hiddenField name="desdelong" id="desdelong" type="text" class="form-control" />
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -153,21 +147,16 @@
 										class="form-control" id="hasta" />
 								</div>
 								<div class="form-group">
-									<!--<label for="coord" class="pull-left">Coordenadas:</label>-->
 									<div class="col-xs-4">
 										<!--<center>Latitud</center>-->
 										<g:hiddenField name="hastalat" id="hastalat" type="text"
 											class="form-control" />
-										<!--<g:field name="hastalat" id="hastalat" type="text"
-									class="form-control" />-->
 									</div>
 
 									<div class="col-xs-4">
 										<!--<center>Longitud</center>-->
 										<g:hiddenField name="hastalong" id="hastalong" type="text"
 											class="form-control" />
-										<!--<g:field name="hastalong" id="hastalong" type="text"
-									class="form-control" />-->
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -216,6 +205,8 @@
 										class="form-control" placeholder="Pesos" />
 								</div>
 								<br />
+								<br/>
+								<br/>
 
 							</div>
 							<div class="col-md-6">

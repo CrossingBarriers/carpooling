@@ -26,7 +26,7 @@ class AgregarVehiculoController {
 			def patenteImg = File.separator + params.patente.toString()+ '.jpg'
 
 			//Ruta generica donde se guardan las imagenes:
-			File destination = new File("D:"+File.separator+"$patenteImg")
+			File destination = new File("A:"+File.separator+"$patenteImg")
 
 			ImageIO.write(src, "jpg", destination);
 
@@ -43,11 +43,11 @@ class AgregarVehiculoController {
 			vehiculo.save()
 			redirect (controller:'misViajes', action: 'show', params:[patente:params.patente])
 		}
-		else
+		/*else
 		{
 			flash.message = 'Debe cargar una imagen para garantizar su identidad'
 			redirect action:'renderAgregarVehiculoView'
-		}
+		}*/
 	}
 
 }
