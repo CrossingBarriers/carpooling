@@ -148,7 +148,7 @@
 		<!--fin menu-->
 
 		<div id="contenido">
-			<h1>Descripción de viaje seleccionado</h1>
+			<h2>Descripción del viaje seleccionado</h2>
 			<div class="seccion_imgs caja-sombra _imgs">
 				
 
@@ -233,12 +233,12 @@
 								<div id="success" class="hidden"></div>
 
 								<center class="btn_vehiculo">
-									<button type="submit" class="btn btn-success btn-xs">Enviar</button>
+									<button type="submit" class="btn btn-warning btn-xs">Enviar</button>
 									<button type="reset" class="btn btn-default btn-xs">Borrar</button>
 								</center>
 
 								<ul class="pager">
-									<li class="previous"><g:link onClick="history.back()">&larr;Volver</g:link>
+									<li class="previous"><g:link onClick="history.back();return false;">&larr;Volver</g:link>
 									</li>
 								</ul>
 
@@ -265,14 +265,14 @@
 								${viaje.hora}:${viaje.minutos}
 							</h5>
 							<h5>
-								<strong>Dia/as: </strong>
+								<strong>Seleccione que días quiere unirse al viaje de ${usuario.nombre}: </strong>
 
 								<table class="table table-striped table-hover">
 									<thead>
 										<tr>
 											<th>
 												<p class="text-center">
-													<strong> Dia </strong>
+													<strong> Día </strong>
 												</p>
 											</th>
 											<th>
@@ -430,7 +430,7 @@
 								style="width: 410px; height: 281px; margin: 15px auto 0"></div>
 							<center class="btn_vehiculo">
 								<g:submitButton name="submit" value="Unirme!"
-									class="btn btn-lg btn-block btn-success" style="margin: 20px auto 0" />
+									class="btn btn-lg btn-block btn-warning" style="margin: 20px auto 0" />
 							</center>
 						</div>
 					</g:form>
