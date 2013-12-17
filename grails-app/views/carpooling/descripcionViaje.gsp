@@ -250,7 +250,7 @@
 
 					<g:form controller="viajesALosQueMeUni" action="usuarioQueSeUne"
 						method="post" enctype="multipart/form-data">
-						<div class="col-md-6">
+						<div class="col-md-6" style="border-left: 1px solid #5dbedb">
 							<h4>Viaje</h4>
 							<h5>
 								<strong>Desde: </strong>
@@ -427,10 +427,10 @@
 								type="text" class="form-control" />
 
 							<div id="map-canvas"
-								style="width: 410px; height: 281px; margin: 75px auto 0"></div>
+								style="width: 410px; height: 281px; margin: 15px auto 0"></div>
 							<center class="btn_vehiculo">
 								<g:submitButton name="submit" value="Unirme!"
-									class="btn btn-lg btn-block btn-success" />
+									class="btn btn-lg btn-block btn-success" style="margin: 20px auto 0" />
 							</center>
 						</div>
 					</g:form>
