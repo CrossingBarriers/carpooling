@@ -10,7 +10,12 @@ class MisMensajesController {
 		def receptor = misMensajesService.buscarReceptor(logueado)
 		def mensajes = misMensajesService.buscarMensajes(receptor)
 		
-		render (view:"/carpooling/misMensajes", model:[mensajes:mensajes])
+		if(mensajes){
+			render (view:"/carpooling/misMensajes", model:[mensajes:mensajes])
+		}else{
+			flash.message="No tienes mensajes"
+			render (view:"/carpooling/misMensajes", model:[mensajes:mensajes])
+		}
 	}
 	
 	def borrarMensaje(String id){
@@ -53,11 +58,13 @@ class MisMensajesController {
 	
 	def buscarRespuesta(){
 		
-		println params.idRespuesta
-		
 		def respuesta = Mensaje.get(params.idRespuesta)
 		
-		render '<script type="text/javascript">jQuery("abbr.timeago").timeago();</script><span class="glyphicon glyphicon-comment"></span> '+respuesta.mensaje+' <abbr class="timeago" title="'+respuesta.dateCreated+'" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr>'
+		if(respuesta){
+			render '<script type="text/javascript">jQuery("abbr.timeago").timeago();</script><span class="glyphicon glyphicon-comment"></span> '+respuesta.mensaje+' <abbr class="timeago" title="'+respuesta.dateCreated+'" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr>'
+		}else{
+			render '<div class="alert alert-danger"><p>Mensaje no disponible</p></div>'
+		}
 	}
 	
 }
