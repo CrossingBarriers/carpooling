@@ -133,7 +133,7 @@
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
 							<li><g:link controller="viajesALosQueMeUni"
-									action="renderMisViajesView">Mis Viajes</g:link></li>
+									action="renderViajesALosQueMeUniView">Mis Viajes</g:link></li>
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
@@ -423,6 +423,9 @@
 								</table>
 							</h5>
 
+							<!--<g:hiddenField name="idViaje" id="idViaje" value="${viaje.id}"
+								type="text" class="form-control" />-->
+								
 							<g:hiddenField name="idViaje" id="idViaje" value="${viaje.id}"
 								type="text" class="form-control" />
 

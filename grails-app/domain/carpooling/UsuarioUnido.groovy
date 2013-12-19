@@ -9,9 +9,8 @@ class UsuarioUnido implements Serializable {
 	static mapping = {
 
 		viaje column: 'viaje_id'
-		usuario column: 'usuario_dni'
+		usuario column: 'usuario_id'
 
-		// id composite: ['viaje', 'usuario']
 		version false
 	}
 

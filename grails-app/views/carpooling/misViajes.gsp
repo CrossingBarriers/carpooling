@@ -205,12 +205,12 @@
 							<tr>
 								<td>
 									<center>
-										${viaje.desde }
+										${viaje.desde}
 									</center>
 								</td>
 								<td>
 									<center>
-										${viaje.hasta }
+										${viaje.hasta}
 									</center>
 								</td>
 								<td>
@@ -262,7 +262,7 @@
 								</td>
 								<td>
 									<center>
-										${viaje.hora }:${viaje.minutos }
+										${viaje.hora}:${viaje.minutos}
 									</center>
 								</td>
 

@@ -5,11 +5,9 @@ class Usuario extends SecUsuario{
 	Integer dni
 	String nombre
 	String apellido
-	/*String email*/
 	Integer telefono
 	String imagen
 	String ocupacion
-	/*String contrasenia*/
 	Boolean conductor
 	
 
@@ -25,9 +23,7 @@ class Usuario extends SecUsuario{
 	static constraints = {
 		nombre (blank: false, nullable: false)
 		apellido (blank: false, nullable: false)
-		/*email (blank: false, email:true, unique: true)*/
 		telefono (blank: false, nullable: false)
-		/*contrasenia (blank: false, nullable:false)*/
 
 	}
 }

@@ -74,7 +74,7 @@
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
 							<li><g:link controller="viajesALosQueMeUni"
-									action="renderMisViajesView">Mis Viajes</g:link></li>
+									action="renderViajesALosQueMeUniView">Mis Viajes</g:link></li>
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
@@ -151,8 +151,7 @@
 										</g:if> <g:else>
 											<strong class="text-muted">Sab</strong>
 										</g:else></li>
-									<li><strong>Horario: </strong>
-										${it.hora}:${it.minutos}</li>
+									<li><strong>Horario: </strong> ${it.hora}:${it.minutos}</li>
 									<li><strong>Colaboración: </strong>$${it.colaboracion}</li>
 								</ul>
 								<g:link class="btn btn-warning btn-xs pull-right"
@@ -167,9 +166,9 @@
 
 				</g:each>
 				<ul class="pager">
-				<li><g:link controller="BusquedaDeViajes"
-						action="renderBusquedaDeViajesView" class="previous">&larr;Volver</g:link>
-				</li>
+					<li><g:link controller="BusquedaDeViajes"
+							action="renderBusquedaDeViajesView" class="previous">&larr;Volver</g:link>
+					</li>
 				</ul>
 			</div>
 

@@ -99,7 +99,7 @@
 				</g:link>
 			</div>
 			<div class="Layer-34 caja-sombra">
-				<g:link controller="viajesALosQueMeUni" action="renderMisViajesView">
+				<g:link controller="viajesALosQueMeUni" action="renderViajesALosQueMeUniView">
 					<img class="tipo_usuario"
 						src="${resource(dir: 'images/carpooling', file: 'Layer-34.jpg')}"
 						alt="pasajero" />

@@ -4,12 +4,12 @@ import grails.transaction.Transactional
 
 @Transactional
 class ViajesALosQueMeUniService {
-
-    def serviceMethod() {
-
-    }
 	
-	def buscarViaje(patente) {
-		ViajeRegistrado.findAllById(patente) //ver
+	def buscarUsuariosUnidosAViaje(usuario) {
+		
+		//def viajeQueMeUni = ViajeRegistrado.get(idViaje)
+		
+		def viajePasajero = UsuarioUnido.findAll("from UsuarioUnido as u where u.usuario = :usuario", [usuario:usuario])
+		
 	}
 }

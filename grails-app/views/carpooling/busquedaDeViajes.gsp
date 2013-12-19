@@ -94,7 +94,7 @@
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
 							<li><g:link controller="viajesALosQueMeUni"
-									action="renderMisViajesView">Mis Viajes</g:link></li>
+									action="renderViajesALosQueMeUniView">Mis Viajes</g:link></li>
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
@@ -114,8 +114,8 @@
 					action="renderResultadoBusquedaView" method="post">
 					<div class="col-md-6">
 						<div class="form-group">
-							<label for="desde">Desde:</label> <input type="text" id="desde"
-								name="desde" class="form-control" />
+							<label for="desde">Desde:</label> <input  type="text" id="desde"
+								name="desde" class="form-control" required />
 						</div>
 
 						<g:hiddenField name="desdelat" id="desdelat" type="text"
@@ -126,7 +126,7 @@
 						<!--FIN: Ver si sirve -->
 						<div class="form-group">
 							<label for="hasta">Hasta:</label> <input type="text" id="hasta"
-								name="hasta" class="form-control" />
+								name="hasta" class="form-control" required />
 						</div>
 
 						<g:hiddenField name="hastalat" id="hastalat" type="text"
@@ -140,13 +140,13 @@
 							<label for="hora" class="pull-left">Hora de salida:</label>
 							<div class="col-xs-3">
 								<input type="text" name="hh" class="form-control"
-									placeholder="hh" />
+									placeholder="hh" required />
 							</div>
 							<label for="dos_puntos" class="pull-left"
 								style="padding-left: 0;">:</label>
 							<div class="col-xs-3">
 								<input type="text" name="mm" class="form-control"
-									placeholder="mm" />
+									placeholder="mm" pattern="[0-59]{2}" title="Los minutos deben ser de 0 a 59" required />
 							</div>
 							<div class="clearfix"></div>
 						</div>

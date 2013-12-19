@@ -12,7 +12,7 @@ class Vehiculo {
 	static mapping = {
 
 		id generator: 'assigned', name:'patente', type: 'string'
-		usuario column: 'usuario_dni'
+		usuario column: 'usuario_id'
 		version false
 	}
 

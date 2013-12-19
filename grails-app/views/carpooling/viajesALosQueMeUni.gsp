@@ -74,7 +74,7 @@
 							<li><g:link controller="perfilUsuario"
 									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
 							<li><g:link controller="viajesALosQueMeUni"
-									action="renderMisViajesView">Mis Viajes</g:link></li>
+									action="renderViajesALosQueMeUniView">Mis Viajes</g:link></li>
 							<li><g:link controller="tipoUsuario"
 									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
 							<li class="divider"></li>
@@ -119,22 +119,81 @@
 									<strong> Colaboración </strong>
 								</p>
 							</th>
-							
+
 						</tr>
 					</thead>
 					<tbody>
-						<g:each var="" in="">
+						<g:each var="unido" in="${viajeConPasajero}">
 							<tr>
 								<td>
-									<center></center>
+									<center>
+										${unido.viaje.desde}
+									</center>
 								</td>
 								<td>
-									<center></center>
+									<center>
+										${unido.viaje.hasta}
+									</center>
 								</td>
 								<td>
-									<center></center>
+									<center>
+										<g:if test="${unido.dia=='D'}">
+											<strong class="text-warning">Dom</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Dom</strong>
+										</g:else>
+										<g:if test="${unido.dia=='L'}">
+											<strong class="text-warning">Lun</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Lun</strong>
+										</g:else>
+										<g:if test="${unido.dia=='M'}">
+											<strong class="text-warning">Mar</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Mar</strong>
+										</g:else>
+										<g:if test="${unido.dia=='X'}">
+											<strong class="text-warning">Mie</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Mie</strong>
+										</g:else>
+
+										<g:if test="${unido.dia=='J'}">
+											<strong class="text-warning">Jue</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Jue</strong>
+										</g:else>
+										<g:if test="${unido.dia=='V'}">
+											<strong class="text-warning">Vie</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Vie</strong>
+										</g:else>
+										<g:if test="${unido.dia=='S'}">
+											<strong class="text-warning">Sab</strong>
+										</g:if>
+										<g:else>
+											<strong class="text-muted">Sab</strong>
+										</g:else>
+									</center>
 								</td>
-								
+								<td>
+									<center>
+										${unido.viaje.hora}:${unido.viaje.minutos}
+									</center>
+								</td>
+								<td>
+									<center>
+										$
+										${unido.viaje.colaboracion}
+									</center>
+								</td>
+
 							</tr>
 						</g:each>
 					</tbody>
