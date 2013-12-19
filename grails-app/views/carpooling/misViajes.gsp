@@ -67,23 +67,39 @@
 
 				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>
-								${session.usuarioLogueado.nombre}
+						<a data-toggle="dropdown" href="#"><span> ${session.usuarioLogueado.nombre}
 						</span> <span class="glyphicon glyphicon-user"></span> </a>
 
 						<ul class="dropdown-menu" role="menu">
-							<li><g:link controller="perfilUsuario"
-									action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
-							<li><g:link controller="misViajes" action="index">Mis Viajes</g:link></li>
-							<li><g:link controller="tipoUsuario"
-									action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
-							<li><g:link controller="agregarVehiculo"
-									action="renderAgregarVehiculoView">
-									<p class="text-warning">Agregar Vehiculo</p>
-								</g:link></li>
-							<li class="divider"></li>
-							<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
+
+							<g:each var="usu" in="${usuario }">
+								<g:if test="${usu.conductor}">
+									<li><g:link controller="perfilUsuario"
+											action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+									<li><g:link controller="misViajes" action="index">Mis Viajes</g:link></li>
+									<li><g:link controller="tipoUsuario"
+											action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+									<li class="divider"></li>
+									<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
+								</g:if>
+
+								<g:else>
+									<li><g:link controller="perfilUsuario"
+											action="renderPerfilUsuarioView">Mi Perfil</g:link></li>
+									<li><g:link controller="misViajes" action="index">Mis Viajes</g:link></li>
+									<li><g:link controller="tipoUsuario"
+											action="renderTipoUsuarioView">Tipo Usuario</g:link></li>
+									<li><g:link controller="agregarVehiculo"
+											action="renderAgregarVehiculoView">
+											<p class="text-warning">Agregar Vehiculo</p>
+										</g:link></li>
+									<li class="divider"></li>
+									<li><g:link controller='logout'>Cerrar Sesión</g:link></li>
+								</g:else>
+							</g:each>
+
 						</ul>
+
 					</div>
 				</li>
 				<div class="clearfix"></div>
@@ -157,11 +173,7 @@
 						</g:each>
 					</tbody>
 				</table>
-				<h4 class="text-danger">
-					<center>
-						${flash.message }
-					</center>
-				</h4>
+				
 				<br />
 				<table class="table table-striped table-hover">
 					<thead>

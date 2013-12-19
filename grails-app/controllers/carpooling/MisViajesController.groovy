@@ -13,32 +13,25 @@ class MisViajesController {
 
 	def index(){
 		def logueado = sec.loggedInUserInfo(field: 'username')
-		def usuario = MisViajesService.buscarUsuarioLogueado(logueado)
-		 
+		
 				if(logueado)
 				{
+					def usuario = MisViajesService.buscarUsuarioLogueado(logueado)
 					def map = MisViajesService.buscarUsuario(usuario)
 					def viajes = MisViajesService.buscarViaje(map)
 					
-					render (view:'/carpooling/misViajes', model:[map:map,viajes:viajes])
-		
+					render (view:'/carpooling/misViajes', model:[usuario:usuario,map:map,viajes:viajes])
 				}
-	
 	}
 
 	def show(String patente){
 		def map = MisViajesService.buscarVehiculo(patente)
-		//println map
-		if(map!=[])
-		{
-			render (view:"/carpooling/misViajes",model:[map:map])
-		}
-		else
-		{
-			flash.message="No se puede registrar mas de un vehiculo"
-			redirect (controller: 'misViajes',action:'index')
-		}
+		def logueado = sec.loggedInUserInfo(field: 'username')
+		def usuario = MisViajesService.buscarUsuarioLogueado(logueado)
+
+		render (view:"/carpooling/misViajes",model:[usuario:usuario,map:map])
 	}
+
 
 	def quitarVehiculo(String id){
 		MisViajesService.eliminarVehiculo(id)

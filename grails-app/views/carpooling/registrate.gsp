@@ -126,8 +126,9 @@
 							<label for="tipo">Cargar una imagen de su Documento de
 								identidad:</label>
 							<g:field type="file" name="myFile" />
+							<br />
 							<p class="text-danger">
-								${flash.message}
+							 ${flash.message}
 							</p>
 						</div>
 					</div>

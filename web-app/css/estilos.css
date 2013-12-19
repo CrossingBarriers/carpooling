@@ -412,7 +412,7 @@ a.activo {
 
 .login {
 	width: 228px;
-	height: 190px;
+	height: auto;
 	float: right;
 	margin-top: 3px;
 }

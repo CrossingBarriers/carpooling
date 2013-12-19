@@ -177,15 +177,12 @@
 						Bienvenido/a,
 						${session.usuarioLogueado.nombre}
 					</h3>
-					<div class="login seccion_img caja-sombra">
-						<div class="form-group">
-							<!-- Imagen de perfil, con que se registro -->
-							<img width="223px" height="185px" class="center-block"
-								src="${createLink(controller:'index', action:'mostrarImagen' , params: ['imagen': usuario.imagen])}" />
-							<br /> <br />
-						</div>
+					
+					<div class="img-thumbnail" style="margin-left: 20%;">
+						<img width="140px" height="140px" class="center-block"
+						src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuario.imagen])}"
+						alt="${usuario.nombre}" />
 					</div>
-					<br />
 
 					<!-- Small button group -->
 					<center>

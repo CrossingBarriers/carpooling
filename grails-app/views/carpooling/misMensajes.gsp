@@ -139,6 +139,12 @@ function precargaRespuesta(current) {
 			<h2>Mis Mensajes</h2>
 
 			<div class="seccion_imgs caja-sombra _imgs">
+			
+				<g:if test='${flash.message}'>
+					<div class='alert alert-danger'>
+						<p class="text-center">${flash.message}</p>
+					</div>
+				</g:if>
 
 				<g:each in="${mensajes.reverse()}">
 
