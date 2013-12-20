@@ -17,19 +17,19 @@ class BootStrap {
 		usuario2.save()
 		//println usuario2
 
-		def usuario3 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 27100732, nombre: "Marcos", apellido: "Suarez", username: "marcossuarez@gmail.com",imagen:"C:/27100732",ocupacion:'Electricista matriculado', telefono: 1530992164 , password: 'mar123',passwordExpired:false, conductor: true)
+		def usuario3 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 27100732, nombre: "Marcos", apellido: "Suarez", username: "marcossuarez@gmail.com",imagen:"C:/27100732.jpg",ocupacion:'Electricista matriculado', telefono: 1530992164 , password: 'mar123',passwordExpired:false, conductor: true)
 		usuario3.save()
 		//println usuario3
 
-		def usuario4 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 36908127, nombre: "Patricia", apellido: "Peralta", username: "patriciaperalta@gmail.com",imagen:"C:/36908127",ocupacion:'Contadora senior en Techint', telefono: 46890244 , password: 'pat123',passwordExpired:false, conductor: false)
+		def usuario4 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 36908127, nombre: "Patricia", apellido: "Peralta", username: "patriciaperalta@gmail.com",imagen:"C:/36908127.jpg",ocupacion:'Contadora senior en Techint', telefono: 46890244 , password: 'pat123',passwordExpired:false, conductor: false)
 		usuario4.save()
 		//println usuario4
 
-		def usuario5 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 29875321, nombre: "Martina", apellido: "Ponce", username: "martinaponce@gmail.com",imagen:"C:/29875321",ocupacion:'Estudiante en UM', telefono: 1567204311 , password: 'mpo123',passwordExpired:false, conductor: true)
+		def usuario5 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 29875321, nombre: "Martina", apellido: "Ponce", username: "martinaponce@gmail.com",imagen:"C:/29875321.jpg",ocupacion:'Estudiante en UM', telefono: 1567204311 , password: 'mpo123',passwordExpired:false, conductor: true)
 		usuario5.save()
 		//println usuario5
 
-		def usuario6 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 33678600, nombre: "Romina", apellido: "Monte", username: "rominamonte@gmail.com",imagen:"C:/33678600",ocupacion:'Trabajo en recursos humanos', telefono: 1530908844 , password: 'rom123',passwordExpired:false, conductor: false)
+		def usuario6 = new Usuario(accountExpired:false,accountLocked:false,enabled:true,class:carpooling.SecUsuario,dni: 33678600, nombre: "Romina", apellido: "Monte", username: "rominamonte@gmail.com",imagen:"C:/33678600.jpg",ocupacion:'Trabajo en recursos humanos', telefono: 1530908844 , password: 'rom123',passwordExpired:false, conductor: false)
 		usuario6.save()
 		//println usuario6
 
