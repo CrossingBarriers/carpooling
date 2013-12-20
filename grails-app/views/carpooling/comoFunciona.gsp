@@ -59,8 +59,7 @@
 			<div class="menu">
 				<ul class="menu_single">
 					<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
-					<li><g:link controller="comoFunciona"
-							action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+					<li><a class="activo">COMO FUNCIONA</a></li>
 					<li><g:link controller="registrate"
 							action="renderRegistrateView">REGISTRATE</g:link></li>
 				</ul>
@@ -71,8 +70,7 @@
 			<ul class="menu_single">
 				
 					<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
-					<li><g:link controller="comoFunciona"
-							action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+					<li><a class="activo">COMO FUNCIONA</a></li>
 					<li class="pull-right"><g:link controller="MisMensajes"
 							action="listarMensajes" title="Mis Mensajes">
 							<span class="glyphicon glyphicon-envelope"></span>
