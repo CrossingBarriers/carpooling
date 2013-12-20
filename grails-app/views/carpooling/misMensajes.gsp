@@ -194,7 +194,7 @@ function precargaRespuesta(current) {
 								</div>
 
 								<center class="btn_vehiculo hidden">
-									<button type="submit" class="btn btn-success btn-xs">Responder</button>
+									<button type="submit" class="btn btn-warning btn-xs">Responder</button>
 									<button type="reset" class="btn btn-default btn-xs">Cancelar</button>
 								</center>
 							</g:formRemote>
