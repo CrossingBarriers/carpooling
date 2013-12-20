@@ -12,33 +12,43 @@ class ResultadoBusquedaController {
 		/*def resultadosId = params.resultadosId.split(',')*.toLong()
 		 def lista = ViajeRegistrado.getAll(resultadosId)
 		 render(view:"/carpooling/resultadoBusqueda", model:[resultado:lista])*/
-		
+
 		Double valor = 1000
 
-		def busqueda = new Busqueda(desde:params.desde, desdeLatitud:params.desdelat.toDouble(), desdeLongitud:params.desdelong.toDouble(), hasta:params.hasta, hastaLatitud:params.hastalat.toDouble(), hastaLongitud:params.hastalong.toDouble(), hh:params.hh, mm:params.mm).save()
+		def busqueda = new Busqueda(desde:params.desde, desdeLatitud:params.desdelat.toDouble(), desdeLongitud:params.desdelong.toDouble(),
+			hasta:params.hasta, hastaLatitud:params.hastalat.toDouble(), hastaLongitud:params.hastalong.toDouble(), hh:params.hh, mm:params.mm,
+			domingo:params.domingo, lunes:params.lunes, martes:params.martes, miercoles:params.miercoles, jueves:params.jueves, viernes:params.viernes,
+			sabado:params.sabado)
+			
+		busqueda.save()
+		
+//		println "validate: " + busqueda.validate()
+//		println "hasErrors: " + busqueda.hasErrors()
+//		println "errors: " + busqueda.errors
+//		
+//		println "Lo que busque: " + busqueda
+		
 		def lista = resultadoBusquedaService.busquedaViajes(busqueda)
-		
+
 		def listresult = []
-		
+
 		for ( registro in lista) {
 
 			def distanciaDesde = calcularDistanciaDesde(registro.desdeLatitud, registro.desdeLongitud, busqueda)
 			def distanciaHasta = calcularDistanciaHasta(registro.hastaLatitud, registro.hastaLongitud, busqueda)
-			
+
 			if(distanciaDesde <= valor && distanciaHasta <= valor){
 				listresult.add(registro)
 			}
-
 		}
-		
+
 		render(view:"/carpooling/resultadoBusqueda", model:[resultado:listresult])
-
 	}
-	
 
-	
+
+
 	Double calcularDistanciaDesde(desdeLatitud, desdeLongitud, busqueda){
-		
+
 		Double buslat =  busqueda.desdeLatitud;
 		Double buslong =  busqueda.desdeLongitud;
 		Double earthRadius = 6371; //kilometers
@@ -50,12 +60,12 @@ class ResultadoBusquedaController {
 		Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 		Double dist = earthRadius * c*1000;
 		return dist;
-		
+
 	}
-	
-	
+
+
 	Double calcularDistanciaHasta(hastaLatitud, hastaLongitud, busqueda){
-		
+
 		Double buslat =  busqueda.hastaLatitud;
 		Double buslong =  busqueda.hastaLongitud;
 		Double earthRadius = 6371; //kilometers
@@ -67,7 +77,6 @@ class ResultadoBusquedaController {
 		Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 		Double dist = earthRadius * c*1000;
 		return dist;
-		
-	}
 
+	}
 }

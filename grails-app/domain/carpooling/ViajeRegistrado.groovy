@@ -18,8 +18,8 @@ class ViajeRegistrado {
 	String viernes
 	String sabado
 	Vehiculo vehiculo
+	//Integer asientosLibres
 	Integer colaboracion
-	Integer asientosLibres // calculado
 	String comentario
 
 	static mapping = {
@@ -52,7 +52,7 @@ class ViajeRegistrado {
 		sabado(nullable:true)
 		vehiculo (blank: false, nullable: false)
 		colaboracion (blank: false, nullable: false)
-		asientosLibres (blank: false, nullable: false, minSize:1)
+		//asientosLibres (blank: false, nullable: false, minSize:1)
 
 	}
 }

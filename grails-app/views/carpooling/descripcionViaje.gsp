@@ -150,348 +150,400 @@
 		<div id="contenido">
 			<h2>Descripción del viaje seleccionado</h2>
 			<div class="seccion_imgs caja-sombra _imgs">
-				
+
 
 				<!--<div class="col-md-6">-->
-					
-					<div class="col-md-6" style="border-right: 0">
 
-						<div class="row">
-							<div class="col-md-8">
-								<h4>Conductor</h4>
-								<h5>
-									<strong>Nombre: </strong>
-									${usuario.nombre}
-								</h5>
-								<h5>
-									<strong>Apellido: </strong>
-									${usuario.apellido}
-								</h5>
-								<h5>
-									<strong>DNI: </strong>
-									${usuario.dni}
-								</h5>
-								<h5>
-									<strong>Teléfono: </strong>
-									${usuario.telefono}
-								</h5>
-								</br>
-								<!-- Ver si lo saco -->
+				<div class="col-md-6" style="border-right: 0">
 
-							</div>
-							<div class="col-md-4">
-								<div class="img-thumbnail">
-									<img width="140px" height="140px" class="center-block"
-										src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuario.imagen])}"
-										alt="${usuario.nombre}" />
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-6">
-								<h4>Vehiculo</h4>
-								<h5>
-									<strong>Marca: </strong>
-									${vehiculo.marca}
-								</h5>
-								<h5>
-									<strong>Model: </strong>
-									${vehiculo.modelo}
-								</h5>
-								<h5>
-									<strong>Patente: </strong>
-									${vehiculo.patente}
-								</h5>
-								</br>
-								<h5>
-									<strong>Colaboración: </strong>$${viaje.colaboracion}
-								</h5>
-							</div>
-							<div class="col-md-6">
-								<div class="img-thumbnail">
-									<img width="220px" height="200px" class="center-block"
-										src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': vehiculo.imagen])}"
-										alt="${vehiculo.patente}" />
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<g:formRemote name="enviar_mensaje"
-								url="[controller: 'DescripcionViaje', action:'guardarMensaje']"
-								method="post" update="success" onSuccess="success()"
-								onLoading="precarga_1()">
-								<div class="form-group">
-									<label for="comentario">Mensaje:</label>
-									<g:textArea class="form-control" name="mensaje"
-										placeholder="Enviale un mensaje al conductor..." />
-									<g:field type="hidden" name="receptor"
-										value="${usuario.username}" />
-								</div>
-
-								<div id="success" class="hidden"></div>
-
-								<center class="btn_vehiculo">
-									<button type="submit" class="btn btn-warning btn-xs">Enviar</button>
-									<button type="reset" class="btn btn-default btn-xs">Borrar</button>
-								</center>
-
-								<ul class="pager">
-									<li class="previous"><g:link onClick="history.back();return false;">&larr;Volver</g:link>
-									</li>
-								</ul>
-
-							</g:formRemote>
+					<div class="row">
+						<div class="col-md-8">
+							<h4>Conductor</h4>
+							<h5>
+								<strong>Nombre: </strong>
+								${usuario.nombre}
+							</h5>
+							<h5>
+								<strong>Apellido: </strong>
+								${usuario.apellido}
+							</h5>
+							<h5>
+								<strong>DNI: </strong>
+								${usuario.dni}
+							</h5>
+							<h5>
+								<strong>Teléfono: </strong>
+								${usuario.telefono}
+							</h5>
+							</br>
+							<!-- Ver si lo saco -->
 
 						</div>
+						<div class="col-md-4">
+							<div class="img-thumbnail">
+								<img width="140px" height="140px" class="center-block"
+									src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuario.imagen])}"
+									alt="${usuario.nombre}" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<h4>Vehiculo</h4>
+							<h5>
+								<strong>Marca: </strong>
+								${vehiculo.marca}
+							</h5>
+							<h5>
+								<strong>Model: </strong>
+								${vehiculo.modelo}
+							</h5>
+							<h5>
+								<strong>Patente: </strong>
+								${vehiculo.patente}
+							</h5>
+							</br>
+							<h5>
+								<strong>Colaboración: </strong>$${viaje.colaboracion}
+							</h5>
+						</div>
+						<div class="col-md-6">
+							<div class="img-thumbnail">
+								<img width="220px" height="200px" class="center-block"
+									src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': vehiculo.imagen])}"
+									alt="${vehiculo.patente}" />
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<g:formRemote name="enviar_mensaje"
+							url="[controller: 'DescripcionViaje', action:'guardarMensaje']"
+							method="post" update="success" onSuccess="success()"
+							onLoading="precarga_1()">
+							<div class="form-group">
+								<label for="comentario">Mensaje:</label>
+								<g:textArea class="form-control" name="mensaje"
+									placeholder="Enviale un mensaje al conductor..." />
+								<g:field type="hidden" name="receptor"
+									value="${usuario.username}" />
+							</div>
+
+							<div id="success" class="hidden"></div>
+
+							<center class="btn_vehiculo">
+								<button type="submit" class="btn btn-warning btn-xs">Enviar</button>
+								<button type="reset" class="btn btn-default btn-xs">Borrar</button>
+							</center>
+
+							<ul class="pager">
+								<li class="previous"><g:link
+										onClick="history.back();return false;">&larr;Volver</g:link></li>
+							</ul>
+
+						</g:formRemote>
 
 					</div>
 
-					<g:form controller="viajesALosQueMeUni" action="usuarioQueSeUne"
-						method="post" enctype="multipart/form-data">
-						<div class="col-md-6" style="border-left: 1px solid #5dbedb">
-							<h4>Viaje</h4>
-							<h5>
-								<strong>Desde: </strong>
-								${viaje.desde}
-							</h5>
-							<h5>
-								<strong>Hasta: </strong>
-								${viaje.hasta}
-							</h5>
-							<h5>
-								<strong>Hora de Salida: </strong>
-								${viaje.hora}:${viaje.minutos}
-							</h5>
-							<h5>
-								<strong>Seleccione que días quiere unirse al viaje de ${usuario.nombre}: </strong>
+				</div>
 
-								<table class="table table-striped table-hover">
-									<thead>
+				<g:form controller="viajesALosQueMeUni" action="usuarioQueSeUne"
+					method="post" enctype="multipart/form-data">
+					<div class="col-md-6" style="border-left: 1px solid #5dbedb">
+						<h4>Viaje</h4>
+						<h5>
+							<strong>Desde: </strong>
+							${viaje.desde}
+						</h5>
+						<h5>
+							<strong>Hasta: </strong>
+							${viaje.hasta}
+						</h5>
+						<h5>
+							<strong>Hora de Salida: </strong>
+							${viaje.hora}:${viaje.minutos}
+						</h5>
+						<h5>
+							<strong>Seleccione que días quiere unirse al viaje de ${usuario.nombre}:
+							</strong>
+
+							<table class="table table-striped table-hover">
+								<thead>
+									<tr>
+										<th>
+											<p class="text-center">
+												<strong> Día </strong>
+											</p>
+										</th>
+										<th>
+											<p class="text-center">
+												<strong> Asientos Disponibles </strong>
+											</p>
+										</th>
+										<th>
+											<p class="text-center">
+												<strong> Seleccionar </strong>
+											</p>
+										</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<g:if test="${viaje.domingo=='D'}">
 										<tr>
-											<th>
-												<p class="text-center">
-													<strong> Día </strong>
-												</p>
-											</th>
-											<th>
-												<p class="text-center">
-													<strong> Asientos Disponibles </strong>
-												</p>
-											</th>
-											<th>
-												<p class="text-center">
-													<strong> Seleccionar </strong>
-												</p>
-											</th>
-										</tr>
-									</thead>
-
-									<tbody>
-										<g:if test="${viaje.domingo=='D'}">
-											<tr>
-												<td>
-													<center>
-														<strong class="text-warning">Domingo</strong>
-													</center>
-												</td>
-												<td>
-													<center>
-														<p>
-															${viaje.asientosLibres}
-														</p>
-													</center>
-												</td>
-												<td>
-													<center>
+											<td>
+												<center>
+													<strong class="text-warning">Domingo</strong>
+												</center>
+											</td>
+											<td>
+												<center>
+													<p>
+														${asientosLibres.domingo}
+													</p>
+												</center>
+											</td>
+											<td>
+												<center>
+													<g:if test="${asientosLibres.domingo > 0}">
 														<g:checkBox type="checkbox" id="checkbox1"
 															name="domingoCheckbox" value="D" checked="false" />
-													</center>
-												</td>
-											</tr>
-										</g:if>
-										<g:if test="${viaje.lunes=='L'}">
-											<tr>
-												<td><strong class="text-warning">Lunes</strong></td>
-												<td>
-													<center>
-														<p>
-															${viaje.asientosLibres}
-														</p>
-													</center>
-												</td>
-												<td>
-													<center>
+													</g:if>
+													<g:else>
+														<g:checkBox type="checkbox" id="checkbox1"
+															name="domingoCheckbox" value="D" checked="false"
+															disabled="true" />
+													</g:else>
+												</center>
+											</td>
+										</tr>
+									</g:if>
+									<g:if test="${viaje.lunes=='L'}">
+										<tr>
+											<td><strong class="text-warning">Lunes</strong></td>
+											<td>
+												<center>
+													<p>
+														${asientosLibres.lunes}
+													</p>
+												</center>
+											</td>
+											<td>
+												<center>
+													<g:if test="${asientosLibres.lunes > 0}">
 														<g:checkBox type="checkbox" id="checkbox2"
 															name="lunesCheckbox" value="L" checked="false" />
-													</center>
-												</td>
-											</tr>
-										</g:if>
-										<g:if test="${viaje.martes=='M'}">
-											<tr>
-												<td><strong class="text-warning">Martes</strong></td>
-												<td>
-													<center>
-														<p>
-															${viaje.asientosLibres}
-														</p>
-													</center>
-												</td>
-												<td>
-													<center>
+													</g:if>
+													<g:else>
+														<g:checkBox type="checkbox" id="checkbox2"
+															name="lunesCheckbox" value="L" checked="false"
+															disabled="true" />
+													</g:else>
+												</center>
+											</td>
+										</tr>
+									</g:if>
+									<g:if test="${viaje.martes=='M'}">
+										<tr>
+											<td><strong class="text-warning">Martes</strong></td>
+											<td>
+												<center>
+													<p>
+														${asientosLibres.martes}
+													</p>
+												</center>
+											</td>
+											<td>
+												<center>
+													<g:if test="${asientosLibres.martes > 0}">
 														<g:checkBox type="checkbox" id="checkbox3"
 															name="martesCheckbox" value="M" checked="false" />
-													</center>
-												</td>
-											</tr>
-										</g:if>
-										<g:if test="${viaje.miercoles=='X'}">
-											<tr>
-												<td><strong class="text-warning">Miercoles</strong></td>
-												<td>
-													<center>
-														<p>
-															${viaje.asientosLibres}
-														</p>
-													</center>
-												</td>
-												<td>
-													<center>
+													</g:if>
+
+													<g:else>
+														<g:checkBox type="checkbox" id="checkbox3"
+															name="martesCheckbox" value="M" checked="false"
+															disabled="true" />
+													</g:else>
+												</center>
+											</td>
+										</tr>
+									</g:if>
+									<g:if test="${viaje.miercoles=='X'}">
+										<tr>
+											<td><strong class="text-warning">Miercoles</strong></td>
+											<td>
+												<center>
+													<p>
+														${asientosLibres.miercoles}
+													</p>
+												</center>
+											</td>
+											<td>
+												<center>
+													<g:if test="${asientosLibres.miercoles > 0}">
 														<g:checkBox type="checkbox" id="checkbox4"
 															name="miercolesCheckbox" value="X" checked="false" />
-													</center>
-												</td>
-											</tr>
-										</g:if>
-										<g:if test="${viaje.jueves=='J'}">
-											<tr>
-												<td><strong class="text-warning">Jueves</strong></td>
-												<td>
-													<center>
-														<p>
-															${viaje.asientosLibres}
-														</p>
-													</center>
-												</td>
-												<td>
-													<center>
+													</g:if>
+													<g:else>
+														<g:checkBox type="checkbox" id="checkbox4"
+															name="miercolesCheckbox" value="X" checked="false"
+															disabled="true" />
+													</g:else>
+												</center>
+											</td>
+										</tr>
+									</g:if>
+									<g:if test="${viaje.jueves=='J'}">
+										<tr>
+											<td><strong class="text-warning">Jueves</strong></td>
+											<td>
+												<center>
+													<p>
+														${asientosLibres.jueves}
+													</p>
+												</center>
+											</td>
+											<td>
+												<center>
+													<g:if test="${asientosLibres.jueves > 0}">
 														<g:checkBox type="checkbox" id="checkbox5"
 															name="juevesCheckbox" value="J" checked="false" />
-													</center>
-												</td>
-											</tr>
-										</g:if>
-										<g:if test="${viaje.viernes=='V'}">
-											<tr>
-												<td><strong class="text-warning">Viernes</strong></td>
-												<td>
-													<center>
-														<p>
-															${viaje.asientosLibres}
-														</p>
-													</center>
-												</td>
-												<td>
-													<center>
+													</g:if>
+													<g:else>
+														<g:checkBox type="checkbox" id="checkbox5"
+															name="juevesCheckbox" value="J" checked="false"
+															disabled="true" />
+													</g:else>
+												</center>
+											</td>
+										</tr>
+									</g:if>
+									<g:if test="${viaje.viernes=='V'}">
+										<tr>
+											<td><strong class="text-warning">Viernes</strong></td>
+											<td>
+												<center>
+													<p>
+														${asientosLibres.viernes}
+													</p>
+												</center>
+											</td>
+											<td>
+												<center>
+													<g:if test="${asientosLibres.viernes > 0}">
 														<g:checkBox type="checkbox" id="checkbox6"
 															name="viernesCheckbox" value="V" checked="false" />
-													</center>
-												</td>
-											</tr>
-										</g:if>
-										<g:if test="${viaje.sabado=='S'}">
-											<tr>
-												<td><strong class="text-warning">Sábado</strong></td>
-												<td>
-													<center>
-														<p>
-															${viaje.asientosLibres}
-														</p>
-													</center>
-												</td>
-												<td>
-													<center>
+													</g:if>
+													<g:else>
+														<g:checkBox type="checkbox" id="checkbox6"
+															name="viernesCheckbox" value="V" checked="false"
+															disabled="true" />
+													</g:else>
+												</center>
+											</td>
+										</tr>
+									</g:if>
+									<g:if test="${viaje.sabado=='S'}">
+										<tr>
+											<td><strong class="text-warning">Sábado</strong></td>
+											<td>
+												<center>
+													<p>
+														${asientosLibres.sabado}
+													</p>
+												</center>
+											</td>
+											<td>
+												<center>
+													<g:if test="${asientosLibres.sabado > 0}">
 														<g:checkBox type="checkbox" id="checkbox7"
 															name="sabadoCheckbox" value="S" checked="false" />
-													</center>
-												</td>
-											</tr>
-										</g:if>
-									</tbody>
-								</table>
-							</h5>
+													</g:if>
+													<g:else>
+														<g:checkBox type="checkbox" id="checkbox7"
+															name="sabadoCheckbox" value="S" checked="false"
+															disabled="true" />
+													</g:else>
+												</center>
+											</td>
+										</tr>
+									</g:if>
+								</tbody>
+							</table>
+						</h5>
 
-							<!--<g:hiddenField name="idViaje" id="idViaje" value="${viaje.id}"
+						<!--<g:hiddenField name="idViaje" id="idViaje" value="${viaje.id}"
 								type="text" class="form-control" />-->
-								
-							<g:hiddenField name="idViaje" id="idViaje" value="${viaje.id}"
-								type="text" class="form-control" />
 
-							<div id="map-canvas"
-								style="width: 410px; height: 281px; margin: 15px auto 0"></div>
-							<center class="btn_vehiculo">
-								<g:submitButton name="submit" value="Unirme!"
-									class="btn btn-lg btn-block btn-warning" style="margin: 20px auto 0" />
-							</center>
-						</div>
-					</g:form>
-					<div class="clearfix"></div>
-				</div>
+						<g:hiddenField name="idViaje" id="idViaje" value="${viaje.id}"
+							type="text" class="form-control" />
 
+						<div id="map-canvas"
+							style="width: 410px; height: 281px; margin: 15px auto 0"></div>
+						<center class="btn_vehiculo">
+							<g:submitButton name="submit" value="Unirme!"
+								class="btn btn-lg btn-block btn-success"
+								style="margin: 20px auto 0" />
+						</center>
+					</div>
+				</g:form>
 				<div class="clearfix"></div>
-
 			</div>
 
-			<!--fin contenido-->
+			<div class="clearfix"></div>
 
-			<div id="push"></div>
 		</div>
 
-		<!--fin contenedor-->
+		<!--fin contenido-->
 
-		<div id="footer">
+		<div id="push"></div>
+	</div>
 
-			<div class="footer_960">
+	<!--fin contenedor-->
 
-				<div id="foot_carpooling" class="secciones_foot">
-					<h3>CARPOOLING</h3>
-					<ul>
-						<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
-						<li><g:link controller="comoFunciona"
-								action="renderComoFuncionaView">Como Funciona</g:link></li>
-						<li><g:link controller="registrate"
-								action="renderRegistrateView">Registrate</g:link></li>
-						<li><a href="#">Contacto</a></li>
-					</ul>
-				</div>
+	<div id="footer">
 
-				<div id="foot_mas_info" class="secciones_foot">
-					<h3>MAS INFORMACION</h3>
-					<ul>
-						<li><a href="#">Acerca de Carpooling</a></li>
-						<li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
-						<li><a href="#">Términos y Condiciones</a></li>
-						<li><a href="#">Políticas de Privacidad</a></li>
-					</ul>
-				</div>
+		<div class="footer_960">
 
-				<div id="foot_redes_sociales" class="secciones_foot">
-					<h3>REDES SOCIALES</h3>
-					<img
-						src="${resource(dir: 'images/carpooling', file: 'redes_icons.png')}"
-						height="33" width="117" alt="redes_icons" />
-				</div>
-
-				<hr class="linea_2" />
-
-				<p>© 2013 | Crossing Barriers | Todos los derechos Reservados</p>
-
+			<div id="foot_carpooling" class="secciones_foot">
+				<h3>CARPOOLING</h3>
+				<ul>
+					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
+					<li><g:link controller="comoFunciona"
+							action="renderComoFuncionaView">Como Funciona</g:link></li>
+					<li><g:link controller="registrate"
+							action="renderRegistrateView">Registrate</g:link></li>
+					<li><a href="#">Contacto</a></li>
+				</ul>
 			</div>
-			<!--fin footer_960-->
+
+			<div id="foot_mas_info" class="secciones_foot">
+				<h3>MAS INFORMACION</h3>
+				<ul>
+					<li><a href="#">Acerca de Carpooling</a></li>
+					<li><a href="#">Preguntas Frecuentes (FAQ)</a></li>
+					<li><a href="#">Términos y Condiciones</a></li>
+					<li><a href="#">Políticas de Privacidad</a></li>
+				</ul>
+			</div>
+
+			<div id="foot_redes_sociales" class="secciones_foot">
+				<h3>REDES SOCIALES</h3>
+				<img
+					src="${resource(dir: 'images/carpooling', file: 'redes_icons.png')}"
+					height="33" width="117" alt="redes_icons" />
+			</div>
+
+			<hr class="linea_2" />
+
+			<p>© 2013 | Crossing Barriers | Todos los derechos Reservados</p>
 
 		</div>
-		<!--fin footer-->
+		<!--fin footer_960-->
+
+	</div>
+	<!--fin footer-->
 </body>
 </html>

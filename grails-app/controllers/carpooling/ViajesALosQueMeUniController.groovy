@@ -4,22 +4,22 @@ package carpooling
 //import org.springframework.security.core.userdetails.UserDetails
 
 class ViajesALosQueMeUniController {
-	
+
 	def viajesALosQueMeUniService
 
 	def viajesALosQueMeUni() {
 	}
 
 	def renderViajesALosQueMeUniView = {
-		
+
 		def usuarioLogueado = sec.loggedInUserInfo(field: 'username')
-		
+
 		def usuario = Usuario.findByUsername(usuarioLogueado)
-		
+
 		def viajeConPasajero = viajesALosQueMeUniService.buscarUsuariosUnidosAViaje(usuario)
 
 		render(view:"/carpooling/viajesALosQueMeUni", model:[viajeConPasajero:viajeConPasajero])
-		
+
 	}
 
 	def usuarioQueSeUne = {
@@ -35,15 +35,6 @@ class ViajesALosQueMeUniController {
 		def viaje = params.idViaje
 
 		def usuario = Usuario.findByUsername(usuarioLogueado)
-
-		println "Domingo: " + domingo
-		println "Lunes: " + lunes
-		println "Martes: " + martes
-		println "Miercoles: " + miercoles
-		println "Jueves: " + jueves
-		println "Viernes: " + viernes
-		println "Sabado: " + sabado
-
 
 		if (domingo == "D"){
 
@@ -80,12 +71,10 @@ class ViajesALosQueMeUniController {
 			def agregar = new UsuarioUnido(viaje:viaje, dia:"S", usuario:usuario)
 			agregar.save()
 		}
-		
+
 		def viajeConPasajero = viajesALosQueMeUniService.buscarUsuariosUnidosAViaje(usuario)
-		
-		println "viajeConPasajero en controller: " + viajeConPasajero
-		
+
 		render(view:"/carpooling/viajesALosQueMeUni", model:[viajeConPasajero:viajeConPasajero])
-		
+
 	}
 }

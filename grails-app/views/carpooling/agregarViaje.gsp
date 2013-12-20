@@ -90,8 +90,7 @@
 
 				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span>
-								${session.usuarioLogueado.nombre}
+						<a data-toggle="dropdown" href="#"><span> ${session.usuarioLogueado.nombre}
 						</span> <span class="glyphicon glyphicon-user"></span> </a>
 
 						<ul class="dropdown-menu" role="menu">
@@ -132,12 +131,14 @@
 								<div class="form-group">
 									<div class="col-xs-4">
 										<!--<center>Latitud</center>-->
-										<g:hiddenField name="desdelat" id="desdelat" class="form-control" />
+										<g:hiddenField name="desdelat" id="desdelat"
+											class="form-control" />
 									</div>
 
 									<div class="col-xs-4">
 										<!--<center>Longitud</center>-->
-										<g:hiddenField name="desdelong" id="desdelong" type="text" class="form-control" />
+										<g:hiddenField name="desdelong" id="desdelong" type="text"
+											class="form-control" />
 									</div>
 									<div class="clearfix"></div>
 								</div>
@@ -175,7 +176,6 @@
 								</div>
 								<br /> <label for="frecuencia">Frecuencia:</label>
 								<div id="checkboxset">
-
 									<g:checkBox type="checkbox" id="checkbox1" name="domingo"
 										value="D" checked="false" />
 									<label for="checkbox1">Dom</label>
@@ -204,9 +204,7 @@
 									<g:field name="colaboracion" id="colaboracion" type="text"
 										class="form-control" placeholder="Pesos" />
 								</div>
-								<br />
-								<br/>
-								<br/>
+								<br /> <br /> <br />
 
 							</div>
 							<div class="col-md-6">

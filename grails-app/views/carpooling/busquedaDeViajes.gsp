@@ -114,7 +114,7 @@
 					action="renderResultadoBusquedaView" method="post">
 					<div class="col-md-6">
 						<div class="form-group">
-							<label for="desde">Desde:</label> <input  type="text" id="desde"
+							<label for="desde">Desde:</label> <input type="text" id="desde"
 								name="desde" class="form-control" required />
 						</div>
 
@@ -146,24 +146,35 @@
 								style="padding-left: 0;">:</label>
 							<div class="col-xs-3">
 								<input type="text" name="mm" class="form-control"
-									placeholder="mm" pattern="[0-59]{2}" title="Los minutos deben ser de 0 a 59" required />
+									placeholder="mm" pattern="[0-59]{2}"
+									title="Los minutos deben ser de 0 a 59" required />
 							</div>
 							<div class="clearfix"></div>
 						</div>
 
 						<label for="frecuencia">Frecuencia:</label>
 						<div id="checkboxset">
-							<input type="checkbox" id="checkbox1" name="checkbox" /><label
-								for="checkbox1">Dom</label> <input type="checkbox"
-								id="checkbox2" name="checkbox" /><label for="checkbox2">Lun</label>
-							<input type="checkbox" id="checkbox3" name="checkbox" /><label
-								for="checkbox3">Mar</label> <input type="checkbox"
-								id="checkbox4" name="checkbox" /><label for="checkbox4">Mier</label>
-							<input type="checkbox" id="checkbox5" name="checkbox" /><label
-								for="checkbox5">Jue</label> <input type="checkbox"
-								id="checkbox6" name="checkbox" /><label for="checkbox6">Vie</label>
-							<input type="checkbox" id="checkbox7" name="checkbox" /><label
-								for="checkbox7">Sab</label>
+							<g:checkBox type="checkbox" id="checkbox1" name="domingo"
+								value="D" checked="false" />
+							<label for="checkbox1">Dom</label>
+							<g:checkBox type="checkbox" id="checkbox2" name="lunes" value="L"
+								checked="false" />
+							<label for="checkbox2">Lun</label>
+							<g:checkBox type="checkbox" id="checkbox3" name="martes"
+								value="M" checked="false" />
+							<label for="checkbox3">Mar</label>
+							<g:checkBox type="checkbox" id="checkbox4" name="miercoles"
+								value="X" checked="false" />
+							<label for="checkbox4">Mier</label>
+							<g:checkBox type="checkbox" id="checkbox5" name="jueves"
+								value="J" checked="false" />
+							<label for="checkbox5">Jue</label>
+							<g:checkBox type="checkbox" id="checkbox6" name="viernes"
+								value="V" checked="false" />
+							<label for="checkbox6">Vie</label>
+							<g:checkBox type="checkbox" id="checkbox7" name="sabado"
+								value="S" checked="false" />
+							<label for="checkbox7">Sab</label>
 						</div>
 					</div>
 

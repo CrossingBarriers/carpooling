@@ -25,7 +25,7 @@ class RegistrateController {
 			def dniImg = File.separator + params.dni.toString()+ '.jpg'
 					
 			//Ruta generica donde se guardan las imagenes:
-			File destination = new File("C:"+File.separator+"$dniImg")
+			File destination = new File("D:"+File.separator+"$dniImg")
 
 			ImageIO.write(src, "jpg", destination);
 

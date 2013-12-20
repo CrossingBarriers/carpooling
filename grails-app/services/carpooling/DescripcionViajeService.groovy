@@ -16,4 +16,9 @@ class DescripcionViajeService {
 	def buscarViaje(idViaje) {
 		ViajeRegistrado.findById(idViaje)
 	}
+	
+	def contarAsientosOcupados(viaje, dia){
+		
+		def cuenta = UsuarioUnido.countByViajeAndDia(viaje, dia)
+	}
 }

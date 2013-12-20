@@ -24,7 +24,7 @@ class UrlMappings {
 		"/registrate" (controller:"registrate", action:"renderRegistrateView")
 		"/miembrosComunidadCarpoolingBA" (controller:"miembrosComunidad", action:"renderMiembrosComunidadView")
 		
-		"/detalleViaje" (controller:"descripcionViaje", action:"renderDescripcionViajeView")
+		"/descripcionViaje" (controller:"descripcionViaje", action:"renderDescripcionViajeView")
 		"/resultadoBusqueda" (controller: "resultadoBusqueda", action: "renderResultadoBusquedaView")
 		"/perfilUsuario" (controller:"perfilUsuario", action:"renderPerfilUsuarioView")
 		
