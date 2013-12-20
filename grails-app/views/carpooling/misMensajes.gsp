@@ -105,6 +105,8 @@ function precargaRespuesta(current) {
 				<li><g:link controller="index" action="renderIndexView">HOME</g:link></li>
 				<li><g:link controller="comoFunciona"
 						action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+				<li><g:link controller="miembrosComunidad"
+						action="renderMiembrosComunidadView">COMUNIDAD</g:link></li>
 				<li class="pull-right"><g:link controller="MisMensajes"
 						action="listarMensajes" title="Mis Mensajes">
 						<span class="glyphicon glyphicon-envelope"></span>
@@ -226,8 +228,6 @@ function precargaRespuesta(current) {
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
 					<li><g:link controller="ComoFunciona"
 							action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="Registrate"
-							action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
 				</ul>
 			</div>

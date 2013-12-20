@@ -68,6 +68,8 @@
 					<li><a class="activo">HOME</a></li>
 					<li><g:link controller="comoFunciona"
 							action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+					<li><g:link controller="miembrosComunidad"
+						action="renderMiembrosComunidadView">COMUNIDAD</g:link></li>
 
 				</ul>
 			</div>
@@ -226,8 +228,11 @@
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
 					<li><g:link controller="comoFunciona"
 							action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="registrate"
-							action="renderRegistrateView">Registrate</g:link></li>
+					<g:if test="${sec.loggedInUserInfo(field: 'username') == ''}">
+						<li><g:link controller="registrate"
+								action="renderRegistrateView">Registrate</g:link></li>
+					</g:if>
+
 					<li><a href="#">Contacto</a></li>
 				</ul>
 			</div>

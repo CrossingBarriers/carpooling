@@ -126,8 +126,6 @@
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
 					<li><g:link controller="comoFunciona"
 							action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="registrate"
-							action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
 				</ul>
 			</div>
