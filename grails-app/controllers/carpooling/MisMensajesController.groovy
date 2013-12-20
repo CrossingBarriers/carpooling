@@ -41,6 +41,8 @@ class MisMensajesController {
 		
 		def respuesta = new Mensaje(mensaje:params.mensaje, receptor:receptor, emisor:emisor, idRespuesta: 0).save()
 		
+		def tiempo = g.formatDate(date:respuesta.dateCreated, format: "yyyy-MM-dd'T'HH:mm")
+		
 		def mensaje = Mensaje.get(params.idMensaje)
 		
 		mensaje.idRespuesta = respuesta.id
@@ -53,7 +55,7 @@ class MisMensajesController {
 			// aquí tratamos la excepción como queramos, haciendo nada, sacando por pantalla el error, ...
 			}
 		
-		render '<script type="text/javascript">jQuery("abbr.timeago").timeago();</script><span class="glyphicon glyphicon-comment"></span> '+respuesta.mensaje+' <abbr class="timeago" title="'+mensaje.dateCreated+'" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr>'
+		render '<script type="text/javascript">jQuery("abbr.timeago").timeago();</script><span class="glyphicon glyphicon-comment"></span> '+respuesta.mensaje+' <abbr class="timeago" title="'+tiempo+'" style="font-size: 12px; color: #68B0D3; cursor: default; border-bottom: 0;"></abbr>'
 	}
 	
 	def buscarRespuesta(){

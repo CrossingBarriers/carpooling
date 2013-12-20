@@ -45,7 +45,7 @@ function success(current) {
 	}
 
 function toggle(current) {
-	$("#"+current+" p.respuesta").toggle("slow");
+	$("#"+current+" p.respuesta").toggle(400);
 }
 
 function borrarMensaje(current) {
@@ -172,9 +172,9 @@ function precargaRespuesta(current) {
 								<strong><g:remoteLink class="respuestas"
 										controller='misMensajes' action='buscarRespuesta'
 										params="${[idRespuesta: it.idRespuesta]}"
-										update="${it.id} p.respuesta" onSuccess="toggle(${it.id})">Respuesta:</g:remoteLink></strong>
+										update="${it.id} p.respuesta" onSuccess="toggle(${it.id})">Ver Respuesta:</g:remoteLink></strong>
 							</h6>
-							<p class="respuesta"></p>
+							<p class="respuesta" style="display: none;"></p>
 						</g:if>
 
 						<g:if test="${it.idRespuesta == 0}">
