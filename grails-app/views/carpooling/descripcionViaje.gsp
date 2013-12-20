@@ -71,6 +71,7 @@
 	}
 
 	function precarga_1() {
+			$("#success").removeAttr("style");
 			$("#success").attr("class","alert alert-info fade in");
 			$("#success").html('<p style="text-align:center;"><img src="${resource(dir: 'images/carpooling', file: 'ajax-loader.gif')}"/></p>');
 	}
