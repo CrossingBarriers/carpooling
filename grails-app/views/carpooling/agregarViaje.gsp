@@ -90,7 +90,10 @@
 
 				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span> ${session.usuarioLogueado.nombre}
+						<a data-toggle="dropdown" href="#"><span> 
+						<g:if test="${session.usuarioLogueado.nombre == null}">
+		<li><g:link controller="index" action="renderIndexView"></g:link></li>
+		</g:if><g:else>${session.usuarioLogueado.nombre}</g:else>
 						</span> <span class="glyphicon glyphicon-user"></span> </a>
 
 						<ul class="dropdown-menu" role="menu">

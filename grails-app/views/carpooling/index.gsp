@@ -175,7 +175,9 @@
 				<div id="columna_derecha">
 					<h3>
 						Bienvenido/a,
-						${session.usuarioLogueado.nombre}
+						<g:if test="${session.usuarioLogueado.nombre == null}">
+		<li><g:link controller="index" action="renderIndexView"></g:link></li>
+		</g:if><g:else>${session.usuarioLogueado.nombre}</g:else>
 					</h3>
 					
 					<div class="img-thumbnail" style="margin-left: 20%;">

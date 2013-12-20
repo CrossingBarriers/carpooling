@@ -19,8 +19,20 @@ class TipoUsuarioController {
 	def renderTipoUsuarioView={
 		
 		String logueado = sec.loggedInUserInfo(field: 'username')
+		
+		if(logueado)
+		{
 		def usuario = Usuario.findByUsername(logueado)
 		session["usuarioLogueado"] = usuario
 		
-		render(view:"/carpooling/tipoUsuario") }
+		render(view:"/carpooling/tipoUsuario") 
+		}
+	else{
+			def redirectIndexController = {
+
+				redirect(controller:"Index", action:"renderIndexView")
+			}
+
+		}
+   }
 }
