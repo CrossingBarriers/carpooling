@@ -109,7 +109,7 @@
 							<label for="ocupacion">Empresa dónde trabajás o
 								universidad dónde estudiás:</label>
 							<g:textField type="text" class="form-control" id="ocupacion"
-								name="ocupacion" placeholder="Ingese ocupacion..." />
+								name="ocupacion" placeholder="Ingrese ocupacion..." />
 						</div>
 						<div class="form-group">
 							<label for="contrasenia">Contraseña:</label>
@@ -128,7 +128,7 @@
 							<g:field type="file" name="myFile" />
 							<br />
 							<p class="text-danger">
-							 ${flash.message}
+								${flash.message}
 							</p>
 						</div>
 					</div>

@@ -38,11 +38,11 @@ class BootStrap {
 		vehiculo1.save()
 		//println vehiculo1
 
-		def vehiculo2 = new Vehiculo(patente: "JAA123", marca: "Chevrolet", modelo: "Corsa", cantidadAsientos: 4, imagen:"C:/JAA123.jpg",usuario: usuario3) // El usuario 3 es conductor
+		def vehiculo2 = new Vehiculo(patente: "JAA123", marca: "Chevrolet", modelo: "Corsa", cantidadAsientos: 2, imagen:"C:/JAA123.jpg",usuario: usuario3) // El usuario 3 es conductor
 		vehiculo2.save()
 		//println vehiculo2
 
-		def vehiculo3 = new Vehiculo(patente: "FQN800", marca: "Peugeot", modelo: "307", cantidadAsientos: 4, imagen:"C:/FQN800.jpg",usuario: usuario5) // El usuario 5 es conductor
+		def vehiculo3 = new Vehiculo(patente: "FQN800", marca: "Peugeot", modelo: "307", cantidadAsientos: 3, imagen:"C:/FQN800.jpg",usuario: usuario5) // El usuario 5 es conductor
 		vehiculo3.save()
 		//println vehiculo3
 

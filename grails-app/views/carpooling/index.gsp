@@ -69,7 +69,7 @@
 					<li><g:link controller="comoFunciona"
 							action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
 					<li><g:link controller="miembrosComunidad"
-						action="renderMiembrosComunidadView">COMUNIDAD</g:link></li>
+							action="renderMiembrosComunidadView">COMUNIDAD</g:link></li>
 
 				</ul>
 			</div>
@@ -178,14 +178,17 @@
 					<h3>
 						Bienvenido/a,
 						<g:if test="${session.usuarioLogueado.nombre == null}">
-		<li><g:link controller="index" action="renderIndexView"></g:link></li>
-		</g:if><g:else>${session.usuarioLogueado.nombre}</g:else>
+							<li><g:link controller="index" action="renderIndexView"></g:link></li>
+						</g:if>
+						<g:else>
+							${session.usuarioLogueado.nombre}
+						</g:else>
 					</h3>
-					
+
 					<div class="img-thumbnail" style="margin-left: 20%;">
 						<img width="140px" height="140px" class="center-block"
-						src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuario.imagen])}"
-						alt="${usuario.nombre}" />
+							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuario.imagen])}"
+							alt="${usuario.nombre}" />
 					</div>
 
 					<!-- Small button group -->
