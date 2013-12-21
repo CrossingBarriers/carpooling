@@ -193,7 +193,11 @@
 										${unido.viaje.colaboracion}
 									</center>
 								</td>
-
+								<td><g:link controller="detalleDelViajeQueMeUni"
+										action="renderDetalleDelViajeQueMeUniView" type="button"
+										class="btn btn-warning btn-xs" params="${[unido:unido]}">
+										 Ver Detalle
+										 </g:link></td>
 							</tr>
 						</g:each>
 					</tbody>

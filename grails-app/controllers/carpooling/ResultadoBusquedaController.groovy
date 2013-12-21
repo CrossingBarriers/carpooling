@@ -29,6 +29,8 @@ class ResultadoBusquedaController {
 //		println "Lo que busque: " + busqueda
 		
 		def lista = resultadoBusquedaService.busquedaViajes(busqueda)
+		
+		println "Lista con createCriteria" + lista
 
 		def listresult = []
 

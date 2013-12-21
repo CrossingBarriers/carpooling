@@ -38,13 +38,13 @@ class RegistrateController {
 
 			render (view:'/carpooling/perfilUsuario', model: [usuario : usuario])
 			}
-			else{flash.message = 'Debe cargar una imagen para garantizar su identidad'
+			else{flash.message = 'Debe cargar una imagen para garantizar su identidad.'
 			redirect action:'renderRegistrateView'}
 		}
 		
 		else{
 			
-			flash.message = 'El usuario ya existe ingrese otro email'
+			flash.message = 'El usuario ya existe, ingrese otro email.'
 			redirect action:'renderRegistrateView'
 			
 		}
