@@ -33,6 +33,8 @@ class ResultadoBusquedaController {
 		println "Lista con createCriteria" + lista
 
 		def listresult = []
+		
+		
 
 		for ( registro in lista) {
 
@@ -43,8 +45,13 @@ class ResultadoBusquedaController {
 				listresult.add(registro)
 			}
 		}
-
-		render(view:"/carpooling/resultadoBusqueda", model:[resultado:listresult])
+		
+		if(listresult){
+			render(view:"/carpooling/resultadoBusqueda", model:[resultado:listresult])
+		}else{
+			flash.message="No existen resultados que coincidan con tu busqueda"
+			render(view:"/carpooling/resultadoBusqueda", model:[resultado:listresult])
+		}
 	}
 
 

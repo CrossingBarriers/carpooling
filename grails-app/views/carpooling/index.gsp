@@ -68,6 +68,8 @@
 					<li><a class="activo">HOME</a></li>
 					<li><g:link controller="comoFunciona"
 							action="renderComoFuncionaView">COMO FUNCIONA</g:link></li>
+					<li><g:link controller="miembrosComunidad"
+							action="renderMiembrosComunidadView">COMUNIDAD</g:link></li>
 
 				</ul>
 			</div>
@@ -175,13 +177,18 @@
 				<div id="columna_derecha">
 					<h3>
 						Bienvenido/a,
-						${session.usuarioLogueado.nombre}
+						<g:if test="${session.usuarioLogueado.nombre == null}">
+							<li><g:link controller="index" action="renderIndexView"></g:link></li>
+						</g:if>
+						<g:else>
+							${session.usuarioLogueado.nombre}
+						</g:else>
 					</h3>
-					
+
 					<div class="img-thumbnail" style="margin-left: 20%;">
 						<img width="140px" height="140px" class="center-block"
-						src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuario.imagen])}"
-						alt="${usuario.nombre}" />
+							src="${createLink(controller:'MiembrosComunidad', action:'mostrarImagen', params: ['imagen': usuario.imagen])}"
+							alt="${usuario.nombre}" />
 					</div>
 
 					<!-- Small button group -->
@@ -224,8 +231,11 @@
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
 					<li><g:link controller="comoFunciona"
 							action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="registrate"
-							action="renderRegistrateView">Registrate</g:link></li>
+					<g:if test="${sec.loggedInUserInfo(field: 'username') == ''}">
+						<li><g:link controller="registrate"
+								action="renderRegistrateView">Registrate</g:link></li>
+					</g:if>
+
 					<li><a href="#">Contacto</a></li>
 				</ul>
 			</div>

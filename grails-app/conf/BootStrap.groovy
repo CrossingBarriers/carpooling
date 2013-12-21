@@ -43,8 +43,6 @@ class BootStrap {
 		//println vehiculo2
 
 		def vehiculo3 = new Vehiculo(patente: "FQN800", marca: "Peugeot", modelo: "307", cantidadAsientos: 4, imagen:"D:\\FQN800.jpg",usuario: usuario5) // El usuario 5 es conductor
-		vehiculo3.save()
-		//println vehiculo3
 
 		//VIAJES:
 		def viaje1 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669938, desdeLongitud: -58.562190999999984, hasta: "Castelar, Buenos Aires, Argentina", hastaLatitud: -34.6554584, hastaLongitud:-58.64524369999998, hora: 10, minutos: 30 , domingo: null, lunes: null, martes: 'M', miercoles: null, jueves: 'J', viernes: 'V', sabado: null, vehiculo: vehiculo1, colaboracion: 25, asientosLibres: 3, comentario: "Nada para comentar")

@@ -71,7 +71,9 @@
 				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
 						<a data-toggle="dropdown" href="#"><span>
-								${session.usuarioLogueado.nombre}
+	<g:if test="${session.usuarioLogueado.nombre == null}">
+		<li><g:link controller="index" action="renderIndexView"></g:link></li>
+		</g:if><g:else>${session.usuarioLogueado.nombre}</g:else>
 						</span> <span class="glyphicon glyphicon-user"></span> </a>
 						<ul class="dropdown-menu" role="menu">
 							<li><g:link controller="perfilUsuario"
@@ -124,8 +126,6 @@
 					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
 					<li><g:link controller="comoFunciona"
 							action="renderComoFuncionaView">Como Funciona</g:link></li>
-					<li><g:link controller="registrate"
-							action="renderRegistrateView">Registrate</g:link></li>
 					<li><a href="#">Contacto</a></li>
 				</ul>
 			</div>

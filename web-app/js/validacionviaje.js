@@ -21,7 +21,7 @@ if(formulario.hasta.value == '')
 
 //valida hora
 var horario= document.getElementById("hora").value;
-if( !(/^\d{2}$/.test(horario)) || horario<=0  ) {
+if( !(/^\d{2}$/.test(horario)) || horario<00 || horario>23  ) {
 	alert('Ingrese hora en formato 24 hs');
  return false;
 }
@@ -29,8 +29,8 @@ if( !(/^\d{2}$/.test(horario)) || horario<=0  ) {
 
 //valida minutos
 var min = document.getElementById("minutos").value;
-if( !(/^\d{2}$/.test(min)) || min<0  ) {
-	alert('Ingrese los minutos');
+if( !(/^\d{2}$/.test(min)) || min<00 || min>59 ) {
+	alert('Ingrese los minutos en formato 60 minutos');
 return false;
 }
 

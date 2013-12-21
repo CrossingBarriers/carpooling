@@ -71,7 +71,9 @@
 					<li class="pull-right" style="padding-right: 15px;">
 						<div class="dropdown">
 							<a data-toggle="dropdown" href="#"><span>
-									${session.usuarioLogueado.nombre}
+									<g:if test="${session.usuarioLogueado.nombre == null}">
+									<li><g:link controller="index" action="renderIndexView"></g:link></li>
+									</g:if><g:else>${session.usuarioLogueado.nombre}</g:else>
 							</span> <span class="glyphicon glyphicon-user"></span> </a>
 
 							<ul class="dropdown-menu" role="menu">
@@ -173,9 +175,9 @@
 			<div id="foot_carpooling" class="secciones_foot">
 				<h3>CARPOOLING</h3>
 				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="como_funciona.html">Como Funciona</a></li>
-					<li><a href="#">Registrate</a></li>
+					<li><g:link controller="index" action="renderIndexView">Home</g:link></li>
+					<li><g:link controller="comoFunciona"
+							action="renderComoFuncionaView">Como Funciona</g:link></li>
 					<li><a href="#">Contacto</a></li>
 				</ul>
 			</div>
