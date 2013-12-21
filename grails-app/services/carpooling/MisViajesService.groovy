@@ -14,21 +14,27 @@ class MisViajesService {
 	def buscarVehiculo(patente) {
 		Vehiculo.findAllByPatente(patente)
 	}
-	
+
 	def buscarUsuarioLogueado(logueado){
 		Usuario.findByUsername(logueado)
 	}
-	
+
 	def buscarUsuario(usuario){
 		Vehiculo.findByUsuario(usuario)
 	}
-	
+
 	def buscarViaje(map){
 		ViajeRegistrado.findAllByVehiculo(map)
 	}
 
 	def eliminarViaje(id){
 		def miViaje=ViajeRegistrado.get(id)
+		def usuariosUnidos = UsuarioUnido.findAllByViaje(miViaje)
+
+		for(registro in usuariosUnidos){
+			registro.delete()
+		}
+
 		miViaje.delete()
 	}
 

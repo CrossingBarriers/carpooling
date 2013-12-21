@@ -69,10 +69,13 @@
 
 				<li class="pull-right" style="padding-right: 15px;">
 					<div class="dropdown">
-						<a data-toggle="dropdown" href="#"><span> 
-						<g:if test="${session.usuarioLogueado.nombre == null}">
-		<li><g:link controller="index" action="renderIndexView"></g:link></li>
-		</g:if><g:else>${session.usuarioLogueado.nombre}</g:else>
+						<a data-toggle="dropdown" href="#"><span> <g:if
+									test="${session.usuarioLogueado.nombre == null}">
+									<li><g:link controller="index" action="renderIndexView"></g:link></li>
+								</g:if>
+								<g:else>
+									${session.usuarioLogueado.nombre}
+								</g:else>
 						</span> <span class="glyphicon glyphicon-user"></span> </a>
 
 						<ul class="dropdown-menu" role="menu">
@@ -198,10 +201,11 @@
 										${unido.viaje.colaboracion}
 									</center>
 								</td>
-								<td><g:link controller="detalleDelViajeQueMeUni"
-										action="renderDetalleDelViajeQueMeUniView" type="button"
-										class="btn btn-warning btn-xs" params="${[unido:unido]}">
-										 Ver Detalle
+								<td><g:link controller="viajesALosQueMeUni"
+										action="quitarUsuarioUnido" id="${unido.id}" type="button"
+										class="btn btn-warning btn-xs">
+										<span class="glyphicon glyphicon-remove-sign"></span>
+										 Eliminar
 										 </g:link></td>
 							</tr>
 						</g:each>

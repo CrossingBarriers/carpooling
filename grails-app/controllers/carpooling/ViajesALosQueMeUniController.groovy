@@ -77,4 +77,10 @@ class ViajesALosQueMeUniController {
 		render(view:"/carpooling/viajesALosQueMeUni", model:[viajeConPasajero:viajeConPasajero])
 
 	}
+
+	def quitarUsuarioUnido(Long id) {
+		viajesALosQueMeUniService.eliminarUsuarioUnido(id)
+		redirect (controller:'viajesALosQueMeUni', action:'renderViajesALosQueMeUniView')
+
+	}
 }

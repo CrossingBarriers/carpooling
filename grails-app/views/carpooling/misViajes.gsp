@@ -284,14 +284,14 @@
 
 								<td><center>
 										$
-										${viaje.colaboracion }
+										${viaje.colaboracion}
 									</center></td>
 								<td>
 									<center>
-										${viaje.comentario }
+										${viaje.comentario}
 									</center>
 								</td>
-								<td><g:link action="quitarViaje" id="${viaje.id }"
+								<td><g:link action="quitarViaje" id="${viaje.id}"
 										type="button" class="btn btn-warning btn-xs">
 										<span class="glyphicon glyphicon-remove-sign"></span> Eliminar viaje</g:link>
 								</td>

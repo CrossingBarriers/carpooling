@@ -152,7 +152,7 @@
 							<div class="col-xs-3">
 								<input type="text" name="mm" class="form-control"
 									placeholder="mm" pattern="[0-59]{2}"
-									title="Los minutos deben ser de 0 a 59" required />
+									title="Los minutos deben ser de 00 a 59" required />
 							</div>
 							<div class="clearfix"></div>
 						</div>
