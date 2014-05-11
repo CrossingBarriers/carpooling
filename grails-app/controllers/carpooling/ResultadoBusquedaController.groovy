@@ -25,8 +25,7 @@ class ResultadoBusquedaController {
 //		println "validate: " + busqueda.validate()
 //		println "hasErrors: " + busqueda.hasErrors()
 //		println "errors: " + busqueda.errors
-//		
-//		println "Lo que busque: " + busqueda
+
 		
 		def lista = resultadoBusquedaService.busquedaViajes(busqueda)
 

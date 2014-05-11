@@ -43,40 +43,41 @@ class BootStrap {
 		//println vehiculo2
 
 		def vehiculo3 = new Vehiculo(patente: "FQN800", marca: "Peugeot", modelo: "307", cantidadAsientos: 4, imagen:"D:\\FQN800.jpg",usuario: usuario5) // El usuario 5 es conductor
-		println vehiculo3.errors
+		vehiculo3.save()
+		//println vehiculo3.errors
 		
 		//VIAJES:
-		def viaje1 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669938, desdeLongitud: -58.562190999999984, hasta: "Castelar, Buenos Aires, Argentina", hastaLatitud: -34.6554584, hastaLongitud:-58.64524369999998, hora: 10, minutos: 30 , domingo: null, lunes: null, martes: 'M', miercoles: null, jueves: 'J', viernes: 'V', sabado: null, vehiculo: vehiculo1, colaboracion: 25, asientosLibres: 3, comentario: "Nada para comentar")
+		def viaje1 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669938, desdeLongitud: -58.562190999999984, hasta: "Castelar, Buenos Aires, Argentina", hastaLatitud: -34.6554584, hastaLongitud:-58.64524369999998, hora: 10, minutos: 30 , domingo: null, lunes: null, martes: 'M', miercoles: null, jueves: 'J', viernes: 'V', sabado: null, vehiculo: vehiculo1, colaboracion: 25, comentario: "Nada para comentar")
 		viaje1.save()
-		//println viaje1.errors
+		println viaje1.errors
 
-		def viaje2 = new ViajeRegistrado(desde: "Walmart San Justo - Brig. Gral. Juan Manuel de Rosas, San Justo, Buenos Aires Province, Argentina", desdeLatitud: -34.68508, desdeLongitud: -58.558298000000036, hasta: "Plaza del Congreso, Buenos Aires, Argentina", hastaLatitud:-34.609814, hastaLongitud:-58.390409999999974, hora: 15, minutos: 30, domingo: null, lunes: 'L', martes: null, miercoles: null, jueves: null, viernes: 'V', sabado: null, vehiculo_patente: vehiculo1, colaboracion: 50, asientosLibres: 3, comentario: "Dudas por mensaje")
+		def viaje2 = new ViajeRegistrado(desde: "Walmart San Justo - Brig. Gral. Juan Manuel de Rosas, San Justo, Buenos Aires Province, Argentina", desdeLatitud: -34.68508, desdeLongitud: -58.558298000000036, hasta: "Plaza del Congreso, Buenos Aires, Argentina", hastaLatitud:-34.609814, hastaLongitud:-58.390409999999974, hora: 15, minutos: 30, domingo: null, lunes: 'L', martes: null, miercoles: null, jueves: null, viernes: 'V', sabado: null, vehiculo: vehiculo1, colaboracion: 50, comentario: "Dudas por mensaje")
 		viaje2.save()
-		//println viaje2.errors
+		println viaje2.errors
 
-		def viaje3 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669938, desdeLongitud: -58.562190999999984, hasta: "Castelar, Buenos Aires, Argentina", hastaLatitud: -34.6554584, hastaLongitud:-58.64524369999998, hora: 11, minutos: 15 , domingo: null, lunes: 'L', martes: null, miercoles: 'X', jueves: null, viernes: null, sabado: null, vehiculo_patente: vehiculo1, colaboracion: 25, asientosLibres: 3, comentario: "-")
+		def viaje3 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669938, desdeLongitud: -58.562190999999984, hasta: "Castelar, Buenos Aires, Argentina", hastaLatitud: -34.6554584, hastaLongitud:-58.64524369999998, hora: 11, minutos: 15 , domingo: null, lunes: 'L', martes: null, miercoles: 'X', jueves: null, viernes: null, sabado: null, vehiculo: vehiculo1, colaboracion: 25, comentario: "-")
 		viaje3.save()
-		//println viaje3
+		println viaje3.errors
 
-		def viaje4 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669938, desdeLongitud: -58.562190999999984, hasta: "Castelar, Buenos Aires, Argentina", hastaLatitud: -34.6554584, hastaLongitud:-58.64524369999998, hora: 11, minutos: 30 , domingo: null, lunes: 'L', martes: null, miercoles: null, jueves: 'J', viernes: 'V', sabado:null, vehiculo_patente: vehiculo2, colaboracion: 75, asientosLibres: 4, comentario: "Viajo solo esos dias")
+		def viaje4 = new ViajeRegistrado(desde: "UNLaM - Florencio Varela, San Justo, Buenos Aires, Argentina", desdeLatitud: -34.669938, desdeLongitud: -58.562190999999984, hasta: "Castelar, Buenos Aires, Argentina", hastaLatitud: -34.6554584, hastaLongitud:-58.64524369999998, hora: 11, minutos: 30 , domingo: null, lunes: 'L', martes: null, miercoles: null, jueves: 'J', viernes: 'V', sabado:null, vehiculo: vehiculo2, colaboracion: 75, comentario: "Viajo solo esos dias")
 		viaje4.save()
-		//println viaje4
+		println viaje4.errors
 
-		def viaje5 = new ViajeRegistrado(desde: "Berna 2101, Isidro Casanova, Buenos Aires, Argentina", desdeLatitud:-34.6938476, desdeLongitud:-58.59407799999997, hasta: "Tigre, Buenos Aires, Argentina", hastaLatitud:-34.425087, hastaLongitud:-58.579658499999994, hora: 06, minutos: 00, domingo: null, lunes: null, martes: null, miercoles: null, jueves: null, viernes: null, sabado: 'S', vehiculo_patente: vehiculo2, colaboracion: 100, asientosLibres: 4, comentario: "Viajo solo los sabados")
+		def viaje5 = new ViajeRegistrado(desde: "Berna 2101, Isidro Casanova, Buenos Aires, Argentina", desdeLatitud:-34.6938476, desdeLongitud:-58.59407799999997, hasta: "Tigre, Buenos Aires, Argentina", hastaLatitud:-34.425087, hastaLongitud:-58.579658499999994, hora: 06, minutos: 00, domingo: null, lunes: null, martes: null, miercoles: null, jueves: null, viernes: null, sabado: 'S', vehiculo: vehiculo2, colaboracion: 100, comentario: "Viajo solo los sabados")
 		viaje5.save()
-		//println viaje5
+		println viaje5.errors
 
-		def viaje6 = new ViajeRegistrado(desde: "Palermo, Buenos Aires, Argentina", desdeLatitud:-34.5888889, desdeLongitud:-58.43055559999999, hasta: "Moreno, Buenos Aires, Argentina", hastaLatitud:-34.6340099, hastaLongitud:-58.791382, hora: 07, minutos: 45, domingo: 'D', lunes: null, martes: 'M', miercoles: null, jueves: null, viernes: null, sabado: null, vehiculo_patente: vehiculo2, colaboracion: 300, asientosLibres: 4, comentario: "-")
+		def viaje6 = new ViajeRegistrado(desde: "Palermo, Buenos Aires, Argentina", desdeLatitud:-34.5888889, desdeLongitud:-58.43055559999999, hasta: "Moreno, Buenos Aires, Argentina", hastaLatitud:-34.6340099, hastaLongitud:-58.791382, hora: 07, minutos: 45, domingo: 'D', lunes: null, martes: 'M', miercoles: null, jueves: null, viernes: null, sabado: null, vehiculo: vehiculo2, colaboracion: 300, comentario: "-")
 		viaje6.save()
-		//println viaje6
+		println viaje6.errors
 
-		def viaje7 = new ViajeRegistrado(desde: "Walmart San Justo - Brig. Gral. Juan Manuel de Rosas, San Justo, Buenos Aires Province, Argentina", desdeLatitud: -34.68508, desdeLongitud: -58.558298000000036, hasta: "Plaza del Congreso, Buenos Aires, Argentina", hastaLatitud:-34.609814, hastaLongitud:-58.390409999999974, hora: 14, minutos: 15 , domingo: null, lunes: 'L', martes: null, miercoles: 'X', jueves: null, viernes: 'V', sabado:null, vehiculo_patente: vehiculo3, colaboracion: 50, asientosLibres: 4, comentario: "Consultas por msj")
+		def viaje7 = new ViajeRegistrado(desde: "Walmart San Justo - Brig. Gral. Juan Manuel de Rosas, San Justo, Buenos Aires Province, Argentina", desdeLatitud: -34.68508, desdeLongitud: -58.558298000000036, hasta: "Plaza del Congreso, Buenos Aires, Argentina", hastaLatitud:-34.609814, hastaLongitud:-58.390409999999974, hora: 14, minutos: 15 , domingo: null, lunes: 'L', martes: null, miercoles: 'X', jueves: null, viernes: 'V', sabado:null, vehiculo: vehiculo3, colaboracion: 50, comentario: "Consultas por msj")
 		viaje7.save()
-		//println viaje7
+		println viaje7.errors
 
-		def viaje8 = new ViajeRegistrado(desde: "Palermo, Buenos Aires, Argentina", desdeLatitud:-34.5888889, desdeLongitud:-58.43055559999999, hasta: "Moreno, Buenos Aires, Argentina", hastaLatitud:-34.6340099, hastaLongitud:-58.791382, hora: 06, minutos: 30, domingo: 'D', lunes: null, martes: null, miercoles: null, jueves: null, viernes: null, sabado: 'S', vehiculo_patente: vehiculo3, colaboracion: 330, asientosLibres: 4, comentario: "-")
+		def viaje8 = new ViajeRegistrado(desde: "Palermo, Buenos Aires, Argentina", desdeLatitud:-34.5888889, desdeLongitud:-58.43055559999999, hasta: "Moreno, Buenos Aires, Argentina", hastaLatitud:-34.6340099, hastaLongitud:-58.791382, hora: 06, minutos: 30, domingo: 'D', lunes: null, martes: null, miercoles: null, jueves: null, viernes: null, sabado: 'S', vehiculo: vehiculo3, colaboracion: 330, comentario: "-")
 		viaje8.save()
-		//println viaje8
+		println viaje8.errors
 
 
 	}

@@ -18,7 +18,6 @@ class ViajeRegistrado {
 	String viernes
 	String sabado
 	Vehiculo vehiculo
-	//Integer asientosLibres
 	Integer colaboracion
 	String comentario
 
@@ -26,7 +25,6 @@ class ViajeRegistrado {
 
 		vehiculo column: 'vehiculo_patente'
 		version false
-
 	}
 
 	static belongsTo = [vehiculo:Vehiculo]
@@ -52,7 +50,6 @@ class ViajeRegistrado {
 		sabado(nullable:true)
 		vehiculo (blank: false, nullable: false)
 		colaboracion (blank: false, nullable: false)
-		//asientosLibres (blank: false, nullable: false, minSize:1)
 
 	}
 }
